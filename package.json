@@ -1,0 +1,67 @@
+{
+  "name": "@itslil/rehype-katex",
+  "version": "7.0.1",
+  "description": "rehype-katex reimplemented in LilScript",
+  "keywords": [
+    "rehype",
+    "katex",
+    "math",
+    "latex",
+    "lilscript",
+    "itslil"
+  ],
+  "homepage": "https://yeargun.github.io/rehype-katexlil/",
+  "bugs": "https://github.com/yeargun/rehype-katexlil/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yeargun/rehype-katexlil.git"
+  },
+  "license": "MIT",
+  "author": "yeargun",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "./dist/rehype-katex.cjs",
+  "module": "./dist/rehype-katex.esm.js",
+  "types": "./dist/rehype-katex.d.ts",
+  "unpkg": "./dist/rehype-katex.umd.js",
+  "jsdelivr": "./dist/rehype-katex.umd.js",
+  "exports": {
+    ".": {
+      "types": "./dist/rehype-katex.d.ts",
+      "import": "./dist/rehype-katex.esm.js",
+      "require": "./dist/rehype-katex.cjs",
+      "default": "./dist/rehype-katex.esm.js"
+    },
+    "./closed": "./dist/rehype-katex.closed.js",
+    "./dist/*": "./dist/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "dist/rehype-katex.esm.js",
+    "dist/rehype-katex.cjs",
+    "dist/rehype-katex.umd.js",
+    "dist/rehype-katex.closed.js",
+    "dist/rehype-katex.d.ts",
+    "LICENSE",
+    "NOTICE.md",
+    "README.md"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs --compile",
+    "build:site": "node scripts/build-site.mjs",
+    "test": "node --test test/*.test.mjs",
+    "check:site": "npm run build:site && node --test test/site.test.mjs",
+    "check:pack": "node scripts/check-pack.mjs",
+    "prepublishOnly": "npm test && npm run check:pack && npm run check:site"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.1"
+  }
+}

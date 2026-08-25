@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="rehype-katex reimplemented in LilScript. Walks hast, finds math nodes / <code>math-inline</code> spans, writes KaTeX HTML." />
+    <title>@itslil/rehype-katex — LilScript lab</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <header class="nav shell">
+      <a class="wordmark" href="#top">
+        <span class="mark">rk</span>
+        <span>@itslil/rehype-katex</span>
+      </a>
+      <nav>
+        <a href="#lab">lab</a>
+        <a href="https://www.npmjs.com/package/@itslil/rehype-katex">npm</a>
+        <a href="https://github.com/yeargun/rehype-katexlil">GitHub</a>
+      </nav>
+    </header>
+    <main id="top">
+      <section class="hero shell">
+        <p class="eyebrow">@itslil/rehype-katex · LilScript · zero runtime deps</p>
+        <h1>Math nodes,<br />to KaTeX.</h1>
+        <p class="lede">rehype-katex reimplemented in LilScript. Walks hast, finds math nodes / <code>math-inline</code> spans, writes KaTeX HTML.</p>
+        <div class="install-row">
+          <code>npm install @itslil/rehype-katex</code>
+          <button class="copy" type="button" data-copy="npm install @itslil/rehype-katex">copy</button>
+        </div>
+      </section>
+      <section class="ticker" aria-label="Features">
+        <div>math-inline<span>✦</span>math-display<span>✦</span>throwOnError<span>✦</span>tree-shake</div>
+      </section>
+      <section class="lab shell" id="lab">
+        <h2>Live lab</h2>
+        <p class="section-lead">This page loads the compiled ESM from this repo. Library lane keeps host-visible keys. Closed lane is <code>dist/*.closed.js</code>.</p>
+        <div class="samples" id="samples"></div>
+        <div class="toggles" id="toggles"></div>
+        
+        <div class="play-grid">
+          <textarea id="input" spellcheck="false" aria-label="Input"></textarea>
+          <div>
+            <div id="preview" class="preview" hidden></div>
+            <iframe id="frame" title="Rendered output" sandbox="allow-same-origin" hidden></iframe>
+            <pre id="output"></pre>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="shell">
+      <span>@itslil/rehype-katex · MIT · LilScript reimplementation</span>
+      <a href="https://yeargun.github.io/rehype-katexlil/">yeargun.github.io/rehype-katexlil</a>
+    </footer>
+  </body>
+</html>

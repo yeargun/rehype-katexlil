@@ -1,0 +1,10 @@
+import { transformTree } from "./walk.lil";
+
+export JsValue rehypeKatex(JsValue options) {
+  func(JsValue, JsValue)->JsValue transformer = (JsValue tree, JsValue file) => {
+    return transformTree(tree, options);
+  };
+  return transformer;
+}
+
+export { rehypeKatex as default };

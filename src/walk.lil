@@ -1,0 +1,187 @@
+import { KatexOptions } from "./host.lil";
+import { renderTex } from "./html.lil";
+
+class Settings {
+  bool throwOnError;
+  string errorColor;
+
+  init(bool throwOnError, string errorColor) {
+    this.throwOnError = throwOnError;
+    this.errorColor = errorColor;
+  }
+}
+
+Settings settingsFrom(JsValue options) {
+  bool throwOnError = true;
+  string errorColor = "#cc0000";
+  if (!JS.isNullish(options)) {
+    KatexOptions opts = JS.assume(options);
+    JsValue throwValue = opts.throwOnError;
+    if (throwValue is bool) {
+      throwOnError = throwValue;
+    }
+    JsValue colorValue = opts.errorColor;
+    if (colorValue is string) {
+      errorColor = colorValue;
+    }
+  }
+  return new Settings(throwOnError, errorColor);
+}
+
+int jsLen(JsValue value) {
+  return JS.number(value["length"]).toInt();
+}
+
+bool hasToken(JsValue className, string token) {
+  if (className is string) {
+    string[] parts = className.split(" ");
+    int i = 0;
+    while (i < parts.length) {
+      if (parts[i] == token) {
+        return true;
+      }
+      i = i + 1;
+    }
+    return false;
+  }
+  if (JS.isArray(className)) {
+    int n = jsLen(className);
+    int i = 0;
+    while (i < n) {
+      JsValue item = className[i];
+      if (item is string && item == token) {
+        return true;
+      }
+      i = i + 1;
+    }
+  }
+  return false;
+}
+
+JsValue classNameOf(JsValue node) {
+  JsValue props = node["properties"];
+  if (JS.isNullish(props)) {
+    return JS.undefined();
+  }
+  return props["className"];
+}
+
+bool isElementType(JsValue node) {
+  JsValue typ = node["type"];
+  return typ is string && typ == "element";
+}
+
+bool isMathClass(JsValue className) {
+  return hasToken(className, "math")
+    || hasToken(className, "math-inline")
+    || hasToken(className, "math-display")
+    || hasToken(className, "language-math");
+}
+
+bool isMathElement(JsValue node) {
+  return isElementType(node) && isMathClass(classNameOf(node));
+}
+
+bool isMdastMath(JsValue node) {
+  JsValue typ = node["type"];
+  return typ is string && (typ == "inlineMath" || typ == "math");
+}
+
+bool isPreLanguageMath(JsValue node) {
+  if (!isElementType(node)) {
+    return false;
+  }
+  JsValue tag = node["tagName"];
+  if (!(tag is string) || tag != "pre") {
+    return false;
+  }
+  JsValue children = node["children"];
+  if (!JS.isArray(children)) {
+    return false;
+  }
+  int n = jsLen(children);
+  int i = 0;
+  while (i < n) {
+    JsValue kid = children[i];
+    if (isElementType(kid)) {
+      JsValue kidTag = kid["tagName"];
+      if (kidTag is string && kidTag == "code" && hasToken(classNameOf(kid), "language-math")) {
+        return true;
+      }
+    }
+    i = i + 1;
+  }
+  return false;
+}
+
+string nodeText(JsValue node) {
+  JsValue typ = node["type"];
+  if (typ is string) {
+    if (typ == "text" || typ == "comment" || typ == "inlineMath" || typ == "math" || typ == "raw") {
+      JsValue value = node["value"];
+      if (value is string) {
+        return value;
+      }
+      return "";
+    }
+  }
+  JsValue children = node["children"];
+  if (!JS.isArray(children)) {
+    return "";
+  }
+  string out = "";
+  int n = jsLen(children);
+  int i = 0;
+  while (i < n) {
+    out = out + nodeText(children[i]);
+    i = i + 1;
+  }
+  return out;
+}
+
+bool displayModeOf(JsValue node) {
+  JsValue typ = node["type"];
+  if (typ is string && typ == "math") {
+    return true;
+  }
+  JsValue className = classNameOf(node);
+  if (hasToken(className, "math-display")) {
+    return true;
+  }
+  return false;
+}
+
+JsValue rawHtml(string html) {
+  return JS.object("type", "raw", "value", html);
+}
+
+JsValue renderMathNode(JsValue node, Settings settings, bool displayMode) {
+  string tex = nodeText(node);
+  string html = renderTex(tex, displayMode, settings.throwOnError, settings.errorColor);
+  return rawHtml(html);
+}
+
+void walkTree(JsValue node, Settings settings) {
+  JsValue children = node["children"];
+  if (!JS.isArray(children)) {
+    return;
+  }
+  int n = jsLen(children);
+  int i = 0;
+  while (i < n) {
+    JsValue child = children[i];
+    if (isMdastMath(child) || isMathElement(child)) {
+      children[i] = renderMathNode(child, settings, displayModeOf(child));
+    } else if (isPreLanguageMath(child)) {
+      children[i] = renderMathNode(child, settings, true);
+    } else {
+      walkTree(child, settings);
+    }
+    i = i + 1;
+  }
+}
+
+export JsValue transformTree(JsValue tree, JsValue options) {
+  walkTree(tree, settingsFrom(options));
+  return tree;
+}
