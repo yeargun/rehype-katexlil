@@ -1,6 +1,6 @@
 {
   "name": "@itslil/rehype-katex",
-  "version": "7.0.1",
+  "version": "7.0.2",
   "description": "rehype-katex reimplemented in LilScript",
   "keywords": [
     "rehype",
@@ -56,12 +56,24 @@
   "scripts": {
     "build": "node scripts/build.mjs --compile",
     "build:site": "node scripts/build-site.mjs",
-    "test": "node --test test/*.test.mjs",
+    "test": "node --test test/official/test.js test/*.test.mjs",
     "check:site": "npm run build:site && node --test test/site.test.mjs",
     "check:pack": "node scripts/check-pack.mjs",
     "prepublishOnly": "npm test && npm run check:pack && npm run check:site"
   },
   "devDependencies": {
-    "esbuild": "0.28.1"
+    "esbuild": "0.28.1",
+    "hast-util-from-html-isomorphic": "^2.0.0",
+    "katex": "0.16.22",
+    "rehype-parse": "^9.0.1",
+    "rehype-stringify": "^10.0.1",
+    "remark-math": "^6.0.0",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.2",
+    "unified": "^11.0.5",
+    "vfile-message": "4.0.0"
+  },
+  "overrides": {
+    "vfile-message": "4.0.0"
   }
 }

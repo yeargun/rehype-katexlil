@@ -1,6 +1,6 @@
 # @itslil/rehype-katex
 
-rehype-katex reimplemented in LilScript. This is **not** the official [`rehype-katex`](https://github.com/remarkjs/remark-math) package.
+Official [`rehype-katex@7.0.1`](https://github.com/remarkjs/remark-math) algorithms rewritten in LilScript. Official test suite 16/16. Not affiliated with upstream.
 
 **Site:** [yeargun.github.io/rehype-katexlil/](https://yeargun.github.io/rehype-katexlil/)
 

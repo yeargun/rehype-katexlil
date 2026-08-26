@@ -1,0 +1,130 @@
+import { childCount, copyParents, emptyObject, isArr, isStr, objectAssign, spliceSpread, stringField, toStr } from "./host.lil";
+import { SKIP, visitParents } from "./visit.lil";
+import { toText } from "./to-text.lil";
+import { parseHtmlFragment } from "./from-html.lil";
+import { renderToString } from "./katex/entry.lil";
+
+JsValue emptyClasses = JS.array();
+
+bool classIncludes(JsValue classes, string token) {
+  return JS.invoke(classes, "includes", token).truthy();
+}
+
+JsValue classesOf(JsValue element) {
+  JsValue properties = element["properties"];
+  if (JS.isNullish(properties) || JS.isUndefined(properties)) {
+    return emptyClasses;
+  }
+  JsValue className = properties["className"];
+  if (isArr(className)) {
+    return className;
+  }
+  return emptyClasses;
+}
+
+JsValue katexOptions(JsValue settings, bool displayMode, bool throwOnError, JsValue strict) {
+  JsValue opts = objectAssign(emptyObject(), settings);
+  opts["displayMode"] = displayMode;
+  opts["throwOnError"] = throwOnError;
+  if (!JS.isUndefined(strict)) {
+    opts["strict"] = strict;
+  }
+  return opts;
+}
+
+string errorColorOf(JsValue settings) {
+  JsValue color = settings["errorColor"];
+  if (color is string && color.length > 0) {
+    return color;
+  }
+  return "#cc0000";
+}
+
+string ruleIdOf(JsValue error) {
+  JsValue name = error["name"];
+  if (name is string) {
+    return name.toLowerCase();
+  }
+  return toStr(name).toLowerCase();
+}
+
+JsValue errorSpan(JsValue settings, JsValue error, string value) {
+  JsValue className = JS.array();
+  JS.push(className, "katex-error");
+  JsValue properties = JS.object("className", className, "style", "color:" + errorColorOf(settings), "title", toStr(error));
+  JsValue text = JS.object("type", "text", "value", value);
+  JsValue kids = JS.array();
+  JS.push(kids, text);
+  return JS.object("type", "element", "tagName", "span", "properties", properties, "children", kids);
+}
+
+JsValue renderMath(JsValue settings, string value, bool displayMode, JsValue file, JsValue parents, JsValue element) {
+  try {
+    return renderToString(value, katexOptions(settings, displayMode, true, JS.undefined()));
+  } catch (JsValue error) {
+    JsValue ancestors = copyParents(parents, element);
+    JsValue msgOpts = JS.object("ancestors", ancestors, "cause", error, "place", element["position"], "ruleId", ruleIdOf(error), "source", "rehype-katex");
+    JS.invoke(file, "message", "Could not render math with KaTeX", msgOpts);
+    try {
+      return renderToString(value, katexOptions(settings, displayMode, false, "ignore"));
+    } catch (JsValue _retry) {
+      JsValue nodes = JS.array();
+      JS.push(nodes, errorSpan(settings, error, value));
+      return nodes;
+    }
+  }
+}
+
+JsValue visitMath(JsValue element, JsValue parents, JsValue settings, JsValue file) {
+  JsValue classes = classesOf(element);
+  bool languageMath = classIncludes(classes, "language-math");
+  bool mathDisplay = classIncludes(classes, "math-display");
+  bool mathInline = classIncludes(classes, "math-inline");
+  bool displayMode = mathDisplay;
+  if (!languageMath && !mathDisplay && !mathInline) {
+    return JS.undefined();
+  }
+  int parentCount = childCount(parents);
+  JsValue parent = JS.undefined();
+  if (parentCount > 0) {
+    parent = parents[parentCount - 1];
+  }
+  JsValue scope = element;
+  if (stringField(element, "tagName") == "code" && languageMath && !JS.isUndefined(parent) && !JS.isNullish(parent) && stringField(parent, "type") == "element" && stringField(parent, "tagName") == "pre") {
+    scope = parent;
+    if (parentCount > 1) {
+      parent = parents[parentCount - 2];
+    } else {
+      parent = JS.undefined();
+    }
+    displayMode = true;
+  }
+  if (JS.isUndefined(parent) || JS.isNullish(parent) || !parent.truthy()) {
+    return JS.undefined();
+  }
+  JsValue preOpts = JS.object("whitespace", "pre");
+  string value = toText(scope, preOpts);
+  JsValue result = renderMath(settings, value, displayMode, file, parents, element);
+  if (isStr(result)) {
+    JsValue root = parseHtmlFragment(result, JS.object("fragment", true));
+    result = root["children"];
+  }
+  JsValue kids = parent["children"];
+  JsValue index = JS.invoke(kids, "indexOf", scope);
+  spliceSpread(kids, index, 1, result);
+  return SKIP;
+}
+
+export JsValue rehypeKatex(JsValue options) {
+  JsValue settings = options;
+  if (JS.isNullish(options) || JS.isUndefined(options)) {
+    settings = emptyObject();
+  }
+  return (JsValue tree, JsValue file) => {
+    JsValue visitor = (JsValue element, JsValue parents) => {
+      return visitMath(element, parents, settings, file);
+    };
+    visitParents(tree, "element", visitor);
+    return JS.undefined();
+  };
+}

@@ -1,9 +1,47 @@
-export extern class KatexOptions {
-  JsValue displayMode;
-  JsValue throwOnError;
-  JsValue errorColor;
+import { Object, String, Error, emptyObject, newArray, objectAssign, toStr, isStr, isNum, isArr, isObj } from "./katex/host.lil";
+
+export int childCount(JsValue nodes) {
+  if (!JS.isArray(nodes)) {
+    return 0;
+  }
+  return JS.number(JS.get(nodes, "length")).toInt();
 }
 
-export extern class Element {
-  string innerHTML;
+export string stringField(JsValue node, string key) {
+  JsValue value = JS.get(node, key);
+  if (value is string) {
+    return value;
+  }
+  return "";
 }
+
+export JsValue copyParents(JsValue parents, JsValue extra) {
+  JsValue out = JS.array();
+  int n = childCount(parents);
+  int i = 0;
+  while (i < n) {
+    JS.push(out, parents[i]);
+    i = i + 1;
+  }
+  JS.push(out, extra);
+  return out;
+}
+
+export JsValue spliceSpread(JsValue dest, JsValue start, JsValue deleteCount, JsValue items) {
+  JsValue args = newArray();
+  JS.push(args, start);
+  JS.push(args, deleteCount);
+  int i = 0;
+  int n = childCount(items);
+  while (i < n) {
+    JS.push(args, items[i]);
+    i = i + 1;
+  }
+  return JS.apply(dest["splice"], dest, args);
+}
+
+export JsValue hostString(JsValue value) {
+  return JS.call(String, JS.undefined(), value);
+}
+
+export { Object, String, Error, emptyObject, newArray, objectAssign, toStr, isStr, isNum, isArr, isObj };

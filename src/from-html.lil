@@ -1,0 +1,6 @@
+import extern { fromHtmlIsomorphic } from "./html-host.js";
+extern JsValue fromHtmlIsomorphic(JsValue value, JsValue options);
+
+export JsValue parseHtmlFragment(JsValue value, JsValue options) {
+  return fromHtmlIsomorphic(value, options);
+}

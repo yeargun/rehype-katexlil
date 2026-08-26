@@ -1,0 +1,404 @@
+import { childCount, emptyObject, isArr, isNum, isObj, isStr, stringField, toStr } from "./host.lil";
+
+bool looksLikeElement(JsValue value) {
+  if (JS.isNullish(value) || JS.typeOf(value) != "object") {
+    return false;
+  }
+  return JS.in("type", value) && JS.in("tagName", value);
+}
+
+bool isElementNode(JsValue node) {
+  if (!looksLikeElement(node)) {
+    return false;
+  }
+  if (stringField(node, "type") != "element") {
+    return false;
+  }
+  return isStr(node["tagName"]);
+}
+
+bool tagIs(JsValue node, string name) {
+  return isElementNode(node) && stringField(node, "tagName") == name;
+}
+
+bool isBr(JsValue node) {
+  return tagIs(node, "br");
+}
+
+bool isP(JsValue node) {
+  return tagIs(node, "p");
+}
+
+bool isRow(JsValue node) {
+  return tagIs(node, "tr");
+}
+
+bool isCell(JsValue node) {
+  if (!isElementNode(node)) {
+    return false;
+  }
+  string tag = stringField(node, "tagName");
+  return tag == "td" || tag == "th";
+}
+
+bool isHidden(JsValue node) {
+  if (!isElementNode(node)) {
+    return false;
+  }
+  JsValue properties = node["properties"];
+  if (!isObj(properties)) {
+    return false;
+  }
+  return properties["hidden"].truthy();
+}
+
+bool isClosedDialog(JsValue node) {
+  if (!tagIs(node, "dialog")) {
+    return false;
+  }
+  JsValue properties = node["properties"];
+  if (!isObj(properties)) {
+    return true;
+  }
+  return !properties["open"].truthy();
+}
+
+bool isNotRenderedTag(string tag) {
+  return tag == "datalist" || tag == "head" || tag == "noembed" || tag == "noframes" || tag == "noscript" || tag == "rp" || tag == "script" || tag == "style" || tag == "template" || tag == "title";
+}
+
+bool isNotRendered(JsValue node) {
+  if (!isElementNode(node)) {
+    return false;
+  }
+  if (isNotRenderedTag(stringField(node, "tagName"))) {
+    return true;
+  }
+  if (isHidden(node)) {
+    return true;
+  }
+  return isClosedDialog(node);
+}
+
+bool isBlockOrCaptionTag(string tag) {
+  return tag == "address" || tag == "article" || tag == "aside" || tag == "blockquote" || tag == "body" || tag == "caption" || tag == "center" || tag == "dd" || tag == "dialog" || tag == "dir" || tag == "dl" || tag == "dt" || tag == "div" || tag == "figure" || tag == "figcaption" || tag == "footer" || tag == "form," || tag == "form" || tag == "h1" || tag == "h2" || tag == "h3" || tag == "h4" || tag == "h5" || tag == "h6" || tag == "header" || tag == "hgroup" || tag == "hr" || tag == "html" || tag == "legend" || tag == "li" || tag == "listing" || tag == "main" || tag == "menu" || tag == "nav" || tag == "ol" || tag == "p" || tag == "plaintext" || tag == "pre" || tag == "section" || tag == "ul" || tag == "xmp";
+}
+
+bool isBlockOrCaption(JsValue node) {
+  if (!isElementNode(node)) {
+    return false;
+  }
+  return isBlockOrCaptionTag(stringField(node, "tagName"));
+}
+
+int indexOfNode(JsValue siblings, JsValue node) {
+  int n = childCount(siblings);
+  int i = 0;
+  while (i < n) {
+    if (siblings[i] == node) {
+      return i;
+    }
+    i = i + 1;
+  }
+  return -1;
+}
+
+JsValue findAfter(JsValue parent, JsValue node, JsValue testFn) {
+  if (!isObj(parent) || !isArr(parent["children"])) {
+    return JS.undefined();
+  }
+  JsValue kids = parent["children"];
+  int index = indexOfNode(kids, node);
+  if (index < 0) {
+    return JS.undefined();
+  }
+  int n = childCount(kids);
+  int i = index + 1;
+  while (i < n) {
+    JsValue child = kids[i];
+    if (JS.call(testFn, JS.undefined(), child).truthy()) {
+      return child;
+    }
+    i = i + 1;
+  }
+  return JS.undefined();
+}
+
+string inferWhitespace(JsValue node, JsValue info) {
+  string current = "normal";
+  JsValue ws = info["whitespace"];
+  if (ws is string) {
+    current = ws;
+  }
+  if (stringField(node, "type") != "element") {
+    return current;
+  }
+  string tag = stringField(node, "tagName");
+  JsValue properties = node["properties"];
+  if (!isObj(properties)) {
+    properties = emptyObject();
+  }
+  if (tag == "listing" || tag == "plaintext" || tag == "xmp") {
+    return "pre";
+  }
+  if (tag == "nobr") {
+    return "nowrap";
+  }
+  if (tag == "pre") {
+    if (properties["wrap"].truthy()) {
+      return "pre-wrap";
+    }
+    return "pre";
+  }
+  if (tag == "td" || tag == "th") {
+    if (properties["noWrap"].truthy()) {
+      return "nowrap";
+    }
+    return current;
+  }
+  if (tag == "textarea") {
+    return "pre-wrap";
+  }
+  return current;
+}
+
+string trimAndCollapseSpacesAndTabs(string value, JsValue breakBefore, JsValue breakAfter) {
+  JsValue result = JS.array();
+  int start = 0;
+  int end = 0;
+  int n = value.length;
+  Regex searchTabOrSpaces = new Regex("[\\t ]+", "g");
+  while (start < n) {
+    searchTabOrSpaces.lastIndex = start;
+    JsValue found = JS.invoke(searchTabOrSpaces, "exec", value);
+    if (JS.isNullish(found)) {
+      end = n;
+    } else {
+      end = JS.number(found["index"]).toInt();
+    }
+    if (start == 0 && end == 0 && !JS.isNullish(found) && !breakBefore.truthy()) {
+      JS.push(result, "");
+    }
+    if (start != end) {
+      JS.push(result, value.slice(start, end));
+    }
+    if (JS.isNullish(found)) {
+      start = end;
+    } else {
+      start = end + JS.string(found[0]).length;
+    }
+  }
+  if (start != end && !breakAfter.truthy()) {
+    JS.push(result, "");
+  }
+  return JS.string(JS.invoke(result, "join", " "));
+}
+
+JsValue collectPreText(JsValue node) {
+  JsValue out = JS.array();
+  JS.push(out, toStr(node["value"]));
+  return out;
+}
+
+JsValue collectText(JsValue node, JsValue info) {
+  string value = toStr(node["value"]);
+  Regex bidi = new Regex("[\\u061C\\u200E\\u200F\\u202A-\\u202E\\u2066-\\u2069]", "g");
+  JsValue lines = JS.array();
+  JsValue result = JS.array();
+  int start = 0;
+  int n = value.length;
+  Regex searchLineFeeds = new Regex("\\n", "g");
+  while (start <= n) {
+    searchLineFeeds.lastIndex = start;
+    JsValue found = JS.invoke(searchLineFeeds, "exec", value);
+    int end = n;
+    if (!JS.isNullish(found) && JS.in("index", found)) {
+      end = JS.number(found["index"]).toInt();
+    }
+    string piece = value.slice(start, end);
+    bidi.lastIndex = 0;
+    piece = JS.string(JS.invoke(piece, "replace", bidi, ""));
+    JsValue before = true;
+    if (start == 0) {
+      before = info["breakBefore"];
+    }
+    JsValue after = true;
+    if (end == n) {
+      after = info["breakAfter"];
+    }
+    JS.push(lines, trimAndCollapseSpacesAndTabs(piece, before, after));
+    start = end + 1;
+  }
+  int index = 0;
+  int lineCount = childCount(lines);
+  JsValue join = JS.undefined();
+  while (index < lineCount) {
+    string line = JS.string(lines[index]);
+    bool zwspHere = false;
+    if (line.length > 0 && line.charCodeAt(line.length - 1) == 8203) {
+      zwspHere = true;
+    }
+    bool zwspNext = false;
+    if (index < lineCount - 1) {
+      string next = JS.string(lines[index + 1]);
+      if (next.length > 0 && next.charCodeAt(0) == 8203) {
+        zwspNext = true;
+      }
+    }
+    if (zwspHere || zwspNext) {
+      JS.push(result, line);
+      join = JS.undefined();
+    } else if (line.length > 0) {
+      if (isNum(join)) {
+        JS.push(result, join);
+      }
+      JS.push(result, line);
+      join = 0;
+    } else if (index == 0 || index == lineCount - 1) {
+      JS.push(result, 0);
+    }
+    index = index + 1;
+  }
+  return result;
+}
+
+JsValue collectionInfo(string whitespace, JsValue breakBefore, JsValue breakAfter) {
+  return JS.object("whitespace", whitespace, "breakBefore", breakBefore, "breakAfter", breakAfter);
+}
+
+JsValue collectFromNode(JsValue node, JsValue parent, JsValue info) {
+  if (stringField(node, "type") == "text") {
+    if (stringField(info, "whitespace") == "normal") {
+      return collectText(node, info);
+    }
+    return collectPreText(node);
+  }
+  if (stringField(node, "type") != "element") {
+    return JS.array();
+  }
+  string whitespace = inferWhitespace(node, info);
+  JsValue children = node["children"];
+  if (!isArr(children)) {
+    children = JS.array();
+  }
+  JsValue items = JS.array();
+  if (isNotRendered(node)) {
+    return items;
+  }
+  JsValue prefix = JS.undefined();
+  JsValue suffix = JS.undefined();
+  if (isBr(node)) {
+    suffix = "\n";
+  } else if (isRow(node) && !JS.isUndefined(findAfter(parent, node, JS.method1((JsValue _s, JsValue other) => {
+    return isRow(other);
+  })))) {
+    suffix = "\n";
+  } else if (isP(node)) {
+    prefix = 2;
+    suffix = 2;
+  } else if (isBlockOrCaption(node)) {
+    prefix = 1;
+    suffix = 1;
+  }
+  int index = 0;
+  int n = childCount(children);
+  while (index < n) {
+    JsValue before = JS.undefined();
+    if (index == 0) {
+      before = prefix;
+    }
+    JsValue after = suffix;
+    if (index < n - 1) {
+      after = isBr(children[index + 1]);
+    }
+    items = JS.invoke(items, "concat", collectFromNode(children[index], node, collectionInfo(whitespace, before, after)));
+    index = index + 1;
+  }
+  if (isCell(node) && !JS.isUndefined(findAfter(parent, node, JS.method1((JsValue _s, JsValue other) => {
+    return isCell(other);
+  })))) {
+    JS.push(items, "\t");
+  }
+  if (prefix.truthy()) {
+    JS.invoke(items, "unshift", prefix);
+  }
+  if (suffix.truthy()) {
+    JS.push(items, suffix);
+  }
+  return items;
+}
+
+string joinResults(JsValue results) {
+  JsValue result = JS.array();
+  JsValue count = JS.undefined();
+  int index = 0;
+  int n = childCount(results);
+  while (index < n) {
+    JsValue value = results[index];
+    if (isNum(value)) {
+      if (!JS.isUndefined(count) && JS.greaterThan(value, count)) {
+        count = value;
+      }
+    } else if (value.truthy()) {
+      if (!JS.isUndefined(count) && JS.greaterThan(count, -1)) {
+        int repeats = JS.number(count).toInt();
+        string gap = "";
+        int i = 0;
+        while (i < repeats) {
+          gap = gap + "\n";
+          i = i + 1;
+        }
+        if (gap.length == 0) {
+          gap = " ";
+        }
+        JS.push(result, gap);
+      }
+      count = -1;
+      JS.push(result, value);
+    }
+    index = index + 1;
+  }
+  return JS.string(JS.invoke(result, "join", ""));
+}
+
+export string toText(JsValue tree, JsValue options) {
+  JsValue settings = options;
+  if (JS.isNullish(options)) {
+    settings = emptyObject();
+  }
+  string whitespaceOpt = "normal";
+  JsValue ws = settings["whitespace"];
+  if (ws is string && ws.length > 0) {
+    whitespaceOpt = ws;
+  }
+  JsValue children = JS.array();
+  if (JS.in("children", tree)) {
+    JsValue rawKids = tree["children"];
+    if (isArr(rawKids)) {
+      children = rawKids;
+    }
+  }
+  bool block = isBlockOrCaption(tree);
+  JsValue info = collectionInfo(whitespaceOpt, false, false);
+  string whitespace = inferWhitespace(tree, info);
+  JsValue results = JS.array();
+  string typ = stringField(tree, "type");
+  if (typ == "text" || typ == "comment") {
+    results = JS.invoke(results, "concat", collectText(tree, collectionInfo(whitespace, true, true)));
+  }
+  int index = 0;
+  int n = childCount(children);
+  while (index < n) {
+    JsValue before = JS.undefined();
+    if (index == 0) {
+      before = block;
+    }
+    JsValue after = block;
+    if (index < n - 1) {
+      after = isBr(children[index + 1]);
+    }
+    results = JS.invoke(results, "concat", collectFromNode(children[index], tree, collectionInfo(whitespace, before, after)));
+    index = index + 1;
+  }
+  return joinResults(results);
+}

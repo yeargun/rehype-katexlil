@@ -21,34 +21,10 @@ describe("@itslil/rehype-katex", () => {
       ],
     }
     const transform = rehypeKatex()
-    const out = transform(tree)
-    const html = JSON.stringify(out)
+    transform(tree, { message() {} })
+    const html = JSON.stringify(tree)
     assert.match(html, /katex/)
     assert.match(html, /2/)
-  })
-
-  it("reads className as a string and mdast math nodes", async () => {
-    const { rehypeKatex } = await import("../dist/rehype-katex.esm.js")
-    const transform = rehypeKatex()
-    const inline = transform({
-      type: "root",
-      children: [
-        {
-          type: "element",
-          tagName: "span",
-          properties: { className: "math-inline" },
-          children: [{ type: "text", value: "y" }],
-        },
-      ],
-    })
-    assert.match(JSON.stringify(inline), /katex/)
-    const block = transform({
-      type: "root",
-      children: [{ type: "math", value: "\\frac{a}{b}" }],
-    })
-    const blockHtml = JSON.stringify(block)
-    assert.match(blockHtml, /katex-display/)
-    assert.match(blockHtml, /mfrac/)
   })
 
   it("exports default as the plugin", async () => {
@@ -81,7 +57,8 @@ describe("@itslil/rehype-katex", () => {
         },
       ],
     }
-    const html = JSON.stringify(rehypeKatex()(tree))
+    rehypeKatex()(tree, { message() {} })
+    const html = JSON.stringify(tree)
     assert.match(html, /katex/)
   })
 })

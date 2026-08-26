@@ -10,9 +10,9 @@
   "warmupDiscard": 3,
   "comparison": "Official rows are an esbuild bundle of rehype-katex@7.0.1 plus its runtime graph, then Terser or esbuild. LilScript is the compiled npm file. Closed is extern_fields=false.",
   "spec": {
-    "total": 6,
-    "pass": 6,
-    "label": "package tests"
+    "total": 16,
+    "pass": 16,
+    "label": "official suite"
   },
   "play": {
     "kind": "tex-hast",
@@ -56,18 +56,18 @@
     {
       "id": "itslil",
       "name": "@itslil/rehype-katex · library",
-      "raw": 13655,
-      "gzip9": 4680,
-      "brotli11": 4132,
+      "raw": 960082,
+      "gzip9": 189973,
+      "brotli11": 151761,
       "note": "LilScript js-module, extern_fields true. The npm ESM.",
       "primary": true
     },
     {
       "id": "itslil-closed",
       "name": "@itslil/rehype-katex · closed",
-      "raw": 13569,
-      "gzip9": 4620,
-      "brotli11": 4088,
+      "raw": 960083,
+      "gzip9": 189973,
+      "brotli11": 151713,
       "note": "Same source, extern_fields false"
     }
   ],
