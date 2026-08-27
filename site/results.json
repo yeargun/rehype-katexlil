@@ -56,18 +56,18 @@
     {
       "id": "itslil",
       "name": "@itslil/rehype-katex · library",
-      "raw": 960082,
-      "gzip9": 189973,
-      "brotli11": 151761,
+      "raw": 436511,
+      "gzip9": 97251,
+      "brotli11": 78896,
       "note": "LilScript js-module, extern_fields true. The npm ESM.",
       "primary": true
     },
     {
       "id": "itslil-closed",
       "name": "@itslil/rehype-katex · closed",
-      "raw": 960083,
-      "gzip9": 189973,
-      "brotli11": 151713,
+      "raw": 455157,
+      "gzip9": 100711,
+      "brotli11": 81563,
       "note": "Same source, extern_fields false"
     }
   ],
