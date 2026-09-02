@@ -1,4 +1,4 @@
-/*! @itslil/rehype-katex 7.0.2 | LilScript reimplementation of rehype-katex | MIT */
+/*! @itslil/rehype-katex 7.0.3 | LilScript reimplementation of rehype-katex | MIT */
 // rehype-katex.closed.js
 import { fromHtmlIsomorphic } from "hast-util-from-html-isomorphic";
 import { toText } from "hast-util-to-text";

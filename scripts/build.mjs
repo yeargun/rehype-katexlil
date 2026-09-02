@@ -17,7 +17,7 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), "..")
 const lilscriptRoot = process.env.LILSCRIPT_ROOT ?? resolve(root, "..", "lilscript")
 const dist = resolve(root, "dist")
 const file = "rehype-katex"
-const banner = "/*! @itslil/rehype-katex 7.0.2 | LilScript reimplementation of rehype-katex | MIT */\n"
+const banner = "/*! @itslil/rehype-katex 7.0.3 | LilScript reimplementation of rehype-katex | MIT */\n"
 
 function compilerPath() {
   const candidates = [

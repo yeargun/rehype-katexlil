@@ -136,7 +136,7 @@ describe("source, data, and artifact audit", () => {
   it("pins package, lockfile, declarations, and artifact exports", async () => {
     const manifest = JSON.parse(readFileSync(resolve(root, "package.json"), "utf8"))
     const lock = JSON.parse(readFileSync(resolve(root, "package-lock.json"), "utf8"))
-    assert.equal(manifest.version, "7.0.2")
+    assert.equal(manifest.version, "7.0.3")
     assert.equal(lock.version, manifest.version)
     assert.equal(lock.packages[""].version, manifest.version)
     assert.equal(lock.packages["node_modules/katex"].version, "0.16.22")

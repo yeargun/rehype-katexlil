@@ -1,4 +1,4 @@
-/*! @itslil/rehype-katex 7.0.2 | LilScript reimplementation of rehype-katex | MIT */
+/*! @itslil/rehype-katex 7.0.3 | LilScript reimplementation of rehype-katex | MIT */
 
 
 // rehype-katex.raw.js
