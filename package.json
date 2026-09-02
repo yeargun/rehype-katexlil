@@ -1,6 +1,6 @@
 {
   "name": "@itslil/rehype-katex",
-  "version": "7.0.2",
+  "version": "7.0.3",
   "description": "rehype-katex reimplemented in LilScript",
   "keywords": [
     "rehype",
@@ -56,20 +56,28 @@
   "scripts": {
     "build": "node scripts/build.mjs --compile",
     "build:site": "node scripts/build-site.mjs",
-    "test": "node --test test/official/test.js test/*.test.mjs",
+    "test": "npm run check:types && node --test test/official/test.js test/*.test.mjs",
+    "check:types": "tsc --noEmit --strict --skipLibCheck --module NodeNext --moduleResolution NodeNext --target ES2022 test/types.test.ts",
     "check:site": "npm run build:site && node --test test/site.test.mjs",
     "check:pack": "node scripts/check-pack.mjs",
     "prepublishOnly": "npm test && npm run check:pack && npm run check:site"
   },
+  "dependencies": {
+    "@types/hast": "^3.0.0",
+    "hast-util-from-html-isomorphic": "^2.0.0",
+    "hast-util-to-text": "^4.0.0",
+    "katex": "0.16.22",
+    "unist-util-visit-parents": "^6.0.0",
+    "vfile": "^6.0.0"
+  },
   "devDependencies": {
     "esbuild": "0.28.1",
-    "hast-util-from-html-isomorphic": "^2.0.0",
-    "katex": "0.16.22",
     "rehype-parse": "^9.0.1",
     "rehype-stringify": "^10.0.1",
     "remark-math": "^6.0.0",
     "remark-parse": "^11.0.0",
     "remark-rehype": "^11.1.2",
+    "typescript": "^5.9.3",
     "unified": "^11.0.5",
     "vfile-message": "4.0.0"
   },

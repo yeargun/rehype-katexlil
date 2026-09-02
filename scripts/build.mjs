@@ -5,6 +5,7 @@ import {
   existsSync,
   mkdirSync,
   readFileSync,
+  rmSync,
   writeFileSync,
 } from "node:fs"
 import { dirname, resolve } from "node:path"
@@ -38,25 +39,9 @@ function run(cmd, args) {
   if (result.status !== 0) process.exit(result.status ?? 1)
 }
 
-async function vendorHtmlHost(outfile) {
-  await esbuild({
-    absWorkingDir: root,
-    entryPoints: [resolve(root, "scripts", "html-host-entry.js")],
-    outfile,
-    bundle: true,
-    format: "esm",
-    platform: "neutral",
-    legalComments: "none",
-    minifyWhitespace: false,
-    minifyIdentifiers: false,
-    minifySyntax: false,
-    logLevel: "error",
-  })
-}
-
 function compileLil(compiler, configName, outputName) {
   run(compiler, [
-    resolve(root, "src", "entry.lil"),
+    resolve(root, "src", "index.lil"),
     "--target",
     "js-module",
     "--config",
@@ -73,14 +58,6 @@ function sanitizeCompiled(source) {
     .replace(/(\w+)\s*\+\s*(\d+)\s*\+\s*(\w+)/g, "$1+($2+$3)")
 }
 
-function copyKatexData() {
-  const katexDist = resolve(dist, "katex")
-  mkdirSync(katexDist, { recursive: true })
-  for (const name of ["data-host.js", "fontMetricsData.js", "unicodeSymbols.js"]) {
-    copyFileSync(resolve(root, "src", "katex", name), resolve(katexDist, name))
-  }
-}
-
 async function compileIfRequested() {
   if (!process.argv.includes("--compile") && existsSync(resolve(dist, `${file}.raw.js`))) {
     return
@@ -90,7 +67,6 @@ async function compileIfRequested() {
     throw new Error("LilScript compiler not found. Set LILSCRIPT_COMPILER or build lilscript.")
   }
   mkdirSync(dist, { recursive: true })
-  await vendorHtmlHost(resolve(root, "src", "html-host.js"))
   compileLil(compiler, "lilscript.toml", `${file}.raw.js`)
   compileLil(compiler, "lilscript.closed.toml", `${file}.closed.js`)
 }
@@ -102,12 +78,6 @@ const rawPath = resolve(dist, `${file}.raw.js`)
 if (!existsSync(rawPath)) {
   throw new Error(`dist/${file}.raw.js is missing. Run with --compile after building LilScript.`)
 }
-
-if (!existsSync(resolve(root, "src", "html-host.js"))) {
-  await vendorHtmlHost(resolve(root, "src", "html-host.js"))
-}
-copyFileSync(resolve(root, "src", "html-host.js"), resolve(dist, "html-host.js"))
-copyKatexData()
 
 writeFileSync(rawPath, sanitizeCompiled(readFileSync(rawPath, "utf8")))
 const closedRaw = resolve(dist, `${file}.closed.js`)
@@ -122,33 +92,40 @@ await esbuild({
   bundle: true,
   format: "esm",
   platform: "neutral",
+  external: ["hast-util-from-html-isomorphic", "hast-util-to-text", "katex", "unist-util-visit-parents"],
   legalComments: "none",
   minifyWhitespace: false,
   minifyIdentifiers: false,
-  minifySyntax: false,
+  // esbuild re-prints the compiler's output, and without minifySyntax it spells
+  // every compact boolean back out: `!0` came out as `true` in the bundle, the
+  // 030 class that cost micromarklil all 87 of its compact booleans. Syntax
+  // minification restores the compiler's spelling; identifiers stay untouched.
+  minifySyntax: true,
   banner: { js: banner },
   logLevel: "error",
 })
 
 if (existsSync(closedRaw)) {
-  const closedSrc = readFileSync(closedRaw, "utf8")
-  if (closedSrc.includes("html-host.js") || closedSrc.includes("data-host.js")) {
-    const closedBundled = resolve(dist, `${file}.closed.bundled.js`)
-    await esbuild({
-      absWorkingDir: dist,
-      entryPoints: [closedRaw],
-      outfile: closedBundled,
-      bundle: true,
-      format: "esm",
-      platform: "neutral",
-      legalComments: "none",
-      minifyWhitespace: false,
-      minifyIdentifiers: false,
-      minifySyntax: false,
-      logLevel: "error",
-    })
-    writeFileSync(closedRaw, `${banner}${readFileSync(closedBundled, "utf8").trimEnd()}\n`)
-  }
+  await esbuild({
+    absWorkingDir: dist,
+    entryPoints: [closedRaw],
+    outfile: closedRaw + ".bundled",
+    bundle: true,
+    format: "esm",
+    platform: "neutral",
+    external: ["hast-util-from-html-isomorphic", "hast-util-to-text", "katex", "unist-util-visit-parents"],
+    legalComments: "none",
+    minifyWhitespace: false,
+    minifyIdentifiers: false,
+    // esbuild re-prints the compiler's output, and without minifySyntax it spells
+  // every compact boolean back out: `!0` came out as `true` in the bundle, the
+  // 030 class that cost micromarklil all 87 of its compact booleans. Syntax
+  // minification restores the compiler's spelling; identifiers stay untouched.
+  minifySyntax: true,
+    logLevel: "error",
+  })
+  writeFileSync(closedRaw, `${banner}${readFileSync(closedRaw + ".bundled", "utf8").trimEnd()}\n`)
+  rmSync(closedRaw + ".bundled")
 }
 
 await esbuild({
@@ -158,13 +135,26 @@ await esbuild({
   bundle: true,
   format: "cjs",
   platform: "neutral",
+  external: ["katex"],
   legalComments: "none",
   minifyWhitespace: true,
   minifyIdentifiers: false,
-  minifySyntax: false,
+  // esbuild re-prints the compiler's output, and without minifySyntax it spells
+  // every compact boolean back out: `!0` came out as `true` in the bundle, the
+  // 030 class that cost micromarklil all 87 of its compact booleans. Syntax
+  // minification restores the compiler's spelling; identifiers stay untouched.
+  minifySyntax: true,
   banner: { js: banner },
   logLevel: "error",
 })
+
+const browserKatex = {
+  name: "browser-katex",
+  setup(build) {
+    build.onResolve({ filter: /^katex$/ }, () => ({ path: "katex-global", namespace: "katex" }))
+    build.onLoad({ filter: /.*/, namespace: "katex" }, () => ({ contents: "export default globalThis.katex" }))
+  },
+}
 
 await esbuild({
   absWorkingDir: dist,
@@ -172,14 +162,21 @@ await esbuild({
   outfile: resolve(dist, `${file}.umd.js`),
   bundle: true,
   format: "iife",
+  platform: "neutral",
+  conditions: [],
   globalName: "rehypeKatex",
+  plugins: [browserKatex],
   footer: {
     js: `globalThis.rehypeKatex=rehypeKatex.default||rehypeKatex.rehypeKatex||rehypeKatex;`,
   },
   legalComments: "none",
   minifyWhitespace: true,
   minifyIdentifiers: false,
-  minifySyntax: false,
+  // esbuild re-prints the compiler's output, and without minifySyntax it spells
+  // every compact boolean back out: `!0` came out as `true` in the bundle, the
+  // 030 class that cost micromarklil all 87 of its compact booleans. Syntax
+  // minification restores the compiler's spelling; identifiers stay untouched.
+  minifySyntax: true,
   banner: { js: banner },
   logLevel: "error",
 })

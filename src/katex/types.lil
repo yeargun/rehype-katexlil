@@ -1,0 +1,2 @@
+// KaTeX's types.js contains only erased Flow string-literal aliases.
+// LilScript keeps those domains in the typed signatures of their consumers.

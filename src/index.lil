@@ -1,0 +1,3 @@
+import { rehypeKatex } from "./lib/index.lil";
+
+export { rehypeKatex as default };

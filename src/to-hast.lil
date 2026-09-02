@@ -1,0 +1,262 @@
+import { Anchor, Img, LineNode, PathNode, Span, SvgNode, SymbolNode } from "./katex/domTree.lil";
+import { MathNode, TextNode, mathMLTree } from "./katex/mathMLTree.lil";
+import { DocumentFragment } from "./katex/tree.lil";
+import { path } from "./katex/svgGeometry.lil";
+import { makeEm } from "./katex/units.lil";
+import { ParseError } from "./katex/ParseError.lil";
+import { emptyObject, hasOwn, instanceOf, len, makeError, objectKeys, toStr } from "./katex/host.lil";
+
+string parsedText(JsValue value) {
+  string text = toStr(value);
+  text = toStr(JS.invoke(text, "replace", new Regex("\\r\\n?", "g"), "\n"));
+  return toStr(JS.invoke(text, "replace", new Regex("\\x00", "g"), ""));
+}
+
+string parsedAttribute(JsValue value) {
+  string text = toStr(value);
+  text = toStr(JS.invoke(text, "replace", new Regex("\\r\\n?", "g"), "\n"));
+  return toStr(JS.invoke(text, "replace", new Regex("\\x00", "g"), "�"));
+}
+
+JsValue textNode(JsValue value) {
+  return JS.object("type", "text", "value", parsedText(value));
+}
+
+void appendText(JsValue children, JsValue value) {
+  string text = parsedText(value);
+  if (text.length == 0) {
+    return;
+  }
+  int n = len(children);
+  if (n > 0) {
+    JsValue previous = children[n - 1];
+    if (previous["type"] == "text") {
+      previous["value"] = toStr(previous["value"]) + text;
+      return;
+    }
+  }
+  JS.push(children, textNode(text));
+}
+
+JsValue classNames(JsValue classes) {
+  JsValue result = JS.array();
+  int i = 0;
+  int n = len(classes);
+  while (i < n) {
+    if (classes[i].truthy()) {
+      JS.push(result, parsedAttribute(classes[i]));
+    }
+    i = i + 1;
+  }
+  return result;
+}
+
+string styleText(JsValue style, JsValue italic) {
+  string result = "";
+  if (!JS.isUndefined(italic) && JS.greaterThan(italic, 0)) {
+    result = "margin-right:" + toStr(italic) + "em;";
+  }
+  JsValue keys = objectKeys(style);
+  int i = 0;
+  int n = len(keys);
+  while (i < n) {
+    string key = toStr(keys[i]);
+    if (hasOwn(style, key)) {
+      result = result + toStr(JS.invoke(JS.string(key), "replace", new Regex("([A-Z])", "g"), "-$1")).toLowerCase() + ":" + toStr(style[key]) + ";";
+    }
+    i = i + 1;
+  }
+  return parsedAttribute(result);
+}
+
+string htmlPropertyName(JsValue rawName) {
+  string name = toStr(rawName).toLowerCase();
+  if (name == "class") {
+    return "className";
+  }
+  if (name == "aria-hidden") {
+    return "ariaHidden";
+  }
+  if (name.slice(0, 5) == "data-") {
+    JsValue parts = JS.invoke(name, "split", "-");
+    string result = "data";
+    int i = 1;
+    int n = len(parts);
+    while (i < n) {
+      string part = toStr(parts[i]);
+      if (part.length > 0) {
+        result = result + part.charAt(0).toUpperCase() + part.slice(1);
+      }
+      i = i + 1;
+    }
+    return result;
+  }
+  return name;
+}
+
+string propertyName(JsValue rawName, bool html) {
+  if (html) {
+    return htmlPropertyName(rawName);
+  }
+  string name = toStr(rawName);
+  if (name == "stroke-width") {
+    return "strokeWidth";
+  }
+  return name;
+}
+
+JsValue propertyValue(string name, JsValue rawValue, bool html) {
+  string value = parsedAttribute(rawValue);
+  if (html && value == "0" && (name == "width" || name == "height")) {
+    return 0;
+  }
+  return value;
+}
+
+void copyAttributes(JsValue properties, JsValue attributes, bool html, bool validate) {
+  Regex invalidAttributeName = new Regex("[\\s\"'>/=\\x00-\\x1f]");
+  JsValue keys = objectKeys(attributes);
+  int i = 0;
+  int n = len(keys);
+  while (i < n) {
+    JsValue sourceName = keys[i];
+    if (validate && JS.invoke(invalidAttributeName, "test", sourceName).truthy()) {
+      throw JS.construct(ParseError, "Invalid attribute name '" + toStr(sourceName) + "'");
+    }
+    string name = propertyName(sourceName, html);
+    if (!JS.in(name, properties) && hasOwn(attributes, sourceName)) {
+      properties[name] = propertyValue(name, attributes[sourceName], html);
+    }
+    i = i + 1;
+  }
+}
+
+JsValue htmlProperties(JsValue node, JsValue italic) {
+  JsValue properties = emptyObject();
+  JsValue classes = node["classes"];
+  if (len(classes) > 0) {
+    properties["className"] = classNames(classes);
+  }
+  string styles = styleText(node["style"], italic);
+  if (styles.length > 0) {
+    properties["style"] = styles;
+  }
+  JsValue attributes = node["attributes"];
+  if (!JS.isNullish(attributes)) {
+    copyAttributes(properties, attributes, true, true);
+  }
+  return properties;
+}
+
+JsValue elementNode(string tagName, JsValue properties, JsValue children) {
+  return JS.object("type", "element", "tagName", tagName, "properties", properties, "children", children);
+}
+
+void appendConverted(JsValue children, JsValue node) {
+  if (instanceOf(node, DocumentFragment)) {
+    JsValue fragmentChildren = node["children"];
+    int i = 0;
+    int n = len(fragmentChildren);
+    while (i < n) {
+      appendConverted(children, fragmentChildren[i]);
+      i = i + 1;
+    }
+    return;
+  }
+  JsValue converted = convertNode(node);
+  if (converted["type"] == "text") {
+    appendText(children, converted["value"]);
+  } else {
+    JS.push(children, converted);
+  }
+}
+
+JsValue convertedChildren(JsValue node) {
+  JsValue result = JS.array();
+  JsValue children = node["children"];
+  int i = 0;
+  int n = len(children);
+  while (i < n) {
+    appendConverted(result, children[i]);
+    i = i + 1;
+  }
+  return result;
+}
+
+JsValue convertNode(JsValue node) {
+  if (instanceOf(node, Span)) {
+    return elementNode("span", htmlProperties(node, JS.undefined()), convertedChildren(node));
+  }
+  if (instanceOf(node, Anchor)) {
+    return elementNode("a", htmlProperties(node, JS.undefined()), convertedChildren(node));
+  }
+  if (instanceOf(node, SymbolNode)) {
+    JsValue classes = node["classes"];
+    string styles = styleText(node["style"], node["italic"]);
+    if (len(classes) > 0 || styles.length > 0) {
+      JsValue properties = emptyObject();
+      if (len(classes) > 0) {
+        properties["className"] = classNames(classes);
+      }
+      if (styles.length > 0) {
+        properties["style"] = styles;
+      }
+      JsValue children = JS.array();
+      appendText(children, node["text"]);
+      return elementNode("span", properties, children);
+    }
+    return textNode(node["text"]);
+  }
+  if (instanceOf(node, Img)) {
+    JsValue properties = JS.object("src", parsedAttribute(node["src"]), "alt", parsedAttribute(node["alt"]));
+    string styles = styleText(node["style"], JS.undefined());
+    if (styles.length > 0) {
+      properties["style"] = styles;
+    }
+    properties["'"] = "";
+    return elementNode("img", properties, JS.array());
+  }
+  if (instanceOf(node, SvgNode)) {
+    JsValue properties = JS.object("xmlns", "http://www.w3.org/2000/svg");
+    copyAttributes(properties, node["attributes"], false, false);
+    return elementNode("svg", properties, convertedChildren(node));
+  }
+  if (instanceOf(node, PathNode)) {
+    JsValue data = node["alternate"];
+    if (!data.truthy()) {
+      data = path[node["pathName"]];
+    }
+    return elementNode("path", JS.object("d", parsedAttribute(data)), JS.array());
+  }
+  if (instanceOf(node, LineNode)) {
+    JsValue properties = emptyObject();
+    copyAttributes(properties, node["attributes"], false, false);
+    return elementNode("line", properties, JS.array());
+  }
+  if (instanceOf(node, MathNode)) {
+    JsValue properties = emptyObject();
+    copyAttributes(properties, node["attributes"], true, false);
+    if (len(node["classes"]) > 0) {
+      properties["className"] = classNames(node["classes"]);
+    }
+    return elementNode(toStr(node["type"]), properties, convertedChildren(node));
+  }
+  if (instanceOf(node, TextNode)) {
+    return textNode(node["text"]);
+  }
+  if (instanceOf(node, mathMLTree["SpaceNode"])) {
+    if (node["character"].truthy()) {
+      JsValue children = JS.array();
+      appendText(children, node["character"]);
+      return elementNode("mtext", emptyObject(), children);
+    }
+    return elementNode("mspace", JS.object("width", makeEm(node["width"])), JS.array());
+  }
+  throw makeError("Unknown KaTeX DOM node");
+}
+
+export JsValue toHast(JsValue tree) {
+  JsValue result = JS.array();
+  appendConverted(result, tree);
+  return result;
+}

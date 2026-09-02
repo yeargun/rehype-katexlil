@@ -1,4 +1,0 @@
-import { rehypeKatex } from "./plugin.lil";
-
-export { rehypeKatex };
-export { rehypeKatex as default };

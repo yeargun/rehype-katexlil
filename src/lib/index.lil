@@ -1,0 +1,101 @@
+import extern { fromHtmlIsomorphic } from "hast-util-from-html-isomorphic";
+import extern { toText } from "hast-util-to-text";
+import extern { default as katex } from "katex";
+import extern { SKIP, visitParents } from "unist-util-visit-parents";
+
+extern JsValue fromHtmlIsomorphic;
+extern JsValue toText;
+extern JsValue katex;
+extern JsValue SKIP;
+extern JsValue visitParents;
+extern JsValue Object;
+
+export JsValue rehypeKatex(JsValue options) {
+  JsValue settings = options;
+  if (JS.isNullish(settings) || JS.isUndefined(settings)) {
+    settings = JS.object();
+  }
+
+  return (JsValue tree, JsValue file) => {
+    JS.call(visitParents, JS.undefined(), tree, "element", (JsValue element, JsValue parents) => {
+      JsValue classes = JS.array();
+      JsValue properties = element["properties"];
+      if (!JS.isNullish(properties) && JS.isArray(properties["className"])) {
+        classes = properties["className"];
+      }
+      bool languageMath = JS.invoke(classes, "includes", "language-math").truthy();
+      bool mathDisplay = JS.invoke(classes, "includes", "math-display").truthy();
+      bool mathInline = JS.invoke(classes, "includes", "math-inline").truthy();
+      if (!languageMath && !mathDisplay && !mathInline) {
+        return JS.undefined();
+      }
+
+      int parentCount = JS.number(parents["length"]).toInt();
+      JsValue parent = JS.undefined();
+      if (parentCount > 0) {
+        parent = parents[parentCount - 1];
+      }
+      JsValue scope = element;
+      bool displayMode = mathDisplay;
+      if (element["tagName"] == "code" && languageMath && !JS.isNullish(parent) && parent["type"] == "element" && parent["tagName"] == "pre") {
+        scope = parent;
+        parent = JS.undefined();
+        if (parentCount > 1) {
+          parent = parents[parentCount - 2];
+        }
+        displayMode = true;
+      }
+      if (JS.isNullish(parent) || JS.isUndefined(parent) || !parent.truthy()) {
+        return JS.undefined();
+      }
+
+      string value = JS.string(JS.call(toText, JS.undefined(), scope, JS.object("whitespace", "pre")));
+      JsValue result = JS.undefined();
+      try {
+        JsValue renderOptions = JS.invoke(Object, "assign", JS.object(), settings);
+        renderOptions["displayMode"] = displayMode;
+        renderOptions["throwOnError"] = true;
+        JsValue markup = JS.invoke(katex, "renderToString", value, renderOptions);
+        result = JS.call(fromHtmlIsomorphic, JS.undefined(), markup, JS.object("fragment", true))["children"];
+      } catch (JsValue error) {
+        JsValue ancestors = JS.invoke(parents, "slice");
+        JS.push(ancestors, element);
+        string ruleId = JS.string(error["name"]).toLowerCase();
+        JS.invoke(file, "message", "Could not render math with KaTeX", JS.object("ancestors", ancestors, "cause", error, "place", element["position"], "ruleId", ruleId, "source", "rehype-katex"));
+
+        try {
+          JsValue retryOptions = JS.invoke(Object, "assign", JS.object(), settings);
+          retryOptions["displayMode"] = displayMode;
+          retryOptions["strict"] = "ignore";
+          retryOptions["throwOnError"] = false;
+          JsValue markup = JS.invoke(katex, "renderToString", value, retryOptions);
+          result = JS.call(fromHtmlIsomorphic, JS.undefined(), markup, JS.object("fragment", true))["children"];
+        } catch (JsValue ignored) {
+          JsValue color = settings["errorColor"];
+          if (!color.truthy()) {
+            color = "#cc0000";
+          }
+          result = JS.array(JS.object(
+            "type", "element",
+            "tagName", "span",
+            "properties", JS.object("className", JS.array("katex-error"), "style", "color:" + JS.string(color), "title", JS.string(error)),
+            "children", JS.array(JS.object("type", "text", "value", value))
+          ));
+        }
+      }
+
+      JsValue children = parent["children"];
+      int index = JS.number(JS.invoke(children, "indexOf", scope)).toInt();
+      JsValue spliceArgs = JS.array(index, 1);
+      int resultIndex = 0;
+      int resultCount = JS.number(result["length"]).toInt();
+      while (resultIndex < resultCount) {
+        JS.push(spliceArgs, result[resultIndex]);
+        resultIndex = resultIndex + 1;
+      }
+      JS.apply(children["splice"], children, spliceArgs);
+      return SKIP;
+    });
+    return JS.undefined();
+  };
+}

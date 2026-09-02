@@ -12,8 +12,7 @@ import {unified} from 'unified'
 test('rehype-katex', async function (t) {
   await t.test('should expose the public api', async function () {
     assert.deepEqual(Object.keys(await import('../../dist/rehype-katex.esm.js')).sort(), [
-      'default',
-      'rehypeKatex'
+      'default'
     ])
   })
 

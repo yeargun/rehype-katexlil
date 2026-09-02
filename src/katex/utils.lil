@@ -40,7 +40,9 @@ o2["'"] = "&#x27;";
 ESCAPE_LOOKUP = o2;
 ESCAPE_REGEX = JS.construct(RegExp, "[&><\"']", "g");
 escape = (JsValue text) => {
-  return JS.invoke(toStr(text), "replace", ESCAPE_REGEX, (JsValue matched) => {
+  // Preserve upstream String coercion, including the observable undefined case.
+  JsValue stringText = JS.call(String, undef(), text);
+  return JS.invoke(stringText, "replace", ESCAPE_REGEX, (JsValue matched) => {
   return ESCAPE_LOOKUP[matched];
   });
   return undef();

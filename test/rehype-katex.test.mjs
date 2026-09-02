@@ -8,7 +8,7 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), "..")
 
 describe("@itslil/rehype-katex", () => {
   it("transforms span.math-inline x^2 into katex", async () => {
-    const { rehypeKatex } = await import("../dist/rehype-katex.esm.js")
+    const { default: rehypeKatex } = await import("../dist/rehype-katex.esm.js")
     const tree = {
       type: "root",
       children: [
@@ -29,8 +29,8 @@ describe("@itslil/rehype-katex", () => {
 
   it("exports default as the plugin", async () => {
     const mod = await import("../dist/rehype-katex.esm.js")
-    assert.equal(typeof mod.rehypeKatex, "function")
-    assert.equal(mod.default, mod.rehypeKatex)
+    assert.deepEqual(Object.keys(mod), ["default"])
+    assert.equal(typeof mod.default, "function")
   })
 
   it("pins tree and option keys on the library artifact", () => {
@@ -45,7 +45,7 @@ describe("@itslil/rehype-katex", () => {
   it("closed artifact performs the core call", async () => {
     const closedPath = resolve(root, "dist/rehype-katex.closed.js")
     assert.equal(existsSync(closedPath), true)
-    const { rehypeKatex } = await import("../dist/rehype-katex.closed.js")
+    const { default: rehypeKatex } = await import("../dist/rehype-katex.closed.js")
     const tree = {
       type: "root",
       children: [
