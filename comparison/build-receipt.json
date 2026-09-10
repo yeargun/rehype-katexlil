@@ -204,12 +204,38 @@
   "publicationSourceFingerprint": "b75c1e9435c043307c358a84f2dc84e75c4f6af98fd238e1e8b829bcdcc255d6",
   "comparisonArtifacts": [
     {
+      "path": "site/esm-comparison/original.js",
+      "sha256": "1d2704003070191754b3783b882ccf06b4b5fabef563406f52d345d53f65da43"
+    },
+    {
       "path": "site/esm-comparison/lilscript.js",
       "sha256": "9ef97f32355dfc1eae3404eb30243fd85bf3c9a5300a5f81beceacd248d96796"
     },
     {
-      "path": "site/esm-comparison/original.js",
-      "sha256": "a4b26b1f0f2827d92241f789e7e90b1c5cfca43bc8240f30ecc0bae0a1dde6ce"
+      "path": "site/source-build.json",
+      "sha256": "c2ab76b6f4fe169aaf32e25fd9a99248336523c80bcda5459152b99d7d0b42e2"
+    },
+    {
+      "path": "site/comparison.json",
+      "sha256": "e1b796cca9a06b224bde0419f3a9231fbd35ba4a1d765419e2f02383c31f50f2"
     }
-  ]
+  ],
+  "sourceBuildReceipt": "comparison/source-build/result.json",
+  "currentMeasurement": {
+    "compiler": {
+      "commit": "4dc4e3337d9ffd758d65e3852682d6e13d9331c1",
+      "sha256": "0616048498eb9eb2e4bd75b39e8e6a083733ada647e16108edfee30ad183beeb"
+    },
+    "source": {
+      "commit": "f6ff62ca33ad877e3942a873a89770a830c8a7c7"
+    },
+    "upstream": {
+      "repository": "https://github.com/remarkjs/remark-math.git",
+      "commit": "88a9497e1ede93b958237c85edbf5651faeca7af",
+      "package": "rehype-katex",
+      "version": "7.0.1",
+      "directory": "packages/rehype-katex"
+    },
+    "compatibility": "Runtime checks: 63/63 pass."
+  }
 }

@@ -1,0 +1,35 @@
+{
+  "source": {
+    "repository": "https://github.com/remarkjs/remark-math.git",
+    "commit": "88a9497e1ede93b958237c85edbf5651faeca7af",
+    "package": "rehype-katex",
+    "version": "7.0.1",
+    "directory": "packages/rehype-katex"
+  },
+  "portSource": {
+    "commit": "f6ff62ca33ad877e3942a873a89770a830c8a7c7"
+  },
+  "compilerCommit": "4dc4e3337d9ffd758d65e3852682d6e13d9331c1",
+  "install": [
+    "npm",
+    "install",
+    "--ignore-scripts",
+    "--no-audit",
+    "--no-fund"
+  ],
+  "setup": [],
+  "build": [
+    "npm",
+    "run",
+    "build"
+  ],
+  "clean": [],
+  "entry": "packages/rehype-katex/index.js",
+  "defaultExport": true,
+  "external": [
+    "katex"
+  ],
+  "esmScope": "rehype-katex@7.0.1 public ESM runtime graph; dependency installation excluded; this is a comparison bundle build, not the upstream vendor release pipeline",
+  "lilscriptBuild": "node scripts/build.mjs --compile --force",
+  "test": "npm run check:types && node --test test/official/test.js test/*.test.mjs"
+}
