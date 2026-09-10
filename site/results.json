@@ -12,7 +12,7 @@
   "spec": {
     "total": 63,
     "pass": 63,
-    "label": "official + parity suite"
+    "label": "repository checks"
   },
   "play": {
     "kind": "tex-hast",
@@ -47,7 +47,7 @@
       "raw": 2369,
       "gzip9": 1066,
       "brotli11": 944,
-      "note": "Fresh packaged ESM, rebuilt with compiler 63c2896a71.",
+      "note": "ESM output from LilScript 63c2896.",
       "primary": true,
       "measuredAt": "2026-09-10T13:48:23Z",
       "artifactSha256": "9ef97f32355dfc1eae3404eb30243fd85bf3c9a5300a5f81beceacd248d96796"
@@ -58,7 +58,7 @@
       "raw": 2370,
       "gzip9": 1067,
       "brotli11": 928,
-      "note": "Same runtime graph, extern_fields false; diagnostic only",
+      "note": "ESM output from LilScript 63c2896.",
       "measuredAt": "2026-09-10T13:48:23Z",
       "artifactSha256": "a61d356d580802408b92e285ecde3792b3868fb2e541f543e5889fbc0470b07e"
     }
@@ -75,7 +75,5 @@
       "documentMs": 0.10804099999950267
     }
   ],
-  "sizeMeasuredAt": "2026-09-10T13:48:23Z",
-  "buildAudit": "./build-audit.json",
-  "runtimeEvidenceStatus": "Historical; runtime throughput was not republished as a measurement of this compiler."
+  "sizeMeasuredAt": "2026-09-10T13:48:23Z"
 }

@@ -1,7 +1,5 @@
 # @itslil/rehype-katex
 
-<!-- current-build-audit -->
-**Build audit, 2026-09-10:** [verified; compiler, machine, build times, version gaps and behavior checks](https://yeargun.github.io/rehype-katexlil/#build-audit). The [JSON receipt](site/build-audit.json) records the current comparison; older benchmark prose retains its original scope.
 
 
 Official [`rehype-katex@7.0.1`](https://github.com/remarkjs/remark-math) algorithms rewritten in LilScript with KaTeX 0.16.22. The official suite and structural differential coverage pass in both library and closed-world builds. Not affiliated with upstream.

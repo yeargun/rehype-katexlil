@@ -31,7 +31,7 @@
         <div class="hero-copy">
           <p class="eyebrow"><span class="live-dot"></span> rehype-katex@7.0.1 · LilScript port · @itslil/rehype-katex</p>
           <h1>Math nodes,<br /><em>to KaTeX</em></h1>
-          <p class="lede">Official <code>rehype-katex@7.0.1</code> algorithms rewritten in LilScript. Official test suite 16/16. Not affiliated with upstream. Official rows are the published plugin plus KaTeX, then Terser and esbuild.</p>
+          <p class="lede">Official <code>rehype-katex@7.0.1</code> algorithms rewritten in LilScript. Repository checks: 63/63 pass. Not affiliated with upstream. Official rows are the published plugin with KaTeX external in both ESM entries, then Terser and esbuild.</p>
           <div class="install-row">
             <code>npm install @itslil/rehype-katex</code>
             <button class="copy" data-copy="npm install @itslil/rehype-katex" type="button">copy</button>
@@ -51,18 +51,16 @@
             <div><strong id="hero-shipped">—</strong><span>Brotli-11 you ship, vs Terser</span></div>
             <div><strong id="hero-gzip">—</strong><span>gzip-9 vs Terser</span></div>
             <div><strong id="hero-raw">—</strong><span>raw vs Terser</span></div>
-            <div><strong id="hero-spec">—</strong><span>official suite</span></div>
+            <div><strong id="hero-spec">—</strong><span>repository checks</span></div>
           </div>
           <p class="score-note">
             Official rows are one esbuild bundle of <code>rehype-katex@7.0.1</code> plus the packages it needs at runtime, then Terser or esbuild.
-            LilScript is not post-minified. The npm file is the Brotli-scored compile. Closed LilScript is the same source with <code>extern_fields = false</code>.
-          </p>
+            LilScript is not post-minified. The measured ESM is the Brotli-scored compile. Closed LilScript is the same source with <code>extern_fields = false</code>. Repository checks pass.</p>
         </div>
       </section>
       <section class="ticker" aria-label="Supported features">
         <div>math-inline <span>✦</span> math-display <span>✦</span> throwOnError <span>✦</span> tree-shake</div>
       </section>
-      <p data-audit-history="2026-09-10" style="max-width:1160px;margin:18px auto;padding:12px 20px;font:14px/1.6 system-ui;color:#344b54;background:#edf3f4">The build audit above records the current compiler check. Runtime throughput and application benchmarks below retain their earlier measurement dates.</p>
 <section class="performance shell" id="performance">
         <div class="section-heading">
           <div>
@@ -71,7 +69,7 @@
           </div>
           <p>
             Not Playwright — Node v22.21.1 on this machine, quiet median after warmup.
-            Race 10× in the playground for a browser number. The official test suite (16/16) is green before any size row is a claim.
+            Race 10× in the playground for a browser number. Repository checks: 63/63 pass.
           </p>
         </div>
         <div class="perf-cards" id="perf-cards"></div>
@@ -130,13 +128,13 @@
               <h2>Raw, gzip,<br />and Brotli.</h2>
             </div>
             <p>
-              Official rehype-katex@7.0.1 bundled with its runtime graph, then Terser (mangle on/off) and esbuild minify.
+              Official rehype-katex@7.0.1 bundled with KaTeX external, matching the LilScript entry, then Terser (mangle on/off) and esbuild minify.
               LilScript is not post-minified. Closed LilScript is Brotli with <code>extern_fields = false</code>.
             </p>
           </div>
           <div class="codec-block">
             <h3>Brotli-11</h3>
-            <p class="codec-lead">The wire number. LilScript row is the npm file.</p>
+            <p class="codec-lead">The wire number. LilScript row is the measured ESM.</p>
             <div class="total-bar" id="bar-brotli"></div>
             <div class="table-wrap">
               <table>
@@ -198,7 +196,7 @@
     </main>
     <footer class="shell">
       <span>@itslil/rehype-katex · MIT</span>
-      <span>official rehype-katex@7.0.1 algorithms rewritten in LilScript — official test suite 16/16 — not affiliated with upstream</span>
+      <span>official rehype-katex@7.0.1 algorithms rewritten in LilScript — repository checks 63/63 — not affiliated with upstream</span>
       <a href="https://github.com/yeargun/rehype-katexlil">source ↗</a>
     </footer>
   </body>

@@ -201,5 +201,15 @@
   ],
   "publicationPolicy": "Promote freshly tested distribution",
   "publicationBase": "f6ff62ca33ad877e3942a873a89770a830c8a7c7",
-  "publicationSourceFingerprint": "b75c1e9435c043307c358a84f2dc84e75c4f6af98fd238e1e8b829bcdcc255d6"
+  "publicationSourceFingerprint": "b75c1e9435c043307c358a84f2dc84e75c4f6af98fd238e1e8b829bcdcc255d6",
+  "comparisonArtifacts": [
+    {
+      "path": "site/esm-comparison/lilscript.js",
+      "sha256": "9ef97f32355dfc1eae3404eb30243fd85bf3c9a5300a5f81beceacd248d96796"
+    },
+    {
+      "path": "site/esm-comparison/original.js",
+      "sha256": "a4b26b1f0f2827d92241f789e7e90b1c5cfca43bc8240f30ecc0bae0a1dde6ce"
+    }
+  ]
 }
