@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "name": "rehype-katexlil",
+  "measuredAt": "2026-09-10T13:48:23Z",
+  "status": "verified",
+  "buildPassed": true,
+  "summary": "The fresh artifact was checked against the repository test command.",
+  "sourceCommit": "f6ff62ca33ad877e3942a873a89770a830c8a7c7",
+  "previousPublicCommit": "f6ff62ca33ad877e3942a873a89770a830c8a7c7",
+  "compiler": {
+    "commit": "63c2896a71e60cbcca7870fe979f9d6ecaff3452",
+    "sha256": "2319462ef7d858c8e2a5a767260aa4f80d325e0045afa0cc86cc122d1299b059",
+    "profile": "release",
+    "dirty": false
+  },
+  "machine": {
+    "cpu": "AMD EPYC 9V45 96-Core Processor",
+    "logicalCpus": 16,
+    "affinityCpus": 16,
+    "memoryBytes": 33648431104,
+    "os": "Ubuntu 24.04.4 LTS",
+    "kernel": "6.17.0-1022-azure",
+    "architecture": "x86_64",
+    "node": "v22.23.2",
+    "rayonThreads": 16,
+    "provider": "Azure",
+    "instanceClass": "Standard_D16als_v7",
+    "parallelPortBuildsOnMachine": 1,
+    "loadAtStart": [
+      1.0712890625,
+      3.2216796875,
+      1.98974609375
+    ],
+    "loadAtEnd": [
+      1.0654296875,
+      3.1845703125,
+      1.984375
+    ],
+    "concurrencyNote": "The audit scheduled one port per worker, but this is a shared pool. Outside compiler jobs were observed during the run; timings are contextual wall times, not controlled speedup benchmarks."
+  },
+  "upstream": {
+    "name": "rehype-katexlil",
+    "package": "rehype-katex",
+    "pinned": "7.0.1",
+    "latest": "7.0.1",
+    "source": "https://www.npmjs.com/package/rehype-katex"
+  },
+  "comparisonScope": "rehype-katex@7.0.1 public ESM runtime graph; dependency installation excluded; this is a comparison bundle build, not the upstream vendor release pipeline External on both sides: hast-util-from-html-isomorphic, hast-util-to-text, katex, unist-util-visit-parents. Sizes use canonical zlib 1.3.1 gzip-9 and Google Brotli 1.1.0 quality 11.",
+  "sizes": {
+    "previous": {
+      "id": "itslil",
+      "name": "@itslil/rehype-katex \u00b7 library",
+      "raw": 2363,
+      "gzip9": 1067,
+      "brotli11": 936,
+      "note": "Browser ESM graph including the shared KaTeX and HAST runtimes.",
+      "primary": true
+    },
+    "current": {
+      "path": "dist/rehype-katex.esm.js",
+      "raw": 2369,
+      "gzip9": 1066,
+      "brotli11": 944,
+      "sha256": "9ef97f32355dfc1eae3404eb30243fd85bf3c9a5300a5f81beceacd248d96796"
+    },
+    "upstream": {
+      "path": ".page-audit/upstream/official.esm.js",
+      "raw": 1265,
+      "gzip9": 710,
+      "brotli11": 632,
+      "sha256": "a4b26b1f0f2827d92241f789e7e90b1c5cfca43bc8240f30ecc0bae0a1dde6ce"
+    }
+  },
+  "officialArtifacts": [
+    {
+      "path": ".page-audit/upstream/official.esm.js",
+      "raw": 1265,
+      "gzip9": 710,
+      "brotli11": 632,
+      "sha256": "a4b26b1f0f2827d92241f789e7e90b1c5cfca43bc8240f30ecc0bae0a1dde6ce"
+    },
+    {
+      "path": ".page-audit/upstream/official.unminified.js",
+      "raw": 2763,
+      "gzip9": 1019,
+      "brotli11": 879,
+      "sha256": "84c09641d749b7e3a17dc636ba63e40e728dde136654f5db4dfcf7b47261f6f1"
+    }
+  ],
+  "candidateArtifacts": [
+    {
+      "path": "dist/rehype-katex.umd.js",
+      "raw": 284737,
+      "gzip9": 70008,
+      "brotli11": 57672,
+      "sha256": "68082927602d36519fa31f94572992fdedb0894a781c642ffd71450095f72145"
+    },
+    {
+      "path": "dist/rehype-katex.cjs",
+      "raw": 284896,
+      "gzip9": 70054,
+      "brotli11": 57756,
+      "sha256": "a3bdf33db23caa4b558e3b00f8e7a94d5ae4d9d61c0bc68626534b31e39656f7"
+    },
+    {
+      "path": "dist/rehype-katex.closed.js",
+      "raw": 2370,
+      "gzip9": 1067,
+      "brotli11": 928,
+      "sha256": "a61d356d580802408b92e285ecde3792b3868fb2e541f543e5889fbc0470b07e"
+    },
+    {
+      "path": "dist/rehype-katex.esm.js",
+      "raw": 2369,
+      "gzip9": 1066,
+      "brotli11": 944,
+      "sha256": "9ef97f32355dfc1eae3404eb30243fd85bf3c9a5300a5f81beceacd248d96796"
+    },
+    {
+      "path": "dist/rehype-katex.raw.js",
+      "raw": 1597,
+      "gzip9": 890,
+      "brotli11": 756,
+      "sha256": "375b8da7663018f5ff9a8ea2a8678b150bc94d1818f569f29c01c380cf88153d"
+    },
+    {
+      "path": ".page-audit/upstream/official.esm.js",
+      "raw": 1265,
+      "gzip9": 710,
+      "brotli11": 632,
+      "sha256": "a4b26b1f0f2827d92241f789e7e90b1c5cfca43bc8240f30ecc0bae0a1dde6ce"
+    }
+  ],
+  "timing": {
+    "primaryCompilerSeconds": 0.012639999389648438,
+    "primaryScope": "One real compiler process, including code generation and codec-guided search; excludes subsequent package wrapping.",
+    "packageSeconds": 0.1641683230000126,
+    "packageScope": "node scripts/build.mjs --compile --force; 2 successful compiler invocations plus package generation.",
+    "upstreamSeconds": 0.01145853000000001,
+    "upstreamScope": "rehype-katex@7.0.1 public ESM runtime graph; dependency installation excluded; this is a comparison bundle build, not the upstream vendor release pipeline",
+    "protocol": "Same shared worker for both lanes; one fresh LilScript package build; median of three sequential upstream ESM builds (PlayCanvas records one native reference build). Outside compiler jobs were observed in the pool, so contention is not excluded. Dependencies, tests and compression measurement are outside these build times.",
+    "upstreamSamples": [
+      {
+        "bundleSeconds": 0.0021952190000000017,
+        "wallSeconds": 0.03222310400000001
+      },
+      {
+        "bundleSeconds": 0.0017470270000000028,
+        "wallSeconds": 0.01145853000000001
+      },
+      {
+        "bundleSeconds": 0.0019974349999999958,
+        "wallSeconds": 0.010453267999999995
+      }
+    ]
+  },
+  "behavior": {
+    "command": "npm run check:types && node --test test/official/test.js test/*.test.mjs",
+    "summary": "Repository test command passed (exit 0). # tests 63 \u00b7 # pass 63 \u00b7 # fail 0",
+    "before": {
+      "exitCode": 0,
+      "failures": [],
+      "logSha256": "3b5f08c46ad101814a5869566fc99f3372a48bf775688a7c7d41818a4acd50fc"
+    },
+    "after": {
+      "exitCode": 0,
+      "failures": [],
+      "tail": "est: trusted HTML styles\n    ok 23 - trusted HTML styles\n      ---\n      duration_ms: 0.565091\n      type: 'test'\n      ...\n    # Subtest: trusted data attributes\n    ok 24 - trusted data attributes\n      ---\n      duration_ms: 1.107519\n      type: 'test'\n      ...\n    # Subtest: HTML-only output\n    ok 25 - HTML-only output\n      ---\n      duration_ms: 1.877135\n      type: 'test'\n      ...\n    # Subtest: MathML-only output\n    ok 26 - MathML-only output\n      ---\n      duration_ms: 0.844958\n      type: 'test'\n      ...\n    # Subtest: left equation numbers\n    ok 27 - left equation numbers\n      ---\n      duration_ms: 2.889954\n      type: 'test'\n      ...\n    # Subtest: flush-left display\n    ok 28 - flush-left display\n      ---\n      duration_ms: 1.572422\n      type: 'test'\n      ...\n    # Subtest: minimum rule thickness\n    ok 29 - minimum rule thickness\n      ---\n      duration_ms: 1.568346\n      type: 'test'\n      ...\n    # Subtest: custom macros\n    ok 30 - custom macros\n      ---\n      duration_ms: 1.154339\n      type: 'test'\n      ...\n    # Subtest: preserves a non-math tree and ignores scalar className\n    ok 31 - preserves a non-math tree and ignores scalar className\n      ---\n      duration_ms: 0.185115\n      type: 'test'\n      ...\n    # Subtest: does not transform a matching root element without a parent\n    ok 32 - does not transform a matching root element without a parent\n      ---\n      duration_ms: 0.06725\n      type: 'test'\n      ...\n    # Subtest: uses display mode when both math classes are present\n    ok 33 - uses display mode when both math classes are present\n      ---\n      duration_ms: 0.359866\n      type: 'test'\n      ...\n    # Subtest: uses preformatted text and replaces the pre for language-math\n    ok 34 - uses preformatted text and replaces the pre for language-math\n      ---\n      duration_ms: 0.594936\n      type: 'test'\n      ...\n    # Subtest: matches preformatted text extraction for nested HAST\n    ok 35 - matches preformatted text extraction for nested HAST\n      ---\n      duration_ms: 0.58427\n      type: 'test'\n      ...\n    # Subtest: transforms each math sibling without revisiting replacements\n    ok 36 - transforms each math sibling without revisiting replacements\n      ---\n      duration_ms: 0.547616\n      type: 'test'\n      ...\n    # Subtest: matches official ParseError recovery and diagnostics\n    ok 37 - matches official ParseError recovery and diagnostics\n      ---\n      duration_ms: 0.864718\n      type: 'test'\n      ...\n    # Subtest: matches HTML null preprocessing in ParseError output\n    ok 38 - matches HTML null preprocessing in ParseError output\n      ---\n      duration_ms: 0.73866\n      type: 'test'\n      ...\n    # Subtest: rejects invalid trusted HTML attribute names like KaTeX toMarkup\n    ok 39 - rejects invalid trusted HTML attribute names like KaTeX toMarkup\n      ---\n      duration_ms: 0.293968\n      type: 'test'\n      ...\n    # Subtest: preserves upstream truthy errorColor coercion on non-parse errors\n    ok 40 - preserves upstream truthy errorColor coercion on non-parse errors\n      ---\n      duration_ms: 0.348248\n      type: 'test'\n      ...\n    # Subtest: shares the runtime mhchem registry\n    ok 41 - shares the runtime mhchem registry\n      ---\n      duration_ms: 10.880554\n      type: 'test'\n      ...\n    # Subtest: shares macros registered through __defineMacro\n    ok 42 - shares macros registered through __defineMacro\n      ---\n      duration_ms: 0.925058\n      type: 'test'\n      ...\n    # Subtest: shares functions registered through __defineFunction\n    ok 43 - shares functions registered through __defineFunction\n      ---\n      duration_ms: 0.550339\n      type: 'test'\n      ...\n    1..43\nok 3 - KaTeX 0.16.22 structural parity\n  ---\n  duration_ms: 111.384514\n  type: 'suite'\n  ...\n# Subtest: @itslil/rehype-katex\n    # Subtest: transforms span.math-inline x^2 into katex\n    ok 1 - transforms span.math-inline x^2 into katex\n      ---\n      duration_ms: 43.783086\n      type: 'test'\n      ...\n    # Subtest: exports default as the plugin\n    ok 2 - exports default as the plugin\n      ---\n      duration_ms: 0.572382\n      type: 'test'\n      ...\n    # Subtest: pins tree and option keys on the library artifact\n    ok 3 - pins tree and option keys on the library artifact\n      ---\n      duration_ms: 0.192717\n      type: 'test'\n      ...\n    # Subtest: closed artifact performs the core call\n    ok 4 - closed artifact performs the core call\n      ---\n      duration_ms: 3.901541\n      type: 'test'\n      ...\n    1..4\nok 4 - @itslil/rehype-katex\n  ---\n  duration_ms: 49.122728\n  type: 'suite'\n  ...\n# Subtest: site\n    # Subtest: has a markedlil-style lab with receipts\n    ok 1 - has a markedlil-style lab with receipts\n      ---\n      duration_ms: 0.465894\n      type: 'test'\n      ...\n    1..1\nok 5 - site\n  ---\n  duration_ms: 0.947742\n  type: 'suite'\n  ...\n1..5\n# tests 63\n# suites 4\n# pass 63\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 204.135457\n",
+      "logSha256": "3cd3ff027d9140b0f5985302ab087b29cbaf07b6942840995d16739a9b69b56b"
+    }
+  },
+  "findings": [
+    "Published-to-fresh Brotli drift: +8 bytes (+0.85%). This includes port source/config changes and compiler changes.",
+    "The earlier headline compared a small plugin with external dependencies against a bundled upstream graph. The refreshed upstream lane preserves the same external dependency boundary."
+  ],
+  "primaryArtifact": "dist/rehype-katex.esm.js",
+  "beforePage": {
+    "url": "https://yeargun.github.io/rehype-katexlil/",
+    "status": 200,
+    "sha256": "fa8a16c37e9c83e1e06843645a12baedc2462f9960d9ae7bd4b5d1c11581a00c",
+    "lastModified": "Wed, 02 Sep 2026 16:04:13 GMT"
+  },
+  "codecSha256": "9257fd055728895c11b9c4b0d882895d7d11bb3dd3495f560123879ca2bc3cd6",
+  "publicationArtifacts": [
+    {
+      "path": "dist/rehype-katex.umd.js",
+      "sha256": "68082927602d36519fa31f94572992fdedb0894a781c642ffd71450095f72145"
+    },
+    {
+      "path": "dist/rehype-katex.cjs",
+      "sha256": "a3bdf33db23caa4b558e3b00f8e7a94d5ae4d9d61c0bc68626534b31e39656f7"
+    },
+    {
+      "path": "dist/rehype-katex.closed.js",
+      "sha256": "a61d356d580802408b92e285ecde3792b3868fb2e541f543e5889fbc0470b07e"
+    },
+    {
+      "path": "dist/rehype-katex.esm.js",
+      "sha256": "9ef97f32355dfc1eae3404eb30243fd85bf3c9a5300a5f81beceacd248d96796"
+    }
+  ],
+  "publicationPolicy": "Promote freshly tested distribution",
+  "publicationBase": "f6ff62ca33ad877e3942a873a89770a830c8a7c7",
+  "publicationSourceFingerprint": "b75c1e9435c043307c358a84f2dc84e75c4f6af98fd238e1e8b829bcdcc255d6"
+}
