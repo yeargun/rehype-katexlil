@@ -13,22 +13,23 @@
   ],
   "samples": [
     {
-      "bundleSeconds": 0.011885358999999995,
-      "wallSeconds": 0.136519688
+      "bundleSeconds": 0.023507126,
+      "wallSeconds": 0.35839367
     },
     {
-      "bundleSeconds": 0.0072450069999999865,
-      "wallSeconds": 0.093925387
+      "bundleSeconds": 0.015001537999999983,
+      "wallSeconds": 0.22703186999999997
     },
     {
-      "bundleSeconds": 0.006235254999999995,
-      "wallSeconds": 0.07426292999999998
+      "bundleSeconds": 0.01425302499999998,
+      "wallSeconds": 0.18081680900000002
     }
   ],
-  "medianSeconds": 0.093925387,
+  "medianSeconds": 0.22703186999999997,
   "toolchain": {
     "esbuild": "0.28.1",
-    "terser": "5.51.2"
+    "terser": "5.51.2",
+    "vite": "8.2.1 (Oxc minify)"
   },
   "artifacts": [
     {
@@ -58,6 +59,20 @@
       "gzip9": 10127,
       "brotli11": 9144,
       "sha256": "f5f1c8cd28e6dbeb56acec1127fc1e010b47e438b38bc9aedbfdf2a969368a49"
+    },
+    {
+      "path": "original.oxc-mangle.js",
+      "raw": 28583,
+      "gzip9": 9975,
+      "brotli11": 9028,
+      "sha256": "63068f6d7f9f0270e0c49e3c5ea13bbed0f85211e2f07d3ad7fa0cb4b4ce91e2"
+    },
+    {
+      "path": "original.oxc-nomangle.js",
+      "raw": 37334,
+      "gzip9": 11276,
+      "brotli11": 10211,
+      "sha256": "975a5de8e4332fb5d9ad7fb9ad71aa3de156e16fb6d5a9886c3a4da79e6a3953"
     }
   ],
   "inputs": [

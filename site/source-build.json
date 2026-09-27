@@ -1,31 +1,31 @@
 {
   "schemaVersion": 1,
   "name": "rehype-katexlil",
-  "startedAt": "2026-09-10T20:38:29Z",
+  "startedAt": "2026-09-27T14:50:06Z",
   "machine": {
     "provider": "Azure",
-    "instanceClass": "Standard_D16als_v7",
-    "cpu": "AMD EPYC 9V45 96-Core Processor",
-    "logicalCpus": 16,
-    "memoryBytes": 33648431104,
-    "os": "Ubuntu 24.04.4 LTS",
-    "kernel": "6.17.0-1022-azure",
+    "instanceClass": "Standard_B8als_v2",
+    "cpu": "AMD EPYC 7763 64-Core Processor",
+    "logicalCpus": 8,
+    "memoryBytes": 16706420736,
+    "os": "Ubuntu 24.04.3 LTS",
+    "kernel": "7.0.0-1014-azure",
     "node": "v24.11.1",
     "rayonThreads": 8,
     "loadAtStart": [
-      1.3681640625,
-      1.63818359375,
-      1.8798828125
+      6.232421875,
+      5.2255859375,
+      5.5263671875
     ],
     "loadAtEnd": [
-      1.50830078125,
-      1.6474609375,
-      1.87744140625
+      5.90869140625,
+      5.224609375,
+      5.5205078125
     ]
   },
   "compiler": {
-    "commit": "4dc4e3337d9ffd758d65e3852682d6e13d9331c1",
-    "sha256": "0616048498eb9eb2e4bd75b39e8e6a083733ada647e16108edfee30ad183beeb"
+    "commit": "249686599dc3bf1b6bf70dc9a030081b755bbb24",
+    "sha256": "47048e41164027e92d3bf1d1840d8d83e04c60532c031ceb3346222e194b3041"
   },
   "source": {
     "repository": "https://github.com/remarkjs/remark-math.git",
@@ -35,8 +35,9 @@
     "directory": "packages/rehype-katex"
   },
   "portSource": {
-    "commit": "f6ff62ca33ad877e3942a873a89770a830c8a7c7"
+    "commit": "cfb5d29590bd483389801ff994bd2bba3f43c495"
   },
+  "prerequisiteAdjustments": null,
   "steps": {
     "original-install": {
       "command": [
@@ -47,29 +48,13 @@
         "--no-fund"
       ],
       "cwd": "upstream",
-      "wallSeconds": 11.231703760000528,
-      "cpuSeconds": 8.619850999999999,
+      "wallSeconds": 2.425407840986736,
+      "cpuSeconds": 2.7456139999999998,
       "exitCode": 0,
       "timedOut": false,
       "log": "original-install.log",
-      "logSha256": "46e5e18e58670809f03750763537675bdcaf399ffdf71ac0bf47e2a61190a7f2",
-      "tail": "npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.\nnpm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead\nnpm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported\nnpm warn deprecated whatwg-encoding@3.1.1: Use @exodus/bytes instead for a more spec-conformant and faster implementation\nnpm warn deprecated glob@7.2.3: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me\nnpm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead\nnpm warn deprecated @xmldom/xmldom@0.9.10: this version has critical issues, please update to the latest version\nnpm warn deprecated glob@10.5.0: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me\nnpm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.\n\nadded 914 packages in 11s\n"
-    },
-    "lilscript-install": {
-      "command": [
-        "npm",
-        "ci",
-        "--no-audit",
-        "--no-fund"
-      ],
-      "cwd": "port",
-      "wallSeconds": 0.5646972959993946,
-      "cpuSeconds": 0.7949149999999992,
-      "exitCode": 0,
-      "timedOut": false,
-      "log": "lilscript-install.log",
-      "logSha256": "ae1e94556e39549ef7e635d0d54314c9ed493d902ad2acc3cdbbd16f0474062a",
-      "tail": "\nadded 92 packages in 501ms\n"
+      "logSha256": "ce7bf91f54adc7390cff6bf1c2572fd00ce9cfbd0611637e273059c4710a80c9",
+      "tail": "\nup to date in 2s\n"
     },
     "original-build-1": {
       "command": [
@@ -78,8 +63,8 @@
         "build"
       ],
       "cwd": "upstream",
-      "wallSeconds": 1.716832021999835,
-      "cpuSeconds": 3.2818340000000013,
+      "wallSeconds": 4.1370483380160294,
+      "cpuSeconds": 7.704644000000001,
       "exitCode": 0,
       "timedOut": false,
       "log": "original-build-1.log",
@@ -93,8 +78,8 @@
         "node scripts/build.mjs --compile --force"
       ],
       "cwd": "port",
-      "wallSeconds": 0.16392812400044932,
-      "cpuSeconds": 0.14461600000000008,
+      "wallSeconds": 0.3148344249930233,
+      "cpuSeconds": 0.27430399999999966,
       "exitCode": 0,
       "timedOut": false,
       "log": "lilscript-build-1.log",
@@ -103,35 +88,35 @@
       "invocations": [
         {
           "args": [
-            "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/src/index.lil",
+            "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/src/index.lil",
             "--target",
             "js-module",
             "--config",
-            "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/lilscript.toml",
+            "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/lilscript.toml",
             "-o",
-            "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/dist/rehype-katex.raw.js"
+            "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/dist/rehype-katex.raw.js"
           ],
-          "startedAt": 1789072722.5865016,
-          "wallSeconds": 0.011976480484008789,
+          "startedAt": 1790520613.288485,
+          "wallSeconds": 0.010276079177856445,
           "exitCode": 0,
-          "output": "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/dist/rehype-katex.raw.js",
-          "sha256": "375b8da7663018f5ff9a8ea2a8678b150bc94d1818f569f29c01c380cf88153d"
+          "output": "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/dist/rehype-katex.raw.js",
+          "sha256": "ff51a0ad05f5ff0a1cb6c40efcf2afbaf9dc173d3e4cbf65afdcc69d35f55756"
         },
         {
           "args": [
-            "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/src/index.lil",
+            "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/src/index.lil",
             "--target",
             "js-module",
             "--config",
-            "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/lilscript.closed.toml",
+            "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/lilscript.closed.toml",
             "-o",
-            "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/dist/rehype-katex.closed.js"
+            "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/dist/rehype-katex.closed.js"
           ],
-          "startedAt": 1789072722.6205812,
-          "wallSeconds": 0.011271238327026367,
+          "startedAt": 1790520613.352098,
+          "wallSeconds": 0.010955095291137695,
           "exitCode": 0,
-          "output": "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/dist/rehype-katex.closed.js",
-          "sha256": "375b8da7663018f5ff9a8ea2a8678b150bc94d1818f569f29c01c380cf88153d"
+          "output": "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/dist/rehype-katex.closed.js",
+          "sha256": "ff51a0ad05f5ff0a1cb6c40efcf2afbaf9dc173d3e4cbf65afdcc69d35f55756"
         }
       ]
     },
@@ -142,8 +127,8 @@
         "node scripts/build.mjs --compile --force"
       ],
       "cwd": "port",
-      "wallSeconds": 0.16397633599990513,
-      "cpuSeconds": 0.14759600000000006,
+      "wallSeconds": 0.2662584889912978,
+      "cpuSeconds": 0.251567000000001,
       "exitCode": 0,
       "timedOut": false,
       "log": "lilscript-build-2.log",
@@ -152,35 +137,35 @@
       "invocations": [
         {
           "args": [
-            "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/src/index.lil",
+            "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/src/index.lil",
             "--target",
             "js-module",
             "--config",
-            "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/lilscript.toml",
+            "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/lilscript.toml",
             "-o",
-            "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/dist/rehype-katex.raw.js"
+            "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/dist/rehype-katex.raw.js"
           ],
-          "startedAt": 1789072722.7495077,
-          "wallSeconds": 0.012078523635864258,
+          "startedAt": 1790520613.6003768,
+          "wallSeconds": 0.007090330123901367,
           "exitCode": 0,
-          "output": "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/dist/rehype-katex.raw.js",
-          "sha256": "375b8da7663018f5ff9a8ea2a8678b150bc94d1818f569f29c01c380cf88153d"
+          "output": "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/dist/rehype-katex.raw.js",
+          "sha256": "ff51a0ad05f5ff0a1cb6c40efcf2afbaf9dc173d3e4cbf65afdcc69d35f55756"
         },
         {
           "args": [
-            "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/src/index.lil",
+            "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/src/index.lil",
             "--target",
             "js-module",
             "--config",
-            "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/lilscript.closed.toml",
+            "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/lilscript.closed.toml",
             "-o",
-            "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/dist/rehype-katex.closed.js"
+            "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/dist/rehype-katex.closed.js"
           ],
-          "startedAt": 1789072722.7848306,
-          "wallSeconds": 0.011787891387939453,
+          "startedAt": 1790520613.647524,
+          "wallSeconds": 0.007237911224365234,
           "exitCode": 0,
-          "output": "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/dist/rehype-katex.closed.js",
-          "sha256": "375b8da7663018f5ff9a8ea2a8678b150bc94d1818f569f29c01c380cf88153d"
+          "output": "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/dist/rehype-katex.closed.js",
+          "sha256": "ff51a0ad05f5ff0a1cb6c40efcf2afbaf9dc173d3e4cbf65afdcc69d35f55756"
         }
       ]
     },
@@ -191,8 +176,8 @@
         "build"
       ],
       "cwd": "upstream",
-      "wallSeconds": 1.7170746309993774,
-      "cpuSeconds": 3.232548000000001,
+      "wallSeconds": 4.030379269039258,
+      "cpuSeconds": 7.529097999999998,
       "exitCode": 0,
       "timedOut": false,
       "log": "original-build-2.log",
@@ -206,8 +191,8 @@
         "build"
       ],
       "cwd": "upstream",
-      "wallSeconds": 1.6669948489998205,
-      "cpuSeconds": 3.2159190000000004,
+      "wallSeconds": 4.388231379038189,
+      "cpuSeconds": 7.784375,
       "exitCode": 0,
       "timedOut": false,
       "log": "original-build-3.log",
@@ -221,8 +206,8 @@
         "node scripts/build.mjs --compile --force"
       ],
       "cwd": "port",
-      "wallSeconds": 0.16393687999971007,
-      "cpuSeconds": 0.14479599999999948,
+      "wallSeconds": 0.26468689198372886,
+      "cpuSeconds": 0.2404670000000011,
       "exitCode": 0,
       "timedOut": false,
       "log": "lilscript-build-3.log",
@@ -231,48 +216,48 @@
       "invocations": [
         {
           "args": [
-            "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/src/index.lil",
+            "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/src/index.lil",
             "--target",
             "js-module",
             "--config",
-            "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/lilscript.toml",
+            "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/lilscript.toml",
             "-o",
-            "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/dist/rehype-katex.raw.js"
+            "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/dist/rehype-katex.raw.js"
           ],
-          "startedAt": 1789072726.2986093,
-          "wallSeconds": 0.01195216178894043,
+          "startedAt": 1790520622.2799773,
+          "wallSeconds": 0.008295297622680664,
           "exitCode": 0,
-          "output": "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/dist/rehype-katex.raw.js",
-          "sha256": "375b8da7663018f5ff9a8ea2a8678b150bc94d1818f569f29c01c380cf88153d"
+          "output": "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/dist/rehype-katex.raw.js",
+          "sha256": "ff51a0ad05f5ff0a1cb6c40efcf2afbaf9dc173d3e4cbf65afdcc69d35f55756"
         },
         {
           "args": [
-            "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/src/index.lil",
+            "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/src/index.lil",
             "--target",
             "js-module",
             "--config",
-            "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/lilscript.closed.toml",
+            "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/lilscript.closed.toml",
             "-o",
-            "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/dist/rehype-katex.closed.js"
+            "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/dist/rehype-katex.closed.js"
           ],
-          "startedAt": 1789072726.3336484,
-          "wallSeconds": 0.01146245002746582,
+          "startedAt": 1790520622.3307579,
+          "wallSeconds": 0.007089376449584961,
           "exitCode": 0,
-          "output": "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/dist/rehype-katex.closed.js",
-          "sha256": "375b8da7663018f5ff9a8ea2a8678b150bc94d1818f569f29c01c380cf88153d"
+          "output": "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/dist/rehype-katex.closed.js",
+          "sha256": "ff51a0ad05f5ff0a1cb6c40efcf2afbaf9dc173d3e4cbf65afdcc69d35f55756"
         }
       ]
     },
     "original-esm": {
       "command": [
         "node",
-        "/home/lilfarm/source-perf-20260910/tools/source-esm.mjs",
-        "/home/lilfarm/source-perf-20260910",
+        "/home/azureuser/lilscript-work/release-0927/srcbuild/rehype-katexlil/tools/source-esm.mjs",
+        "/home/azureuser/lilscript-work/release-0927/srcbuild/rehype-katexlil",
         "rehype-katexlil"
       ],
       "cwd": "upstream",
-      "wallSeconds": 0.5647041889997126,
-      "cpuSeconds": 0.9612969999999983,
+      "wallSeconds": 1.517217416956555,
+      "cpuSeconds": 2.3880569999999963,
       "exitCode": 0,
       "timedOut": false,
       "log": "original-esm.log",
@@ -286,13 +271,13 @@
         "npm run check:types && node --test test/official/test.js test/*.test.mjs"
       ],
       "cwd": "port",
-      "wallSeconds": 0.5654731189997619,
-      "cpuSeconds": 1.3944810000000016,
+      "wallSeconds": 1.3200912050087936,
+      "cpuSeconds": 3.124046999999998,
       "exitCode": 0,
       "timedOut": false,
       "log": "lilscript-tests.log",
-      "logSha256": "cf0f355e342c2fd316a5e8fd15966dcd151e02e8dc83d9a94489999148f3e856",
-      "tail": "421786ms)\n  \u2714 covers every KaTeX 0.16.22 source module by upstream filename (1.082661ms)\n  \u2714 vendors the exact KaTeX 0.16.22 metric and Unicode mappings (5.264934ms)\n  \u2714 pins package, lockfile, declarations, and artifact exports (66.852454ms)\n\u2714 source, data, and artifact audit (74.233696ms)\n\u25b6 rehype-katex\n  \u2714 should expose the public api (1.104544ms)\n  \u2714 should transform math with katex (8.916696ms)\n  \u2714 should support markdown fenced code (3.853346ms)\n  \u2714 should integrate with `remark-math` (4.391757ms)\n  \u2714 should transform `.math-inline.math-display` math with `displayMode: true` (1.192036ms)\n  \u2714 should support `macros` (1.285186ms)\n  \u2714 should handle errors, support `errorColor` (1.724008ms)\n  \u2714 should support `strict: ignore` (1.246378ms)\n  \u2714 should support comments (6.497741ms)\n  \u2714 should not crash on non-parse errors (0.702308ms)\n\u2714 rehype-katex (32.368754ms)\n\u25b6 KaTeX 0.16.22 structural parity\n  \u2714 empty expression (7.144946ms)\n  \u2714 plain symbols (3.573525ms)\n  \u2714 HTML line-ending preprocessing (2.048687ms)\n  \u2714 superscripts and subscripts (5.169048ms)\n  \u2714 fractions (2.585125ms)\n  \u2714 roots and generated SVG paths (3.61696ms)\n  \u2714 stretchy delimiters (2.415019ms)\n  \u2714 matrix environments (4.066287ms)\n  \u2714 array rules and SVG lines (2.602372ms)\n  \u2714 stretchy accents (3.22481ms)\n  \u2714 horizontal braces (2.080214ms)\n  \u2714 enclosures (2.445555ms)\n  \u2714 fonts and colors (1.636556ms)\n  \u2714 text and consecutive MathML text (0.642238ms)\n  \u2714 unicode fallback classes (1.010383ms)\n  \u2714 mathematical alphanumeric fonts (1.604839ms)\n  \u2714 spacing nodes (1.538679ms)\n  \u2714 commutative diagrams (7.456205ms)\n  \u2714 trusted anchors (1.732741ms)\n  \u2714 trusted image nodes (1.416865ms)\n  \u2714 trusted HTML classes (0.857693ms)\n  \u2714 trusted HTML identifiers (0.481135ms)\n  \u2714 trusted HTML styles (0.490449ms)\n  \u2714 trusted data attributes (0.607515ms)\n  \u2714 HTML-only output (0.881087ms)\n  \u2714 MathML-only output (0.259361ms)\n  \u2714 left equation numbers (1.449754ms)\n  \u2714 flush-left display (0.856029ms)\n  \u2714 minimum rule thickness (1.522814ms)\n  \u2714 custom macros (1.004543ms)\n  \u2714 preserves a non-math tree and ignores scalar className (0.193602ms)\n  \u2714 does not transform a matching root element without a parent (0.098589ms)\n  \u2714 uses display mode when both math classes are present (0.361144ms)\n  \u2714 uses preformatted text and replaces the pre for language-math (0.644762ms)\n  \u2714 matches preformatted text extraction for nested HAST (0.629138ms)\n  \u2714 transforms each math sibling without revisiting replacements (0.60396ms)\n  \u2714 matches official ParseError recovery and diagnostics (0.986537ms)\n  \u2714 matches HTML null preprocessing in ParseError output (0.609929ms)\n  \u2714 rejects invalid trusted HTML attribute names like KaTeX toMarkup (0.307994ms)\n  \u2714 preserves upstream truthy errorColor coercion on non-parse errors (0.355345ms)\n  \u2714 shares the runtime mhchem registry (7.308553ms)\n  \u2714 shares macros registered through __defineMacro (0.526393ms)\n  \u2714 shares functions registered through __defineFunction (0.526603ms)\n\u2714 KaTeX 0.16.22 structural parity (81.170458ms)\n\u25b6 @itslil/rehype-katex\n  \u2714 transforms span.math-inline x^2 into katex (46.194936ms)\n  \u2714 exports default as the plugin (0.87581ms)\n  \u2714 pins tree and option keys on the library artifact (0.219751ms)\n  \u2714 closed artifact performs the core call (2.760109ms)\n\u2714 @itslil/rehype-katex (50.755058ms)\n\u25b6 site\n  \u2714 has a markedlil-style lab with receipts (0.519924ms)\n\u2714 site (0.985465ms)\n\u2139 tests 63\n\u2139 suites 4\n\u2139 pass 63\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 182.883279\n"
+      "logSha256": "0723794a2032e043996a84b1f00c1d5ecb51d5b3df9a5f61c1437685bb093a53",
+      "tail": "\u2714 covers every KaTeX 0.16.22 source module by upstream filename (3.434967ms)\n  \u2714 vendors the exact KaTeX 0.16.22 metric and Unicode mappings (24.519954ms)\n  \u2714 pins package, lockfile, declarations, and artifact exports (180.794339ms)\n\u2714 source, data, and artifact audit (211.767945ms)\n\u25b6 rehype-katex\n  \u2714 should expose the public api (2.405287ms)\n  \u2714 should transform math with katex (21.151682ms)\n  \u2714 should support markdown fenced code (8.134182ms)\n  \u2714 should integrate with `remark-math` (9.282463ms)\n  \u2714 should transform `.math-inline.math-display` math with `displayMode: true` (2.792102ms)\n  \u2714 should support `macros` (3.030248ms)\n  \u2714 should handle errors, support `errorColor` (3.649549ms)\n  \u2714 should support `strict: ignore` (2.565848ms)\n  \u2714 should support comments (17.80386ms)\n  \u2714 should not crash on non-parse errors (1.061809ms)\n\u2714 rehype-katex (74.486429ms)\n\u25b6 KaTeX 0.16.22 structural parity\n  \u2714 empty expression (19.344176ms)\n  \u2714 plain symbols (10.813219ms)\n  \u2714 HTML line-ending preprocessing (5.041737ms)\n  \u2714 superscripts and subscripts (13.653262ms)\n  \u2714 fractions (9.909548ms)\n  \u2714 roots and generated SVG paths (16.378506ms)\n  \u2714 stretchy delimiters (8.382858ms)\n  \u2714 matrix environments (12.081818ms)\n  \u2714 array rules and SVG lines (7.401649ms)\n  \u2714 stretchy accents (8.374812ms)\n  \u2714 horizontal braces (7.315858ms)\n  \u2714 enclosures (6.886304ms)\n  \u2714 fonts and colors (4.162579ms)\n  \u2714 text and consecutive MathML text (1.749256ms)\n  \u2714 unicode fallback classes (1.899048ms)\n  \u2714 mathematical alphanumeric fonts (4.182579ms)\n  \u2714 spacing nodes (3.06916ms)\n  \u2714 commutative diagrams (20.453513ms)\n  \u2714 trusted anchors (3.632607ms)\n  \u2714 trusted image nodes (3.256121ms)\n  \u2714 trusted HTML classes (2.158265ms)\n  \u2714 trusted HTML identifiers (1.734881ms)\n  \u2714 trusted HTML styles (1.784564ms)\n  \u2714 trusted data attributes (2.060381ms)\n  \u2714 HTML-only output (3.497293ms)\n  \u2714 MathML-only output (1.14242ms)\n  \u2714 left equation numbers (4.638962ms)\n  \u2714 flush-left display (2.903752ms)\n  \u2714 minimum rule thickness (3.31966ms)\n  \u2714 custom macros (2.033481ms)\n  \u2714 preserves a non-math tree and ignores scalar className (0.399369ms)\n  \u2714 does not transform a matching root element without a parent (0.200565ms)\n  \u2714 uses display mode when both math classes are present (0.88081ms)\n  \u2714 uses preformatted text and replaces the pre for language-math (1.487046ms)\n  \u2714 matches preformatted text extraction for nested HAST (1.596902ms)\n  \u2714 transforms each math sibling without revisiting replacements (1.586352ms)\n  \u2714 matches official ParseError recovery and diagnostics (2.193901ms)\n  \u2714 matches HTML null preprocessing in ParseError output (1.410213ms)\n  \u2714 rejects invalid trusted HTML attribute names like KaTeX toMarkup (0.707727ms)\n  \u2714 preserves upstream truthy errorColor coercion on non-parse errors (0.82746ms)\n  \u2714 shares the runtime mhchem registry (26.808133ms)\n  \u2714 shares macros registered through __defineMacro (1.549263ms)\n  \u2714 shares functions registered through __defineFunction (4.360571ms)\n\u2714 KaTeX 0.16.22 structural parity (240.989399ms)\n\u25b6 @itslil/rehype-katex\n  \u2714 transforms span.math-inline x^2 into katex (145.12069ms)\n  \u2714 exports default as the plugin (1.994246ms)\n  \u2714 pins tree and option keys on the library artifact (0.468819ms)\n  \u2714 closed artifact performs the core call (6.418226ms)\n\u2714 @itslil/rehype-katex (155.472878ms)\n\u25b6 site\n  \u2714 has a markedlil-style lab with receipts (2.515063ms)\n\u2714 site (3.988132ms)\n\u2139 tests 63\n\u2139 suites 4\n\u2139 pass 63\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 502.533576\n"
     }
   },
   "nativeBuilds": [
@@ -303,8 +288,8 @@
         "build"
       ],
       "cwd": "upstream",
-      "wallSeconds": 1.716832021999835,
-      "cpuSeconds": 3.2818340000000013,
+      "wallSeconds": 4.1370483380160294,
+      "cpuSeconds": 7.704644000000001,
       "exitCode": 0,
       "timedOut": false,
       "log": "original-build-1.log",
@@ -318,8 +303,8 @@
         "build"
       ],
       "cwd": "upstream",
-      "wallSeconds": 1.7170746309993774,
-      "cpuSeconds": 3.232548000000001,
+      "wallSeconds": 4.030379269039258,
+      "cpuSeconds": 7.529097999999998,
       "exitCode": 0,
       "timedOut": false,
       "log": "original-build-2.log",
@@ -333,8 +318,8 @@
         "build"
       ],
       "cwd": "upstream",
-      "wallSeconds": 1.6669948489998205,
-      "cpuSeconds": 3.2159190000000004,
+      "wallSeconds": 4.388231379038189,
+      "cpuSeconds": 7.784375,
       "exitCode": 0,
       "timedOut": false,
       "log": "original-build-3.log",
@@ -350,8 +335,8 @@
         "node scripts/build.mjs --compile --force"
       ],
       "cwd": "port",
-      "wallSeconds": 0.16392812400044932,
-      "cpuSeconds": 0.14461600000000008,
+      "wallSeconds": 0.3148344249930233,
+      "cpuSeconds": 0.27430399999999966,
       "exitCode": 0,
       "timedOut": false,
       "log": "lilscript-build-1.log",
@@ -360,35 +345,35 @@
       "invocations": [
         {
           "args": [
-            "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/src/index.lil",
+            "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/src/index.lil",
             "--target",
             "js-module",
             "--config",
-            "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/lilscript.toml",
+            "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/lilscript.toml",
             "-o",
-            "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/dist/rehype-katex.raw.js"
+            "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/dist/rehype-katex.raw.js"
           ],
-          "startedAt": 1789072722.5865016,
-          "wallSeconds": 0.011976480484008789,
+          "startedAt": 1790520613.288485,
+          "wallSeconds": 0.010276079177856445,
           "exitCode": 0,
-          "output": "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/dist/rehype-katex.raw.js",
-          "sha256": "375b8da7663018f5ff9a8ea2a8678b150bc94d1818f569f29c01c380cf88153d"
+          "output": "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/dist/rehype-katex.raw.js",
+          "sha256": "ff51a0ad05f5ff0a1cb6c40efcf2afbaf9dc173d3e4cbf65afdcc69d35f55756"
         },
         {
           "args": [
-            "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/src/index.lil",
+            "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/src/index.lil",
             "--target",
             "js-module",
             "--config",
-            "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/lilscript.closed.toml",
+            "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/lilscript.closed.toml",
             "-o",
-            "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/dist/rehype-katex.closed.js"
+            "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/dist/rehype-katex.closed.js"
           ],
-          "startedAt": 1789072722.6205812,
-          "wallSeconds": 0.011271238327026367,
+          "startedAt": 1790520613.352098,
+          "wallSeconds": 0.010955095291137695,
           "exitCode": 0,
-          "output": "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/dist/rehype-katex.closed.js",
-          "sha256": "375b8da7663018f5ff9a8ea2a8678b150bc94d1818f569f29c01c380cf88153d"
+          "output": "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/dist/rehype-katex.closed.js",
+          "sha256": "ff51a0ad05f5ff0a1cb6c40efcf2afbaf9dc173d3e4cbf65afdcc69d35f55756"
         }
       ]
     },
@@ -399,8 +384,8 @@
         "node scripts/build.mjs --compile --force"
       ],
       "cwd": "port",
-      "wallSeconds": 0.16397633599990513,
-      "cpuSeconds": 0.14759600000000006,
+      "wallSeconds": 0.2662584889912978,
+      "cpuSeconds": 0.251567000000001,
       "exitCode": 0,
       "timedOut": false,
       "log": "lilscript-build-2.log",
@@ -409,35 +394,35 @@
       "invocations": [
         {
           "args": [
-            "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/src/index.lil",
+            "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/src/index.lil",
             "--target",
             "js-module",
             "--config",
-            "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/lilscript.toml",
+            "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/lilscript.toml",
             "-o",
-            "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/dist/rehype-katex.raw.js"
+            "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/dist/rehype-katex.raw.js"
           ],
-          "startedAt": 1789072722.7495077,
-          "wallSeconds": 0.012078523635864258,
+          "startedAt": 1790520613.6003768,
+          "wallSeconds": 0.007090330123901367,
           "exitCode": 0,
-          "output": "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/dist/rehype-katex.raw.js",
-          "sha256": "375b8da7663018f5ff9a8ea2a8678b150bc94d1818f569f29c01c380cf88153d"
+          "output": "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/dist/rehype-katex.raw.js",
+          "sha256": "ff51a0ad05f5ff0a1cb6c40efcf2afbaf9dc173d3e4cbf65afdcc69d35f55756"
         },
         {
           "args": [
-            "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/src/index.lil",
+            "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/src/index.lil",
             "--target",
             "js-module",
             "--config",
-            "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/lilscript.closed.toml",
+            "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/lilscript.closed.toml",
             "-o",
-            "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/dist/rehype-katex.closed.js"
+            "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/dist/rehype-katex.closed.js"
           ],
-          "startedAt": 1789072722.7848306,
-          "wallSeconds": 0.011787891387939453,
+          "startedAt": 1790520613.647524,
+          "wallSeconds": 0.007237911224365234,
           "exitCode": 0,
-          "output": "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/dist/rehype-katex.closed.js",
-          "sha256": "375b8da7663018f5ff9a8ea2a8678b150bc94d1818f569f29c01c380cf88153d"
+          "output": "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/dist/rehype-katex.closed.js",
+          "sha256": "ff51a0ad05f5ff0a1cb6c40efcf2afbaf9dc173d3e4cbf65afdcc69d35f55756"
         }
       ]
     },
@@ -448,8 +433,8 @@
         "node scripts/build.mjs --compile --force"
       ],
       "cwd": "port",
-      "wallSeconds": 0.16393687999971007,
-      "cpuSeconds": 0.14479599999999948,
+      "wallSeconds": 0.26468689198372886,
+      "cpuSeconds": 0.2404670000000011,
       "exitCode": 0,
       "timedOut": false,
       "log": "lilscript-build-3.log",
@@ -458,35 +443,35 @@
       "invocations": [
         {
           "args": [
-            "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/src/index.lil",
+            "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/src/index.lil",
             "--target",
             "js-module",
             "--config",
-            "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/lilscript.toml",
+            "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/lilscript.toml",
             "-o",
-            "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/dist/rehype-katex.raw.js"
+            "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/dist/rehype-katex.raw.js"
           ],
-          "startedAt": 1789072726.2986093,
-          "wallSeconds": 0.01195216178894043,
+          "startedAt": 1790520622.2799773,
+          "wallSeconds": 0.008295297622680664,
           "exitCode": 0,
-          "output": "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/dist/rehype-katex.raw.js",
-          "sha256": "375b8da7663018f5ff9a8ea2a8678b150bc94d1818f569f29c01c380cf88153d"
+          "output": "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/dist/rehype-katex.raw.js",
+          "sha256": "ff51a0ad05f5ff0a1cb6c40efcf2afbaf9dc173d3e4cbf65afdcc69d35f55756"
         },
         {
           "args": [
-            "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/src/index.lil",
+            "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/src/index.lil",
             "--target",
             "js-module",
             "--config",
-            "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/lilscript.closed.toml",
+            "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/lilscript.closed.toml",
             "-o",
-            "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/dist/rehype-katex.closed.js"
+            "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/dist/rehype-katex.closed.js"
           ],
-          "startedAt": 1789072726.3336484,
-          "wallSeconds": 0.01146245002746582,
+          "startedAt": 1790520622.3307579,
+          "wallSeconds": 0.007089376449584961,
           "exitCode": 0,
-          "output": "/home/lilfarm/source-perf-20260910/ports/rehype-katexlil/dist/rehype-katex.closed.js",
-          "sha256": "375b8da7663018f5ff9a8ea2a8678b150bc94d1818f569f29c01c380cf88153d"
+          "output": "/home/azureuser/lilscript-work/release-0927/ports/rehype-katexlil/dist/rehype-katex.closed.js",
+          "sha256": "ff51a0ad05f5ff0a1cb6c40efcf2afbaf9dc173d3e4cbf65afdcc69d35f55756"
         }
       ]
     }
@@ -496,7 +481,7 @@
     "cleanOutputs": true,
     "dependencyInstallationTimedSeparately": true,
     "sourceArchives": "Pinned Git checkouts; original repository package build commands, followed by production ESM assembly.",
-    "workerUse": "Both implementations use the same machine and Node version. This shared build pool also runs unrelated jobs; timings are contextual wall times, with CPU time recorded separately."
+    "workerUse": "Both implementations use the same machine and Node version. The machine is a burstable Azure VM that also runs unrelated jobs; timings are contextual wall times, with CPU time recorded separately."
   },
   "esm": {
     "source": {
@@ -513,22 +498,23 @@
     ],
     "samples": [
       {
-        "bundleSeconds": 0.011885358999999995,
-        "wallSeconds": 0.136519688
+        "bundleSeconds": 0.023507126,
+        "wallSeconds": 0.35839367
       },
       {
-        "bundleSeconds": 0.0072450069999999865,
-        "wallSeconds": 0.093925387
+        "bundleSeconds": 0.015001537999999983,
+        "wallSeconds": 0.22703186999999997
       },
       {
-        "bundleSeconds": 0.006235254999999995,
-        "wallSeconds": 0.07426292999999998
+        "bundleSeconds": 0.01425302499999998,
+        "wallSeconds": 0.18081680900000002
       }
     ],
-    "medianSeconds": 0.093925387,
+    "medianSeconds": 0.22703186999999997,
     "toolchain": {
       "esbuild": "0.28.1",
-      "terser": "5.51.2"
+      "terser": "5.51.2",
+      "vite": "8.2.1 (Oxc minify)"
     },
     "artifacts": [
       {
@@ -558,6 +544,20 @@
         "gzip9": 10127,
         "brotli11": 9144,
         "sha256": "f5f1c8cd28e6dbeb56acec1127fc1e010b47e438b38bc9aedbfdf2a969368a49"
+      },
+      {
+        "path": "original.oxc-mangle.js",
+        "raw": 28583,
+        "gzip9": 9975,
+        "brotli11": 9028,
+        "sha256": "63068f6d7f9f0270e0c49e3c5ea13bbed0f85211e2f07d3ad7fa0cb4b4ce91e2"
+      },
+      {
+        "path": "original.oxc-nomangle.js",
+        "raw": 37334,
+        "gzip9": 11276,
+        "brotli11": 10211,
+        "sha256": "975a5de8e4332fb5d9ad7fb9ad71aa3de156e16fb6d5a9886c3a4da79e6a3953"
       }
     ],
     "inputs": [
@@ -610,62 +610,62 @@
   "lilscriptArtifacts": [
     {
       "path": "dist/rehype-katex.umd.js",
-      "raw": 284737,
-      "gzip9": 70008,
-      "brotli11": 57672,
-      "sha256": "68082927602d36519fa31f94572992fdedb0894a781c642ffd71450095f72145"
+      "raw": 284678,
+      "gzip9": 70021,
+      "brotli11": 57614,
+      "sha256": "9dc667f8b019424c6e3e37c1ceca7b6c32f357cb4a0041a960b351da2c303d92"
     },
     {
       "path": "dist/rehype-katex.cjs",
-      "raw": 284896,
+      "raw": 284837,
       "gzip9": 70054,
-      "brotli11": 57756,
-      "sha256": "a3bdf33db23caa4b558e3b00f8e7a94d5ae4d9d61c0bc68626534b31e39656f7"
-    },
-    {
-      "path": "dist/rehype-katex.closed.js",
-      "raw": 2370,
-      "gzip9": 1067,
-      "brotli11": 928,
-      "sha256": "a61d356d580802408b92e285ecde3792b3868fb2e541f543e5889fbc0470b07e"
-    },
-    {
-      "path": "dist/rehype-katex.esm.js",
-      "raw": 2369,
-      "gzip9": 1066,
-      "brotli11": 944,
-      "sha256": "9ef97f32355dfc1eae3404eb30243fd85bf3c9a5300a5f81beceacd248d96796"
+      "brotli11": 57741,
+      "sha256": "dfb4f2cf7df2fb4106fb0c4430d62670ac58e29ac764765630f540b4a01ed010"
     },
     {
       "path": "dist/rehype-katex.raw.js",
-      "raw": 1597,
-      "gzip9": 890,
-      "brotli11": 756,
-      "sha256": "375b8da7663018f5ff9a8ea2a8678b150bc94d1818f569f29c01c380cf88153d"
+      "raw": 1556,
+      "gzip9": 850,
+      "brotli11": 729,
+      "sha256": "ff51a0ad05f5ff0a1cb6c40efcf2afbaf9dc173d3e4cbf65afdcc69d35f55756"
+    },
+    {
+      "path": "dist/rehype-katex.closed.js",
+      "raw": 2230,
+      "gzip9": 1032,
+      "brotli11": 896,
+      "sha256": "d2ee16b8279eb24e495406dcb6fd981c10cf261af2d7e69eca68a9a68a4142fc"
+    },
+    {
+      "path": "dist/rehype-katex.esm.js",
+      "raw": 2229,
+      "gzip9": 1032,
+      "brotli11": 892,
+      "sha256": "50c879691c0d93876679ba21375d2c5c6dd659089202f2072741fcf1e4a24f4a"
     }
   ],
   "nativeBuildsSummary": {
     "samples": 3,
     "successful": 3,
-    "medianSeconds": 1.716832021999835,
-    "minimumSeconds": 1.6669948489998205,
-    "maximumSeconds": 1.7170746309993774
+    "medianSeconds": 4.1370483380160294,
+    "minimumSeconds": 4.030379269039258,
+    "maximumSeconds": 4.388231379038189
   },
   "lilscriptBuildsSummary": {
     "samples": 3,
     "successful": 3,
-    "medianSeconds": 0.16393687999971007,
-    "minimumSeconds": 0.16392812400044932,
-    "maximumSeconds": 0.16397633599990513
+    "medianSeconds": 0.2662584889912978,
+    "minimumSeconds": 0.26468689198372886,
+    "maximumSeconds": 0.3148344249930233
   },
   "status": "complete",
-  "finishedAt": "2026-09-10T20:38:48Z",
+  "finishedAt": "2026-09-27T14:50:26Z",
   "sourceBuild": {
     "original": {
       "complete": true,
-      "medianSeconds": 1.716832021999835,
-      "minimumSeconds": 1.6669948489998205,
-      "maximumSeconds": 1.7170746309993774,
+      "medianSeconds": 4.1370483380160294,
+      "minimumSeconds": 4.030379269039258,
+      "maximumSeconds": 4.388231379038189,
       "samples": [
         {
           "command": [
@@ -673,8 +673,8 @@
             "run",
             "build"
           ],
-          "wallSeconds": 1.716832021999835,
-          "cpuSeconds": 3.2818340000000013,
+          "wallSeconds": 4.1370483380160294,
+          "cpuSeconds": 7.704644000000001,
           "exitCode": 0,
           "timedOut": false,
           "log": "original-build-1.log",
@@ -686,8 +686,8 @@
             "run",
             "build"
           ],
-          "wallSeconds": 1.7170746309993774,
-          "cpuSeconds": 3.232548000000001,
+          "wallSeconds": 4.030379269039258,
+          "cpuSeconds": 7.529097999999998,
           "exitCode": 0,
           "timedOut": false,
           "log": "original-build-2.log",
@@ -699,8 +699,8 @@
             "run",
             "build"
           ],
-          "wallSeconds": 1.6669948489998205,
-          "cpuSeconds": 3.2159190000000004,
+          "wallSeconds": 4.388231379038189,
+          "cpuSeconds": 7.784375,
           "exitCode": 0,
           "timedOut": false,
           "log": "original-build-3.log",
@@ -710,9 +710,9 @@
     },
     "lilscript": {
       "complete": true,
-      "medianSeconds": 0.16393687999971007,
-      "minimumSeconds": 0.16392812400044932,
-      "maximumSeconds": 0.16397633599990513,
+      "medianSeconds": 0.2662584889912978,
+      "minimumSeconds": 0.26468689198372886,
+      "maximumSeconds": 0.3148344249930233,
       "samples": [
         {
           "command": [
@@ -720,8 +720,8 @@
             "-c",
             "node scripts/build.mjs --compile --force"
           ],
-          "wallSeconds": 0.16392812400044932,
-          "cpuSeconds": 0.14461600000000008,
+          "wallSeconds": 0.3148344249930233,
+          "cpuSeconds": 0.27430399999999966,
           "exitCode": 0,
           "timedOut": false,
           "log": "lilscript-build-1.log",
@@ -733,8 +733,8 @@
             "-c",
             "node scripts/build.mjs --compile --force"
           ],
-          "wallSeconds": 0.16397633599990513,
-          "cpuSeconds": 0.14759600000000006,
+          "wallSeconds": 0.2662584889912978,
+          "cpuSeconds": 0.251567000000001,
           "exitCode": 0,
           "timedOut": false,
           "log": "lilscript-build-2.log",
@@ -746,8 +746,8 @@
             "-c",
             "node scripts/build.mjs --compile --force"
           ],
-          "wallSeconds": 0.16393687999971007,
-          "cpuSeconds": 0.14479599999999948,
+          "wallSeconds": 0.26468689198372886,
+          "cpuSeconds": 0.2404670000000011,
           "exitCode": 0,
           "timedOut": false,
           "log": "lilscript-build-3.log",
@@ -759,6 +759,5 @@
     "cleanOutputs": true,
     "installationExcluded": true
   },
-  "prerequisiteAdjustments": null,
   "recordRepository": "https://github.com/yeargun/rehype-katexlil/tree/main/comparison/source-build"
 }

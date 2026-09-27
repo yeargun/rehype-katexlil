@@ -7,9 +7,9 @@
     "directory": "packages/rehype-katex"
   },
   "portSource": {
-    "commit": "f6ff62ca33ad877e3942a873a89770a830c8a7c7"
+    "commit": "cfb5d29590bd483389801ff994bd2bba3f43c495"
   },
-  "compilerCommit": "4dc4e3337d9ffd758d65e3852682d6e13d9331c1",
+  "compilerCommit": "249686599dc3bf1b6bf70dc9a030081b755bbb24",
   "install": [
     "npm",
     "install",
