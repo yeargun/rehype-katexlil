@@ -31,7 +31,7 @@
         <div class="hero-copy">
           <p class="eyebrow"><span class="live-dot"></span> rehype-katex@7.0.1 · LilScript port · @itslil/rehype-katex</p>
           <h1>Math nodes,<br /><em>to KaTeX</em></h1>
-          <p class="lede">Official <code>rehype-katex@7.0.1</code> algorithms rewritten in LilScript. Runtime checks: 63/63 pass. Not affiliated with upstream. Official rows are the published plugin with KaTeX external in both ESM entries, then Terser and esbuild.</p>
+          <p class="lede">Official <code>rehype-katex@7.0.1</code> algorithms rewritten in LilScript. Runtime checks: 63/63 pass. Not affiliated with upstream. Official rows are the published plugin with KaTeX external, then Terser and esbuild. The LilScript entry also leaves <code>hast-util-from-html-isomorphic</code>, <code>hast-util-to-text</code> and <code>unist-util-visit-parents</code> external, which the official rows bundle, so the sizes are not a like-for-like comparison.</p>
           <div class="install-row">
             <code>npm install @itslil/rehype-katex</code>
             <button class="copy" data-copy="npm install @itslil/rehype-katex" type="button">copy</button>
@@ -128,7 +128,7 @@
               <h2>Raw, gzip,<br />and Brotli.</h2>
             </div>
             <p>
-              Official rehype-katex@7.0.1 bundled with KaTeX external, matching the LilScript entry, then Terser (mangle on/off) and esbuild minify.
+              Official rehype-katex@7.0.1 bundled with KaTeX external, then Terser (mangle on/off) and esbuild minify. The official rows include three hast helpers that the LilScript entry imports instead, so they are not the same scope.
               LilScript is not post-minified. Closed LilScript is the Brotli build from <code>lilscript.closed.toml</code>.
             </p>
           </div>
