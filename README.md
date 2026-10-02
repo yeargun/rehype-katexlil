@@ -24,3 +24,8 @@ The LilScript compiler lives next door at `../lilscript`.
 The plugin imports the caller-visible `katex` runtime and therefore observes
 mhchem and all macros/functions registered through KaTeX's extension APIs.
 Like upstream, rendered markup is parsed with `hast-util-from-html-isomorphic`.
+
+
+## Comparison with the original
+
+See [COMPARISON.md](COMPARISON.md) for current size and build-time comparisons against minified upstream.
