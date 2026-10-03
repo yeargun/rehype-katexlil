@@ -29,3 +29,5 @@ Like upstream, rendered markup is parsed with `hast-util-from-html-isomorphic`.
 ## Comparison with the original
 
 See [COMPARISON.md](COMPARISON.md) for current size and build-time comparisons against minified upstream.
+
+[Download the checked repository package](https://yeargun.github.io/rehype-katexlil/downloads/package.tgz) · [Package files, hashes and validation](https://yeargun.github.io/rehype-katexlil/package-build.json). npm publication is independent.

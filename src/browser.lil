@@ -1,8 +1,8 @@
 // Match the package's existing dependency boundary for this consumer.
 import extern {default as katex} from "katex";
-import extern {fromHtmlIsomorphic} from "hast-util-from-html-isomorphic";
-import extern {toText} from "hast-util-to-text";
-import extern {SKIP, visitParents} from "unist-util-visit-parents";
+import extern {fromHtmlIsomorphic} from "../node_modules/hast-util-from-html-isomorphic/lib/browser.js";
+import extern {toText} from "../node_modules/hast-util-to-text/index.js";
+import extern {SKIP, visitParents} from "../node_modules/unist-util-visit-parents/index.js";
 extern JsValue katex;
 extern JsValue fromHtmlIsomorphic;
 extern JsValue toText;

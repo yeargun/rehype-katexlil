@@ -1,0 +1,128 @@
+{
+  "version": 3,
+  "codec": "brotli",
+  "outputs": [
+    {
+      "mode": "single",
+      "format": "esm",
+      "entries": [
+        {
+          "name": "index",
+          "file": "rehype-katex.closed.js",
+          "dynamic": false,
+          "closure": [
+            "rehype-katex.closed.js"
+          ],
+          "row": 735,
+          "raw_row": 1518
+        }
+      ],
+      "files": [
+        {
+          "file": "rehype-katex.closed.js",
+          "role": "entry",
+          "source_map_for": null,
+          "label": [
+            "index"
+          ],
+          "modules": [
+            "index.lil",
+            "module-2",
+            "module-3",
+            "module-4",
+            "module-5"
+          ],
+          "anchored": true,
+          "imports": [],
+          "dynamic_imports": [],
+          "bytes": 1518,
+          "codec_bytes": 735,
+          "sha256": "d6969fa13eec7ab34e7f304beae83b89b7c347a10c58243827098a510a7afe31"
+        }
+      ],
+      "side_effects": [
+        "rehype-katex.closed.js"
+      ],
+      "codec_total": 735,
+      "rows_total": 735,
+      "setters": 0,
+      "output": "primary",
+      "codec": "brotli",
+      "codec_settings": {
+        "brotli": {
+          "quality": 11,
+          "window": 22,
+          "mode": "generic"
+        },
+        "gzip": {
+          "level": 9,
+          "window": 15
+        }
+      },
+      "policy_fingerprint": [
+        220,
+        190,
+        177,
+        40,
+        18,
+        221,
+        98,
+        12,
+        154,
+        137,
+        5,
+        56,
+        224,
+        191,
+        136,
+        189,
+        228,
+        119,
+        190,
+        228,
+        40,
+        96,
+        190,
+        67,
+        129,
+        18,
+        228,
+        165,
+        242,
+        156,
+        245,
+        241
+      ]
+    }
+  ],
+  "source_sha256": "abb7c6bd5fad2b7bc72eaad8cc15bee1f0eacd72bcb5e19a2b8bc35be5015b7d",
+  "inputs": {
+    "root": 0,
+    "entries": [
+      {
+        "name": "index",
+        "module": 0
+      }
+    ],
+    "modules": [
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/rehype-katexlil/src/index.lil",
+        "bytes": 579,
+        "sha256": "122b571e7c4f8e16b648add0433c7207716778196d047fbe2b33b0f48eb986c1",
+        "dependencies": [
+          1
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/rehype-katexlil/src/lib/index.lil",
+        "bytes": 4223,
+        "sha256": "52dc2ab6008368cacd60b899eb1630613edb86d89acf35e3163f3f3893d64f09",
+        "dependencies": [],
+        "dynamic_dependencies": []
+      }
+    ],
+    "host_modules": [],
+    "host_reserved": []
+  }
+}

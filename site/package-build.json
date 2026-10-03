@@ -1,0 +1,481 @@
+{
+  "schemaVersion": 1,
+  "package": "@itslil/rehype-katex",
+  "version": "7.0.3",
+  "checkedAt": "2026-10-03T15:05:13.646490+00:00",
+  "compilerSha256": "8ff44fabb92c949e68240ce6541038fd52e2f3c04d1a9ac470031e4238541c3a",
+  "buildReport": "./comparison/package-build-report.json",
+  "packageBuildSeconds": 3.534,
+  "validation": {
+    "ok": true,
+    "checks": [
+      {
+        "suite": "test",
+        "command": [
+          "npm",
+          "test"
+        ],
+        "returncode": 0,
+        "log": "./comparison/package-validation/test.log",
+        "logSha256": "f326e3799857ddfe46cf34ec8dc51de12ce711c22c9de3008951834bd60ef63d"
+      },
+      {
+        "suite": "pack",
+        "command": [
+          "npm",
+          "run",
+          "check:pack"
+        ],
+        "returncode": 0,
+        "log": "./comparison/package-validation/pack.log",
+        "logSha256": "0db2b2eb1183b020d5c356802984a0be15b46d98ac6b237b1c030431884fa669"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "path": "src/browser.lil",
+      "sha256": "158ebf0a85671bbdc5135946c286228f9a26eeefa901259921cbb7f2f8c762f4"
+    },
+    {
+      "path": "src/bundled.lil",
+      "sha256": "d0c9671a4bccfb314d22080865521133f30d09cde666ca0d148c0478c019c459"
+    },
+    {
+      "path": "src/host.lil",
+      "sha256": "9b01cb4716a2a393fb03cb0c56e19f670b2ebbb33f2b918822cb9e59f4ec714c"
+    },
+    {
+      "path": "src/index.lil",
+      "sha256": "122b571e7c4f8e16b648add0433c7207716778196d047fbe2b33b0f48eb986c1"
+    },
+    {
+      "path": "src/katex/Lexer.lil",
+      "sha256": "6433a9cf7ffdd71b54dc117af54722ae9b16406a51bc2eb88e47d2713248fed0"
+    },
+    {
+      "path": "src/katex/MacroExpander.lil",
+      "sha256": "4cfc60f8ca0d702a9d1d0a82096d849eec14272239ab0933db16e2a67df49bce"
+    },
+    {
+      "path": "src/katex/Namespace.lil",
+      "sha256": "cc55a80b33bd9a635eee782e4ada94bcb738aa2cf5835dbc57d7aa5bec11bcc8"
+    },
+    {
+      "path": "src/katex/Options.lil",
+      "sha256": "5232d7ad376b6cf6a0bff46bec65cbeb07b4c9b91e65cc44398003090b1e485e"
+    },
+    {
+      "path": "src/katex/ParseError.lil",
+      "sha256": "cb6dce72e9dac1461735968d4e623ee7d026226958538cad794a01b1376be9d2"
+    },
+    {
+      "path": "src/katex/Parser.lil",
+      "sha256": "4374c31d2e03cc3b50f4b4d8d4b66895521e03e7720602a42527b872a11ad45b"
+    },
+    {
+      "path": "src/katex/Settings.lil",
+      "sha256": "28a7d3cdb5f8ab7feef12c6b3e6f899aa4f5bd2b40c8a6a1d1bd0a10ce0ffd7b"
+    },
+    {
+      "path": "src/katex/SourceLocation.lil",
+      "sha256": "5147a90591202fb14e66c9455d6c480194d4f0cad838fc5bf31aa96a59fb9509"
+    },
+    {
+      "path": "src/katex/Style.lil",
+      "sha256": "003bd4490aa56a26e43c45dfeda9cd6824f559b249ec619840d3253c46730752"
+    },
+    {
+      "path": "src/katex/Token.lil",
+      "sha256": "26cc38023c22940f3ff47f93feeb9e97b0b30516c61520415fd2637ac55599d3"
+    },
+    {
+      "path": "src/katex/buildCommon.lil",
+      "sha256": "59a75cecf605a61e9b0debb87537991ab48fc6098b16f9b6bb2c4d99af899df5"
+    },
+    {
+      "path": "src/katex/buildHTML.lil",
+      "sha256": "839e1447dbf7973d79dc9147d2c00e9adc745e3af5daf00295fa23bb7304636c"
+    },
+    {
+      "path": "src/katex/buildMathML.lil",
+      "sha256": "7ad0768b2e0ead6de2f32a8608cfd948b6e76d3adceb01fd63e014b75a7dc6f0"
+    },
+    {
+      "path": "src/katex/buildTree.lil",
+      "sha256": "3eacfd6f6f0808e3abb174a63c634ff5f922caac0fb46cbe6800e41eb11af5ed"
+    },
+    {
+      "path": "src/katex/data.lil",
+      "sha256": "9cdb124be81f88319db0b0820da45e1ccd802c5b016e0388775e7d087af2bd7b"
+    },
+    {
+      "path": "src/katex/defineEnvironment.lil",
+      "sha256": "2646d84ac115177efb43212bba9b3e1297b01fc9366b9ac2655f71256f8203d9"
+    },
+    {
+      "path": "src/katex/defineFunction.lil",
+      "sha256": "618cbc117209e770ee7f68aeed15cccd985e21e373119b22a47d1c7024c77b7f"
+    },
+    {
+      "path": "src/katex/defineMacro.lil",
+      "sha256": "a8354822f50d5675a8716644ffb3832025f657021b894660370b1b253eadc632"
+    },
+    {
+      "path": "src/katex/delimiter.lil",
+      "sha256": "c1fd715028ae17ed39b2465ab7be88394a1c044321c32812e5a86bcd608f06b3"
+    },
+    {
+      "path": "src/katex/domTree.lil",
+      "sha256": "fcd737b675f8ec882745dfebcdeb48ff7218dbf6e9358fc706111c92899fbea9"
+    },
+    {
+      "path": "src/katex/environments/array.lil",
+      "sha256": "60d9c1c311c29336747a346d45650636c4c894ca7d868c9b2522ed039619a248"
+    },
+    {
+      "path": "src/katex/environments/cd.lil",
+      "sha256": "20e6c42cb83abc25b6ca452182e5eb4c47f892f1199d4023c2fa5651782295fd"
+    },
+    {
+      "path": "src/katex/environments.lil",
+      "sha256": "9e7b4bae8fa5ce8b87091b3df39f92d914406c1f7c77a04efd44400eba613747"
+    },
+    {
+      "path": "src/katex/fontMetrics.lil",
+      "sha256": "0923dee97ba9f1ec0befbd3b6b4a984ac1c4f14d24cbd84632bd1ce3694eab10"
+    },
+    {
+      "path": "src/katex/fontMetricsData.js",
+      "sha256": "b5ad13cba5980681a4f1f618676babe7cea41fe6a8e4d6a28f63b000d5fa1880"
+    },
+    {
+      "path": "src/katex/functions/accent.lil",
+      "sha256": "9d8804a2567978d723304b607cedac61c661d70eadcba79049722d618b944e22"
+    },
+    {
+      "path": "src/katex/functions/accentunder.lil",
+      "sha256": "d81b42d0be71f1db74b239a7bcc708ec28cea470d79a9934fd6503cfeebdbb69"
+    },
+    {
+      "path": "src/katex/functions/arrow.lil",
+      "sha256": "e1b175f18f64958faa728605f61e3568ed9e2dbc264f98d36101f9d43405fdd6"
+    },
+    {
+      "path": "src/katex/functions/char.lil",
+      "sha256": "5a25da86e866109a5d6b917fe4e307b7c07d16d4227160075a343e86fdfa03ec"
+    },
+    {
+      "path": "src/katex/functions/color.lil",
+      "sha256": "346bcbdd02b659f7437616b121c172abc7de06cd966182c1b5e5506b2814c430"
+    },
+    {
+      "path": "src/katex/functions/cr.lil",
+      "sha256": "110d0695487200d47a097344a9e556105499e2e0cf82e8d87d3566b3e8f8bb40"
+    },
+    {
+      "path": "src/katex/functions/def.lil",
+      "sha256": "855060077eee8479cb4ace0f76fd2ec9ee6764549c416e3696cedc2c331f3b2b"
+    },
+    {
+      "path": "src/katex/functions/delimsizing.lil",
+      "sha256": "a9c8ad7e0afdb367009ccf41b32e1a7e869652a9bfd7be835f91d84467b20c05"
+    },
+    {
+      "path": "src/katex/functions/enclose.lil",
+      "sha256": "9806c2fc409f0511a702e71f19e7758dad4a419c5a8b93a6f9193a412047442e"
+    },
+    {
+      "path": "src/katex/functions/environment.lil",
+      "sha256": "bcd076b8c41c7b3db3703bda5f88a3398847218976d96878b26b614c6fd66ad5"
+    },
+    {
+      "path": "src/katex/functions/font.lil",
+      "sha256": "4ddcdac8e97fb7145fc1556d6a890d6992611c5f995f70355c48a3f3d1d68e75"
+    },
+    {
+      "path": "src/katex/functions/genfrac.lil",
+      "sha256": "4b0964534c3bff8eebd93a7c952c96378888ecc03e837543d0769802b8e1252d"
+    },
+    {
+      "path": "src/katex/functions/hbox.lil",
+      "sha256": "2963fb251a8b84fe02fefca2893ddc4b37e6ee4325aed0c47d99f5364e88b359"
+    },
+    {
+      "path": "src/katex/functions/horizBrace.lil",
+      "sha256": "2823b308d7a52d4a3c9201f4e21fc6b1739347e575c3301345e52780e571b2e6"
+    },
+    {
+      "path": "src/katex/functions/href.lil",
+      "sha256": "7aa916ddc3bd26ef03b9804ee77390c2a1733b0255235925aa3d32caa4bd4f62"
+    },
+    {
+      "path": "src/katex/functions/html.lil",
+      "sha256": "4543a671ca2e0e40f26636f4c895f454f782c9e504fbd2c872746986cc273077"
+    },
+    {
+      "path": "src/katex/functions/htmlmathml.lil",
+      "sha256": "f4c5a214eaf4070c47ad57013c77804f2f4575e25694f01e85b4d32ad086d493"
+    },
+    {
+      "path": "src/katex/functions/includegraphics.lil",
+      "sha256": "40b1621e37199dc1aca335bd711309a4f0365e4d2463f75251957d4e6a5a1db6"
+    },
+    {
+      "path": "src/katex/functions/kern.lil",
+      "sha256": "03a6f5b1d317ab6ce81df02be856a09190ea86c5c4b3d896666c7e300bb1b48c"
+    },
+    {
+      "path": "src/katex/functions/lap.lil",
+      "sha256": "c79e846c034e0ce84273235ff0406be96550959ceb966c0e63a00b1c6216aa87"
+    },
+    {
+      "path": "src/katex/functions/math.lil",
+      "sha256": "b101178f529dfdede5d297a734cc8582de47b45b311f115ce51dea39c9793fa0"
+    },
+    {
+      "path": "src/katex/functions/mathchoice.lil",
+      "sha256": "ba970c6f92c31b747360574feb35e0b9583461ed2200fe380bacad2cfef886f8"
+    },
+    {
+      "path": "src/katex/functions/mclass.lil",
+      "sha256": "675b85add166f65c2758c2e1fe9f44b608b373f3fdd360611de1f458a235f1bc"
+    },
+    {
+      "path": "src/katex/functions/op.lil",
+      "sha256": "579d3467e9e4fdb252329132af930ad7d4e386ca5a2ae4c069b5815734ccc07a"
+    },
+    {
+      "path": "src/katex/functions/operatorname.lil",
+      "sha256": "4772ad38f966d547753673db47d4f281c3f1d3e2ed25e900b73f88dee08e77da"
+    },
+    {
+      "path": "src/katex/functions/ordgroup.lil",
+      "sha256": "80dd5a897d911cd6d90439e43618bee1adf93c346640ea631355caa044557a36"
+    },
+    {
+      "path": "src/katex/functions/overline.lil",
+      "sha256": "1a01f78b904868ae673aa33da7646c08cd72ce217e3e2ac292c6e1de21760023"
+    },
+    {
+      "path": "src/katex/functions/phantom.lil",
+      "sha256": "b45fe2b5e0a68589914c9bd45bf1194d2fb7dbc58b406fa9c174452421b61856"
+    },
+    {
+      "path": "src/katex/functions/pmb.lil",
+      "sha256": "5cf9f67fc63198dcab6304ec7a387873fffaa7fa3e9b0c052beb616e85b91fc6"
+    },
+    {
+      "path": "src/katex/functions/raisebox.lil",
+      "sha256": "5ca84cc0fffecde7ce4f148194a16399f83a185a6a08c3adb0ff1052f4a3e1d0"
+    },
+    {
+      "path": "src/katex/functions/relax.lil",
+      "sha256": "52a05cf0fc77b258f2f6455e6b9257e0d61d6b60435e0b6039b1ca57b1a6f86e"
+    },
+    {
+      "path": "src/katex/functions/rule.lil",
+      "sha256": "65724efb2623dcd237b2ddc78c053929fd8224bb815d2e057b79581f86fe32f3"
+    },
+    {
+      "path": "src/katex/functions/sizing.lil",
+      "sha256": "79511611c99ee4f32266ad2faa78d747b66b4eb45cf28485fcb2d12b7300eb3e"
+    },
+    {
+      "path": "src/katex/functions/smash.lil",
+      "sha256": "c7c02449f0e64dd14192833eee24db2cd067fed70683ac8e63168fe403145dea"
+    },
+    {
+      "path": "src/katex/functions/sqrt.lil",
+      "sha256": "7c52092b9c071b4c58ffeb1ffa80888b3db0a1d95b61ff76c8c7c313825eac3f"
+    },
+    {
+      "path": "src/katex/functions/styling.lil",
+      "sha256": "1f646bbcfad2bb7bdaf877f3417ede9dc006697fa7a303e580fc2e897a5fa11a"
+    },
+    {
+      "path": "src/katex/functions/supsub.lil",
+      "sha256": "1643c62a3a084bd564fe7f709ded87e4f49f1c581cf2916452ef701f948d65dc"
+    },
+    {
+      "path": "src/katex/functions/symbolsOp.lil",
+      "sha256": "a8cd3471ec21e2d830e2b101333997d31213d2d51878a7f7124b5ecd8ed394c0"
+    },
+    {
+      "path": "src/katex/functions/symbolsOrd.lil",
+      "sha256": "842fb85603cda61656b8160d000c4d539c1f7d0e8bd1d62262f33a94a269b3f7"
+    },
+    {
+      "path": "src/katex/functions/symbolsSpacing.lil",
+      "sha256": "79de9b0d54624b07b1421ee5287610d5ea1b48d8e3870fe2bda1152f144cee9e"
+    },
+    {
+      "path": "src/katex/functions/tag.lil",
+      "sha256": "858380708533d0f6deaccd04b63c3b7e18e98321c905263f4f322d7e2193b053"
+    },
+    {
+      "path": "src/katex/functions/text.lil",
+      "sha256": "a7ad06751ea4a66305c17b5366d7a0f453da18b8efc840010dbd24696f274bb9"
+    },
+    {
+      "path": "src/katex/functions/underline.lil",
+      "sha256": "894fdfc9ae6f472ca1d34f446752ab0bfc5b2095ce6d0491b399960f84b49b67"
+    },
+    {
+      "path": "src/katex/functions/utils/assembleSupSub.lil",
+      "sha256": "1614c07e34f18ee644863f42851d042082c81faba0b1b0c31d8fccf74bbc2b9f"
+    },
+    {
+      "path": "src/katex/functions/vcenter.lil",
+      "sha256": "89b2159bcb7c0ac48afffb21c6808c2c1ac0f3e8ceb9ddac680636c49994387c"
+    },
+    {
+      "path": "src/katex/functions/verb.lil",
+      "sha256": "ef76190c67c2b084e6a3f425c1d7c76024d8c8f2bc3cbae9360587579103591f"
+    },
+    {
+      "path": "src/katex/functions.lil",
+      "sha256": "96be0d4ca270b4ab8959ae204b3196a1b5707606dedc76358fe45de9983491b9"
+    },
+    {
+      "path": "src/katex/host.lil",
+      "sha256": "2df29a7c67b870a89699495f7ed5c64693c8ff140b38dc177a5c00b01666179f"
+    },
+    {
+      "path": "src/katex/katex.lil",
+      "sha256": "b92fbbe86bc50574e8686fa67c5b1ab53714f5b46c0b0fb96cd9bd3eb9f64e56"
+    },
+    {
+      "path": "src/katex/macros.lil",
+      "sha256": "00d218368e63b32b59446af08e8956e9dd714075c4adf96e4bbd10467e765a9b"
+    },
+    {
+      "path": "src/katex/mathMLTree.lil",
+      "sha256": "06fef771ea5a083949e41d579912538fa5494d379d0f351ee064c05fb734b99f"
+    },
+    {
+      "path": "src/katex/parseNode.lil",
+      "sha256": "d373642c22d16e45ea92dacf546dc7df6a13f564537169c7e042abbb090e6e3b"
+    },
+    {
+      "path": "src/katex/parseTree.lil",
+      "sha256": "59b46c21db84403d2125dd49dca21cd3d23a5c03aa4c2ada88b6a59bfdf33f04"
+    },
+    {
+      "path": "src/katex/spacingData.lil",
+      "sha256": "5fa7eb7e4db48a712f57456d4440136bba4a336137255a6d00ee1136d1bd4fd1"
+    },
+    {
+      "path": "src/katex/stretchy.lil",
+      "sha256": "5cae5bff48acf06852e1dc7b19b26d2ba965fbc2514b550725666c99f29ea91d"
+    },
+    {
+      "path": "src/katex/svgGeometry.lil",
+      "sha256": "83dd648bfdbf1099d55d002cdf6db21ac6e7c9a4bc23e2b22bd64da54342cd1d"
+    },
+    {
+      "path": "src/katex/symbols.lil",
+      "sha256": "39f55e061c2dc174d382e23e1db43ef42c88eb46578fff69d8a8a4c36de2734e"
+    },
+    {
+      "path": "src/katex/tree.lil",
+      "sha256": "0ca7944821c76af297ae1378363eb16b5e902ae48e047673fc84ff354b8f281c"
+    },
+    {
+      "path": "src/katex/types.lil",
+      "sha256": "aa8636a32eafeb1e6528fcc655ee3fad90bc54097f2af750092aa195abc71928"
+    },
+    {
+      "path": "src/katex/unicodeAccents.lil",
+      "sha256": "6be9a01f6bd8ad59a2f2eddfa5537b835e6b028cfe8fe2ea404698b61e34c8c6"
+    },
+    {
+      "path": "src/katex/unicodeScripts.lil",
+      "sha256": "6e5759ff3d01931fa009fcf2174ad9c4955428495827d1f43b69c7f47bc4cc9b"
+    },
+    {
+      "path": "src/katex/unicodeSupOrSub.lil",
+      "sha256": "42335e8d8c350e1e30bf0c7e80e4273a7a48db5dbe8be4741b14fa128340774a"
+    },
+    {
+      "path": "src/katex/unicodeSymbols.js",
+      "sha256": "c1ed44a47f023dafb2e91f2dacc2c75a532affea2804f119f762e3becb25f112"
+    },
+    {
+      "path": "src/katex/units.lil",
+      "sha256": "10ff2f26b197431a638684323ac10b0d8ee88cc4d1a80a89579bd42b20da4da4"
+    },
+    {
+      "path": "src/katex/utils.lil",
+      "sha256": "7d475636cef7b0fd7feafaf929306b5e6506ec8e939e690bee32d41ca13a5cc7"
+    },
+    {
+      "path": "src/katex/wide-character.lil",
+      "sha256": "3deafd83cc7039b338512e0ea4448a2d1bee7d98247393ac94a79a711cf07dda"
+    },
+    {
+      "path": "src/lib/index.lil",
+      "sha256": "52dc2ab6008368cacd60b899eb1630613edb86d89acf35e3163f3f3893d64f09"
+    },
+    {
+      "path": "src/to-hast.lil",
+      "sha256": "5678d7dfbd49e488bae628d68c92be84f6882629542219e879568a35265ef3c3"
+    },
+    {
+      "path": "src/to-text.lil",
+      "sha256": "3ea966b799ce2af37a06c97d944f8cad1e2784d492f5385ed57376068dd168d1"
+    },
+    {
+      "path": "src/visit.lil",
+      "sha256": "7edc294fc8208bb5c2b570eb33aaa36e47b32a7b37239578fb4f7fbf92bf3f0d"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "dist/.lilscript/closed.json",
+      "bytes": 2744,
+      "sha256": "dced35fa294d0e145b867497188365f0a3b7fa4c8ed78260b10afd2f668a087c"
+    },
+    {
+      "path": "dist/.lilscript/public.json",
+      "bytes": 80708,
+      "sha256": "5b97b90e75289efe86d21208fac0d6e3904b9aa7f3e08025d9065467e065c126"
+    },
+    {
+      "path": "dist/lilscript.manifest.json",
+      "bytes": 10235,
+      "sha256": "8feff20bd27ae07d9fc9654bd6874ec11bc6901ced464d49dd5c7275b0800533"
+    },
+    {
+      "path": "dist/rehype-katex.cjs",
+      "bytes": 346440,
+      "sha256": "7dab198400ba04ac1244e3d1fdf02b29d69dc77c32bfc2b3473674e273419f35"
+    },
+    {
+      "path": "dist/rehype-katex.closed.js",
+      "bytes": 1518,
+      "sha256": "d6969fa13eec7ab34e7f304beae83b89b7c347a10c58243827098a510a7afe31"
+    },
+    {
+      "path": "dist/rehype-katex.d.ts",
+      "bytes": 328,
+      "sha256": "ca79baae8a93705bf1ed45d43392a1a0abb3a9660bf615d61823928bf58a6e0a"
+    },
+    {
+      "path": "dist/rehype-katex.esm.js",
+      "bytes": 1536,
+      "sha256": "e7436770c11dcb3dd00564d753b2bcfb02c5810d65d0f7063849e473852ef10e"
+    },
+    {
+      "path": "dist/rehype-katex.raw.js",
+      "bytes": 1536,
+      "sha256": "e7436770c11dcb3dd00564d753b2bcfb02c5810d65d0f7063849e473852ef10e"
+    },
+    {
+      "path": "dist/rehype-katex.umd.js",
+      "bytes": 48456,
+      "sha256": "35618120b4bcea1dbb538b06598a93fca12e664739f045c4b20efae11bc163c5"
+    }
+  ],
+  "scope": "Checked repository package; independent of npm publication. Main-entry objective comparisons have separate artifacts and timings."
+}

@@ -1,0 +1,3594 @@
+{
+  "version": 5,
+  "source_sha256": "fca9bff360a0bdf6160dc1d23a6a34c4f8b7b6a2631a341667b83bb5ac06ffb3",
+  "inputs": {
+    "root": 0,
+    "entries": [
+      {
+        "name": "browser",
+        "module": 0
+      },
+      {
+        "name": "bundled",
+        "module": 2
+      },
+      {
+        "name": "index",
+        "module": 3
+      }
+    ],
+    "modules": [
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/rehype-katexlil/src/browser.lil",
+        "bytes": 660,
+        "sha256": "158ebf0a85671bbdc5135946c286228f9a26eeefa901259921cbb7f2f8c762f4",
+        "dependencies": [
+          1
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/rehype-katexlil/src/lib/index.lil",
+        "bytes": 4223,
+        "sha256": "52dc2ab6008368cacd60b899eb1630613edb86d89acf35e3163f3f3893d64f09",
+        "dependencies": [],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/rehype-katexlil/src/bundled.lil",
+        "bytes": 654,
+        "sha256": "d0c9671a4bccfb314d22080865521133f30d09cde666ca0d148c0478c019c459",
+        "dependencies": [
+          1
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/rehype-katexlil/src/index.lil",
+        "bytes": 579,
+        "sha256": "122b571e7c4f8e16b648add0433c7207716778196d047fbe2b33b0f48eb986c1",
+        "dependencies": [
+          1
+        ],
+        "dynamic_dependencies": []
+      }
+    ],
+    "host_modules": [
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/property-information/lib/util/schema.js",
+        "stem": "schema",
+        "delivered_bytes": 207,
+        "sha256": "89c5c8df88c8a9fd4bb5d285f4e4e0417453a0cd6f3e67106075f2bc426f5262",
+        "exports": [
+          [
+            "Schema",
+            "Schema"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/property-information/lib/util/merge.js",
+        "stem": "merge",
+        "delivered_bytes": 230,
+        "sha256": "7c3a89c581f5de622f10445db8940f020868e5a52f2f21e15fe7518286f1f019",
+        "exports": [
+          [
+            "merge",
+            "merge"
+          ]
+        ],
+        "imports": [
+          [
+            0,
+            [
+              [
+                "Schema",
+                "Schema"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/property-information/lib/normalize.js",
+        "stem": "normalize",
+        "delivered_bytes": 53,
+        "sha256": "d4f69c5783dfc96746f8b6930cd2eac6bc2f53aac1317cac606a9a6a19a22831",
+        "exports": [
+          [
+            "normalize",
+            "normalize"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/property-information/lib/util/info.js",
+        "stem": "info",
+        "delivered_bytes": 486,
+        "sha256": "adca64c37c2c063dc0c574139b8fb33bf7e0302a3750cd84fc64f30733d5c9eb",
+        "exports": [
+          [
+            "Info",
+            "Info"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/property-information/lib/util/types.js",
+        "stem": "types",
+        "delivered_bytes": 275,
+        "sha256": "96247404c5399709c4392fdffe679d5d96fa9851fa2b2cd498acd82e11aa4ed8",
+        "exports": [
+          [
+            "boolean",
+            "boolean"
+          ],
+          [
+            "booleanish",
+            "booleanish"
+          ],
+          [
+            "overloadedBoolean",
+            "overloadedBoolean"
+          ],
+          [
+            "number",
+            "number"
+          ],
+          [
+            "spaceSeparated",
+            "spaceSeparated"
+          ],
+          [
+            "commaSeparated",
+            "commaSeparated"
+          ],
+          [
+            "commaOrSpaceSeparated",
+            "commaOrSpaceSeparated"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/property-information/lib/util/defined-info.js",
+        "stem": "defined-info",
+        "delivered_bytes": 413,
+        "sha256": "356fbf66bd13c96018589c99be199f5e6f86bae2f34d88aaccaa631854771bb6",
+        "exports": [
+          [
+            "DefinedInfo",
+            "DefinedInfo"
+          ]
+        ],
+        "imports": [
+          [
+            3,
+            [
+              [
+                "Info",
+                "Info"
+              ]
+            ]
+          ],
+          [
+            4,
+            [
+              [
+                null,
+                "types"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/property-information/lib/util/create.js",
+        "stem": "create",
+        "delivered_bytes": 516,
+        "sha256": "1b08470f5218d7e38e5a8f040b49221e101914b1b844e7e8f6057dd2258dc867",
+        "exports": [
+          [
+            "create",
+            "create"
+          ]
+        ],
+        "imports": [
+          [
+            2,
+            [
+              [
+                "normalize",
+                "normalize"
+              ]
+            ]
+          ],
+          [
+            5,
+            [
+              [
+                "DefinedInfo",
+                "DefinedInfo"
+              ]
+            ]
+          ],
+          [
+            0,
+            [
+              [
+                "Schema",
+                "Schema"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/property-information/lib/aria.js",
+        "stem": "aria",
+        "delivered_bytes": 1191,
+        "sha256": "deba8da2f974b2e03e10f8f1c2c7ea0127dd8866acac07b475b6e73d06b9733d",
+        "exports": [
+          [
+            "aria",
+            "aria"
+          ]
+        ],
+        "imports": [
+          [
+            6,
+            [
+              [
+                "create",
+                "create"
+              ]
+            ]
+          ],
+          [
+            4,
+            [
+              [
+                "booleanish",
+                "booleanish"
+              ],
+              [
+                "number",
+                "number"
+              ],
+              [
+                "spaceSeparated",
+                "spaceSeparated"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/property-information/lib/util/case-sensitive-transform.js",
+        "stem": "case-sensitive-transform",
+        "delivered_bytes": 117,
+        "sha256": "3c461cc74808145200414c2b8436185852f6cda9d41bee091c701707564e841d",
+        "exports": [
+          [
+            "caseSensitiveTransform",
+            "caseSensitiveTransform"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/property-information/lib/util/case-insensitive-transform.js",
+        "stem": "case-insensitive-transform",
+        "delivered_bytes": 120,
+        "sha256": "0b52d02841429a824c0387197fe73d6bd0cfefa26a6fa140f2df5703837ba93d",
+        "exports": [
+          [
+            "caseInsensitiveTransform",
+            "caseInsensitiveTransform"
+          ]
+        ],
+        "imports": [
+          [
+            8,
+            [
+              [
+                "caseSensitiveTransform",
+                "caseSensitiveTransform"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/property-information/lib/html.js",
+        "stem": "html",
+        "delivered_bytes": 5072,
+        "sha256": "5e197c2b2d9a211cc3682c547992c77ecee130b5e74a7bd24f8bab75c68969bf",
+        "exports": [
+          [
+            "html",
+            "html"
+          ]
+        ],
+        "imports": [
+          [
+            9,
+            [
+              [
+                "caseInsensitiveTransform",
+                "caseInsensitiveTransform"
+              ]
+            ]
+          ],
+          [
+            6,
+            [
+              [
+                "create",
+                "create"
+              ]
+            ]
+          ],
+          [
+            4,
+            [
+              [
+                "booleanish",
+                "booleanish"
+              ],
+              [
+                "boolean",
+                "boolean"
+              ],
+              [
+                "commaSeparated",
+                "commaSeparated"
+              ],
+              [
+                "number",
+                "number"
+              ],
+              [
+                "overloadedBoolean",
+                "overloadedBoolean"
+              ],
+              [
+                "spaceSeparated",
+                "spaceSeparated"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/property-information/lib/svg.js",
+        "stem": "svg",
+        "delivered_bytes": 10700,
+        "sha256": "d0b30a9e7974906a3330c78664a26a69941db7d72aad998d881a8998627d57aa",
+        "exports": [
+          [
+            "svg",
+            "svg"
+          ]
+        ],
+        "imports": [
+          [
+            8,
+            [
+              [
+                "caseSensitiveTransform",
+                "caseSensitiveTransform"
+              ]
+            ]
+          ],
+          [
+            6,
+            [
+              [
+                "create",
+                "create"
+              ]
+            ]
+          ],
+          [
+            4,
+            [
+              [
+                "boolean",
+                "boolean"
+              ],
+              [
+                "commaOrSpaceSeparated",
+                "commaOrSpaceSeparated"
+              ],
+              [
+                "commaSeparated",
+                "commaSeparated"
+              ],
+              [
+                "number",
+                "number"
+              ],
+              [
+                "spaceSeparated",
+                "spaceSeparated"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/property-information/lib/xlink.js",
+        "stem": "xlink",
+        "delivered_bytes": 230,
+        "sha256": "c4b61b76fcf69d8cb0f5b402fb2c9a975d832e8b53f61d2e5bc0809805d4cb9a",
+        "exports": [
+          [
+            "xlink",
+            "xlink"
+          ]
+        ],
+        "imports": [
+          [
+            6,
+            [
+              [
+                "create",
+                "create"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/property-information/lib/xmlns.js",
+        "stem": "xmlns",
+        "delivered_bytes": 148,
+        "sha256": "a0887d52ea2f58b54dbb5986f3e5f8284fad65c249973b7e9a2238dc9ea4d490",
+        "exports": [
+          [
+            "xmlns",
+            "xmlns"
+          ]
+        ],
+        "imports": [
+          [
+            6,
+            [
+              [
+                "create",
+                "create"
+              ]
+            ]
+          ],
+          [
+            9,
+            [
+              [
+                "caseInsensitiveTransform",
+                "caseInsensitiveTransform"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/property-information/lib/xml.js",
+        "stem": "xml",
+        "delivered_bytes": 152,
+        "sha256": "c32776445b1c604ccec7534e613b4b350888e4d78d8d5a51814e86e27aab6aaf",
+        "exports": [
+          [
+            "xml",
+            "xml"
+          ]
+        ],
+        "imports": [
+          [
+            6,
+            [
+              [
+                "create",
+                "create"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/property-information/lib/hast-to-react.js",
+        "stem": "hast-to-react",
+        "delivered_bytes": 449,
+        "sha256": "a019deac697d5c7e0c4391aada129f43cc1a204f3db4d2520bbe45c4d6df0f5c",
+        "exports": [
+          [
+            "hastToReact",
+            "hastToReact"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/property-information/lib/find.js",
+        "stem": "find",
+        "delivered_bytes": 742,
+        "sha256": "a8ee58acea7540b94a3b7bad0cd024f62e4129736cceca3398862d0fcc2ca382",
+        "exports": [
+          [
+            "find",
+            "find"
+          ]
+        ],
+        "imports": [
+          [
+            5,
+            [
+              [
+                "DefinedInfo",
+                "DefinedInfo"
+              ]
+            ]
+          ],
+          [
+            3,
+            [
+              [
+                "Info",
+                "Info"
+              ]
+            ]
+          ],
+          [
+            2,
+            [
+              [
+                "normalize",
+                "normalize"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/property-information/index.js",
+        "stem": "index",
+        "delivered_bytes": 110,
+        "sha256": "5a28e2c5b95547323667a96c478651ed6c3e553f4ddfd023b730f50b75ea4fc5",
+        "exports": [
+          [
+            "hastToReact",
+            "__lil_host_export_0"
+          ],
+          [
+            "html",
+            "html"
+          ],
+          [
+            "find",
+            "__lil_host_export_1"
+          ],
+          [
+            "normalize",
+            "__lil_host_export_2"
+          ],
+          [
+            "svg",
+            "svg"
+          ]
+        ],
+        "imports": [
+          [
+            1,
+            [
+              [
+                "merge",
+                "merge"
+              ]
+            ]
+          ],
+          [
+            7,
+            [
+              [
+                "aria",
+                "aria"
+              ]
+            ]
+          ],
+          [
+            10,
+            [
+              [
+                "html",
+                "htmlBase"
+              ]
+            ]
+          ],
+          [
+            11,
+            [
+              [
+                "svg",
+                "svgBase"
+              ]
+            ]
+          ],
+          [
+            12,
+            [
+              [
+                "xlink",
+                "xlink"
+              ]
+            ]
+          ],
+          [
+            13,
+            [
+              [
+                "xmlns",
+                "xmlns"
+              ]
+            ]
+          ],
+          [
+            14,
+            [
+              [
+                "xml",
+                "xml"
+              ]
+            ]
+          ],
+          [
+            15,
+            []
+          ],
+          [
+            15,
+            [
+              [
+                "hastToReact",
+                "__lil_host_export_0"
+              ]
+            ]
+          ],
+          [
+            16,
+            []
+          ],
+          [
+            16,
+            [
+              [
+                "find",
+                "__lil_host_export_1"
+              ]
+            ]
+          ],
+          [
+            2,
+            []
+          ],
+          [
+            2,
+            [
+              [
+                "normalize",
+                "__lil_host_export_2"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/comma-separated-tokens/index.js",
+        "stem": "index",
+        "delivered_bytes": 532,
+        "sha256": "49c4339dea44a81858fbafc1153d5e20a5d72f64acc7936ddd306280ccda9e27",
+        "exports": [
+          [
+            "parse",
+            "parse"
+          ],
+          [
+            "stringify",
+            "stringify"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/hast-util-parse-selector/lib/index.js",
+        "stem": "index",
+        "delivered_bytes": 631,
+        "sha256": "f02f47cc7c41d144011b682e7d1436fb2e9cb7d101befd870c9f6502d2f3ed25",
+        "exports": [
+          [
+            "parseSelector",
+            "parseSelector"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/hast-util-parse-selector/index.js",
+        "stem": "index",
+        "delivered_bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exports": [
+          [
+            "parseSelector",
+            "__lil_host_export_0"
+          ]
+        ],
+        "imports": [
+          [
+            19,
+            []
+          ],
+          [
+            19,
+            [
+              [
+                "parseSelector",
+                "__lil_host_export_0"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/space-separated-tokens/index.js",
+        "stem": "index",
+        "delivered_bytes": 162,
+        "sha256": "071e844d5627138f21e3caa415a991059033619f850a95b7f65aac61741b6736",
+        "exports": [
+          [
+            "parse",
+            "parse"
+          ],
+          [
+            "stringify",
+            "stringify"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/hastscript/lib/create-h.js",
+        "stem": "create-h",
+        "delivered_bytes": 3257,
+        "sha256": "2bd54617f563293474b3389c89f73929016127f983dd8987a3dd747305785fa9",
+        "exports": [
+          [
+            "createH",
+            "createH"
+          ]
+        ],
+        "imports": [
+          [
+            18,
+            [
+              [
+                "parse",
+                "parseCommas"
+              ]
+            ]
+          ],
+          [
+            20,
+            [
+              [
+                "parseSelector",
+                "parseSelector"
+              ]
+            ]
+          ],
+          [
+            17,
+            [
+              [
+                "find",
+                "find"
+              ],
+              [
+                "normalize",
+                "normalize"
+              ]
+            ]
+          ],
+          [
+            21,
+            [
+              [
+                "parse",
+                "parseSpaces"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/hastscript/lib/svg-case-sensitive-tag-names.js",
+        "stem": "svg-case-sensitive-tag-names",
+        "delivered_bytes": 583,
+        "sha256": "584703965fa3b07c00bd972a260775cafb7dda9509123d4260bb5dab1f34a7e7",
+        "exports": [
+          [
+            "svgCaseSensitiveTagNames",
+            "svgCaseSensitiveTagNames"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/hastscript/lib/index.js",
+        "stem": "index",
+        "delivered_bytes": 77,
+        "sha256": "3438f66dfd0fbe24927c0e2724daa9b076ef2338ccf1100d01bccd653f8341cb",
+        "exports": [
+          [
+            "h",
+            "h"
+          ],
+          [
+            "s",
+            "s"
+          ]
+        ],
+        "imports": [
+          [
+            17,
+            [
+              [
+                "html",
+                "html"
+              ],
+              [
+                "svg",
+                "svg"
+              ]
+            ]
+          ],
+          [
+            22,
+            [
+              [
+                "createH",
+                "createH"
+              ]
+            ]
+          ],
+          [
+            23,
+            [
+              [
+                "svgCaseSensitiveTagNames",
+                "svgCaseSensitiveTagNames"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/hastscript/index.js",
+        "stem": "index",
+        "delivered_bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exports": [
+          [
+            "h",
+            "__lil_host_export_0"
+          ],
+          [
+            "s",
+            "__lil_host_export_1"
+          ]
+        ],
+        "imports": [
+          [
+            24,
+            []
+          ],
+          [
+            24,
+            [
+              [
+                "h",
+                "__lil_host_export_0"
+              ]
+            ]
+          ],
+          [
+            24,
+            [
+              [
+                "s",
+                "__lil_host_export_1"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/web-namespaces/index.js",
+        "stem": "index",
+        "delivered_bytes": 252,
+        "sha256": "5313f0106b198ea73af243e2cb51d3c4001aa2ff5779e39f62038e2cceb6119e",
+        "exports": [
+          [
+            "webNamespaces",
+            "webNamespaces"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/hast-util-from-dom/lib/index.js",
+        "stem": "index",
+        "delivered_bytes": 1606,
+        "sha256": "e7d19729019dc4813d3fa22e2a51a34b4848f68f99941b4b64f8b158a9873240",
+        "exports": [
+          [
+            "fromDom",
+            "fromDom"
+          ]
+        ],
+        "imports": [
+          [
+            25,
+            [
+              [
+                "h",
+                "h"
+              ],
+              [
+                "s",
+                "s"
+              ]
+            ]
+          ],
+          [
+            26,
+            [
+              [
+                "webNamespaces",
+                "webNamespaces"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/hast-util-from-dom/index.js",
+        "stem": "index",
+        "delivered_bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exports": [
+          [
+            "fromDom",
+            "__lil_host_export_0"
+          ]
+        ],
+        "imports": [
+          [
+            27,
+            []
+          ],
+          [
+            27,
+            [
+              [
+                "fromDom",
+                "__lil_host_export_0"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/hast-util-from-html-isomorphic/lib/browser.js",
+        "stem": "browser",
+        "delivered_bytes": 315,
+        "sha256": "92a86d6c769a50d98b452f62ead90f2273bc4db6aa975c6d661052dce1424594",
+        "exports": [
+          [
+            "fromHtmlIsomorphic",
+            "fromHtmlIsomorphic"
+          ]
+        ],
+        "imports": [
+          [
+            28,
+            [
+              [
+                "fromDom",
+                "fromDom"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/unist-util-is/lib/index.js",
+        "stem": "index",
+        "delivered_bytes": 1828,
+        "sha256": "a80f689cdcfe8bcd1e79066814eb564cfbb79a361ac18320af1f48ac46d496c4",
+        "exports": [
+          [
+            "is",
+            "is"
+          ],
+          [
+            "convert",
+            "convert"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/unist-util-is/index.js",
+        "stem": "index",
+        "delivered_bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exports": [
+          [
+            "is",
+            "__lil_host_export_0"
+          ],
+          [
+            "convert",
+            "__lil_host_export_1"
+          ]
+        ],
+        "imports": [
+          [
+            30,
+            []
+          ],
+          [
+            30,
+            [
+              [
+                "is",
+                "__lil_host_export_0"
+              ]
+            ]
+          ],
+          [
+            30,
+            [
+              [
+                "convert",
+                "__lil_host_export_1"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/unist-util-find-after/lib/index.js",
+        "stem": "index",
+        "delivered_bytes": 521,
+        "sha256": "366b67eaccc602beae59111d58e3e7056aec17cb530bc6824b8e5da47103b03b",
+        "exports": [
+          [
+            "findAfter",
+            "findAfter"
+          ]
+        ],
+        "imports": [
+          [
+            31,
+            [
+              [
+                "convert",
+                "convert"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/unist-util-find-after/index.js",
+        "stem": "index",
+        "delivered_bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exports": [
+          [
+            "findAfter",
+            "__lil_host_export_0"
+          ]
+        ],
+        "imports": [
+          [
+            32,
+            []
+          ],
+          [
+            32,
+            [
+              [
+                "findAfter",
+                "__lil_host_export_0"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/hast-util-is-element/lib/index.js",
+        "stem": "index",
+        "delivered_bytes": 1806,
+        "sha256": "b090dcc08dbf59ae746086588e1a6eac43534b3b6515d0e6a2316e79d933d2b5",
+        "exports": [
+          [
+            "isElement",
+            "isElement"
+          ],
+          [
+            "convertElement",
+            "convertElement"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/hast-util-is-element/index.js",
+        "stem": "index",
+        "delivered_bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exports": [
+          [
+            "convertElement",
+            "__lil_host_export_0"
+          ],
+          [
+            "isElement",
+            "__lil_host_export_1"
+          ]
+        ],
+        "imports": [
+          [
+            34,
+            []
+          ],
+          [
+            34,
+            [
+              [
+                "convertElement",
+                "__lil_host_export_0"
+              ]
+            ]
+          ],
+          [
+            34,
+            [
+              [
+                "isElement",
+                "__lil_host_export_1"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/hast-util-to-text/lib/index.js",
+        "stem": "index",
+        "delivered_bytes": 4504,
+        "sha256": "43791322ef3d9f44ffdf16a1d2821b612f0b65ce3f8880a06fa43fdc3c138548",
+        "exports": [
+          [
+            "toText",
+            "toText"
+          ]
+        ],
+        "imports": [
+          [
+            33,
+            [
+              [
+                "findAfter",
+                "findAfter"
+              ]
+            ]
+          ],
+          [
+            35,
+            [
+              [
+                "convertElement",
+                "convertElement"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/hast-util-to-text/index.js",
+        "stem": "index",
+        "delivered_bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exports": [
+          [
+            "toText",
+            "__lil_host_export_0"
+          ]
+        ],
+        "imports": [
+          [
+            36,
+            []
+          ],
+          [
+            36,
+            [
+              [
+                "toText",
+                "__lil_host_export_0"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/unist-util-visit-parents/lib/color.js",
+        "stem": "color",
+        "delivered_bytes": 27,
+        "sha256": "a30272267c0744a08d1ff46c42e08743517dbbd085aa550874e94a2ba403705d",
+        "exports": [
+          [
+            "color",
+            "color"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/unist-util-visit-parents/lib/index.js",
+        "stem": "index",
+        "delivered_bytes": 1496,
+        "sha256": "3974272bb46dbeac48dfb72123516708f3b2a49639880d8ef6f5f02309290314",
+        "exports": [
+          [
+            "CONTINUE",
+            "CONTINUE"
+          ],
+          [
+            "EXIT",
+            "EXIT"
+          ],
+          [
+            "SKIP",
+            "SKIP"
+          ],
+          [
+            "visitParents",
+            "visitParents"
+          ]
+        ],
+        "imports": [
+          [
+            31,
+            [
+              [
+                "convert",
+                "convert"
+              ]
+            ]
+          ],
+          [
+            38,
+            [
+              [
+                "color",
+                "color"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/unist-util-visit-parents/index.js",
+        "stem": "index",
+        "delivered_bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exports": [
+          [
+            "CONTINUE",
+            "__lil_host_export_0"
+          ],
+          [
+            "EXIT",
+            "__lil_host_export_1"
+          ],
+          [
+            "SKIP",
+            "__lil_host_export_2"
+          ],
+          [
+            "visitParents",
+            "__lil_host_export_3"
+          ]
+        ],
+        "imports": [
+          [
+            39,
+            []
+          ],
+          [
+            39,
+            [
+              [
+                "CONTINUE",
+                "__lil_host_export_0"
+              ]
+            ]
+          ],
+          [
+            39,
+            [
+              [
+                "EXIT",
+                "__lil_host_export_1"
+              ]
+            ]
+          ],
+          [
+            39,
+            [
+              [
+                "SKIP",
+                "__lil_host_export_2"
+              ]
+            ]
+          ],
+          [
+            39,
+            [
+              [
+                "visitParents",
+                "__lil_host_export_3"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/devlop/lib/default.js",
+        "stem": "default",
+        "delivered_bytes": 90,
+        "sha256": "179aad1e6352c7ac00e8d438cd2d4f6b8564400a9bfcd5b431078e378fdec99e",
+        "exports": [
+          [
+            "deprecate",
+            "deprecate"
+          ],
+          [
+            "equal",
+            "equal"
+          ],
+          [
+            "ok",
+            "ok"
+          ],
+          [
+            "unreachable",
+            "unreachable"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/vfile-location/lib/index.js",
+        "stem": "index",
+        "delivered_bytes": 1044,
+        "sha256": "42a2507b908e55150a182921ea7c6f6be6a32a53d63d14a65e9ae9e9a8fc3b93",
+        "exports": [
+          [
+            "location",
+            "location"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/vfile-location/index.js",
+        "stem": "index",
+        "delivered_bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exports": [
+          [
+            "location",
+            "__lil_host_export_0"
+          ]
+        ],
+        "imports": [
+          [
+            42,
+            []
+          ],
+          [
+            42,
+            [
+              [
+                "location",
+                "__lil_host_export_0"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/hast-util-from-parse5/lib/index.js",
+        "stem": "index",
+        "delivered_bytes": 3548,
+        "sha256": "721248b9faed4e032b8c8cd72ad1b5574108c4d79dbf5800f91f126793222d1c",
+        "exports": [
+          [
+            "fromParse5",
+            "fromParse5"
+          ]
+        ],
+        "imports": [
+          [
+            41,
+            [
+              [
+                "ok",
+                "assert"
+              ]
+            ]
+          ],
+          [
+            25,
+            [
+              [
+                "h",
+                "h"
+              ],
+              [
+                "s",
+                "s"
+              ]
+            ]
+          ],
+          [
+            17,
+            [
+              [
+                "find",
+                "find"
+              ],
+              [
+                "html",
+                "html"
+              ],
+              [
+                "svg",
+                "svg"
+              ]
+            ]
+          ],
+          [
+            43,
+            [
+              [
+                "location",
+                "location"
+              ]
+            ]
+          ],
+          [
+            26,
+            [
+              [
+                "webNamespaces",
+                "webNamespaces"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/hast-util-from-parse5/index.js",
+        "stem": "index",
+        "delivered_bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exports": [
+          [
+            "fromParse5",
+            "__lil_host_export_0"
+          ]
+        ],
+        "imports": [
+          [
+            44,
+            []
+          ],
+          [
+            44,
+            [
+              [
+                "fromParse5",
+                "__lil_host_export_0"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/parse5/dist/common/unicode.js",
+        "stem": "unicode",
+        "delivered_bytes": 2422,
+        "sha256": "0be24c894202473e8ac8d7b41c9ec7c5f147e9a0827cd5dc506475f7e53eda9a",
+        "exports": [
+          [
+            "REPLACEMENT_CHARACTER",
+            "REPLACEMENT_CHARACTER"
+          ],
+          [
+            "CODE_POINTS",
+            "CODE_POINTS"
+          ],
+          [
+            "SEQUENCES",
+            "SEQUENCES"
+          ],
+          [
+            "isSurrogate",
+            "isSurrogate"
+          ],
+          [
+            "isSurrogatePair",
+            "isSurrogatePair"
+          ],
+          [
+            "getSurrogatePairCodePoint",
+            "getSurrogatePairCodePoint"
+          ],
+          [
+            "isControlCodePoint",
+            "isControlCodePoint"
+          ],
+          [
+            "isUndefinedCodePoint",
+            "isUndefinedCodePoint"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/parse5/dist/common/error-codes.js",
+        "stem": "error-codes",
+        "delivered_bytes": 4310,
+        "sha256": "b7d01fd7d3e2ff99b8f0288e2c4f31d71980288d5250a86860c496e06d323911",
+        "exports": [
+          [
+            "ERR",
+            "ERR"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/parse5/dist/tokenizer/preprocessor.js",
+        "stem": "preprocessor",
+        "delivered_bytes": 3437,
+        "sha256": "52cadee15134b7c9c31ff67f0419cd1cd531612d3968336687ef4c2b60225a97",
+        "exports": [
+          [
+            "Preprocessor",
+            "Preprocessor"
+          ]
+        ],
+        "imports": [
+          [
+            46,
+            [
+              [
+                "CODE_POINTS",
+                "$"
+              ],
+              [
+                "getSurrogatePairCodePoint",
+                "getSurrogatePairCodePoint"
+              ],
+              [
+                "isControlCodePoint",
+                "isControlCodePoint"
+              ],
+              [
+                "isSurrogate",
+                "isSurrogate"
+              ],
+              [
+                "isSurrogatePair",
+                "isSurrogatePair"
+              ],
+              [
+                "isUndefinedCodePoint",
+                "isUndefinedCodePoint"
+              ]
+            ]
+          ],
+          [
+            47,
+            [
+              [
+                "ERR",
+                "ERR"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/parse5/dist/common/token.js",
+        "stem": "token",
+        "delivered_bytes": 666,
+        "sha256": "2e90e327d2c00221c153efbafd330de65b576a323b76b891945a3123416da3fc",
+        "exports": [
+          [
+            "TokenType",
+            "TokenType"
+          ],
+          [
+            "getTokenAttr",
+            "getTokenAttr"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/entities/dist/esm/generated/decode-data-html.js",
+        "stem": "decode-data-html",
+        "delivered_bytes": 47772,
+        "sha256": "5328d4fde4f05d7abc6db72eaf7fa98afe4c061ca5126213cba7fc0109016334",
+        "exports": [
+          [
+            "htmlDecodeTree",
+            "htmlDecodeTree"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/entities/dist/esm/generated/decode-data-xml.js",
+        "stem": "decode-data-xml",
+        "delivered_bytes": 326,
+        "sha256": "0577f4207b5723b30dd58034ce3c2cc54b1d56cc299026b27bf95122c0b78902",
+        "exports": [
+          [
+            "xmlDecodeTree",
+            "xmlDecodeTree"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/entities/dist/esm/decode-codepoint.js",
+        "stem": "decode-codepoint",
+        "delivered_bytes": 895,
+        "sha256": "937a76c7f9c346fec257cf5c6e0a94220ddadda41e3234c588bf835fc5b2f020",
+        "exports": [
+          [
+            "fromCodePoint",
+            "fromCodePoint"
+          ],
+          [
+            "replaceCodePoint",
+            "replaceCodePoint"
+          ],
+          [
+            "decodeCodePoint",
+            "decodeCodePoint"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/entities/dist/esm/decode.js",
+        "stem": "decode",
+        "delivered_bytes": 20684,
+        "sha256": "e6e2d3ce9d959d317478d213354f87e693410664fda09db6afc1aff806548572",
+        "exports": [
+          [
+            "BinTrieFlags",
+            "BinTrieFlags"
+          ],
+          [
+            "DecodingMode",
+            "DecodingMode"
+          ],
+          [
+            "EntityDecoder",
+            "EntityDecoder"
+          ],
+          [
+            "determineBranch",
+            "determineBranch"
+          ],
+          [
+            "decodeHTML",
+            "decodeHTML"
+          ],
+          [
+            "decodeHTMLAttribute",
+            "decodeHTMLAttribute"
+          ],
+          [
+            "decodeHTMLStrict",
+            "decodeHTMLStrict"
+          ],
+          [
+            "decodeXML",
+            "decodeXML"
+          ],
+          [
+            "htmlDecodeTree",
+            "__lil_host_export_0"
+          ],
+          [
+            "xmlDecodeTree",
+            "__lil_host_export_1"
+          ],
+          [
+            "decodeCodePoint",
+            "__lil_host_export_2"
+          ],
+          [
+            "replaceCodePoint",
+            "__lil_host_export_3"
+          ],
+          [
+            "fromCodePoint",
+            "__lil_host_export_4"
+          ]
+        ],
+        "imports": [
+          [
+            50,
+            [
+              [
+                "htmlDecodeTree",
+                "htmlDecodeTree"
+              ]
+            ]
+          ],
+          [
+            51,
+            [
+              [
+                "xmlDecodeTree",
+                "xmlDecodeTree"
+              ]
+            ]
+          ],
+          [
+            52,
+            [
+              [
+                "replaceCodePoint",
+                "replaceCodePoint"
+              ],
+              [
+                "fromCodePoint",
+                "fromCodePoint"
+              ]
+            ]
+          ],
+          [
+            50,
+            []
+          ],
+          [
+            50,
+            [
+              [
+                "htmlDecodeTree",
+                "__lil_host_export_0"
+              ]
+            ]
+          ],
+          [
+            51,
+            []
+          ],
+          [
+            51,
+            [
+              [
+                "xmlDecodeTree",
+                "__lil_host_export_1"
+              ]
+            ]
+          ],
+          [
+            52,
+            []
+          ],
+          [
+            52,
+            [
+              [
+                "decodeCodePoint",
+                "__lil_host_export_2"
+              ]
+            ]
+          ],
+          [
+            52,
+            [
+              [
+                "replaceCodePoint",
+                "__lil_host_export_3"
+              ]
+            ]
+          ],
+          [
+            52,
+            [
+              [
+                "fromCodePoint",
+                "__lil_host_export_4"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/parse5/dist/common/html.js",
+        "stem": "html",
+        "delivered_bytes": 13453,
+        "sha256": "2676a54bfea9748f3c5ccfa31836e88c649e7ae3575d5e04eb23a7caf9f2ff55",
+        "exports": [
+          [
+            "NS",
+            "NS"
+          ],
+          [
+            "ATTRS",
+            "ATTRS"
+          ],
+          [
+            "DOCUMENT_MODE",
+            "DOCUMENT_MODE"
+          ],
+          [
+            "TAG_NAMES",
+            "TAG_NAMES"
+          ],
+          [
+            "TAG_ID",
+            "TAG_ID"
+          ],
+          [
+            "getTagID",
+            "getTagID"
+          ],
+          [
+            "SPECIAL_ELEMENTS",
+            "SPECIAL_ELEMENTS"
+          ],
+          [
+            "NUMBERED_HEADERS",
+            "NUMBERED_HEADERS"
+          ],
+          [
+            "hasUnescapedText",
+            "hasUnescapedText"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/parse5/dist/tokenizer/index.js",
+        "stem": "index",
+        "delivered_bytes": 51820,
+        "sha256": "fd244f736799e6c2c872f96df056e3824772ee75c8c028d94969402381fec90e",
+        "exports": [
+          [
+            "TokenizerMode",
+            "TokenizerMode"
+          ],
+          [
+            "Tokenizer",
+            "Tokenizer"
+          ]
+        ],
+        "imports": [
+          [
+            48,
+            [
+              [
+                "Preprocessor",
+                "Preprocessor"
+              ]
+            ]
+          ],
+          [
+            46,
+            [
+              [
+                "CODE_POINTS",
+                "$"
+              ],
+              [
+                "SEQUENCES",
+                "$$"
+              ],
+              [
+                "REPLACEMENT_CHARACTER",
+                "REPLACEMENT_CHARACTER"
+              ],
+              [
+                "isSurrogate",
+                "isSurrogate"
+              ],
+              [
+                "isUndefinedCodePoint",
+                "isUndefinedCodePoint"
+              ],
+              [
+                "isControlCodePoint",
+                "isControlCodePoint"
+              ]
+            ]
+          ],
+          [
+            49,
+            [
+              [
+                "TokenType",
+                "TokenType"
+              ],
+              [
+                "getTokenAttr",
+                "getTokenAttr"
+              ]
+            ]
+          ],
+          [
+            53,
+            [
+              [
+                "htmlDecodeTree",
+                "htmlDecodeTree"
+              ],
+              [
+                "EntityDecoder",
+                "EntityDecoder"
+              ],
+              [
+                "DecodingMode",
+                "DecodingMode"
+              ]
+            ]
+          ],
+          [
+            47,
+            [
+              [
+                "ERR",
+                "ERR"
+              ]
+            ]
+          ],
+          [
+            54,
+            [
+              [
+                "TAG_ID",
+                "TAG_ID"
+              ],
+              [
+                "getTagID",
+                "getTagID"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/parse5/dist/parser/open-element-stack.js",
+        "stem": "open-element-stack",
+        "delivered_bytes": 6835,
+        "sha256": "2555df4785f6ddba743a6215105a45572b0ff495092bc9d190b181c48104f4df",
+        "exports": [
+          [
+            "OpenElementStack",
+            "OpenElementStack"
+          ]
+        ],
+        "imports": [
+          [
+            54,
+            [
+              [
+                "TAG_ID",
+                "$"
+              ],
+              [
+                "NS",
+                "NS"
+              ],
+              [
+                "NUMBERED_HEADERS",
+                "NUMBERED_HEADERS"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/parse5/dist/parser/formatting-element-list.js",
+        "stem": "formatting-element-list",
+        "delivered_bytes": 2520,
+        "sha256": "766bddfbf4c85271fdff71286b1bed01e00101aa6d2be0793a92cf1637051964",
+        "exports": [
+          [
+            "EntryType",
+            "EntryType"
+          ],
+          [
+            "FormattingElementList",
+            "FormattingElementList"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/parse5/dist/tree-adapters/default.js",
+        "stem": "default",
+        "delivered_bytes": 3483,
+        "sha256": "4ef7d2d09c7f0000aab64b7689fcb625bf4700a0573d21cf70a1e12c65a7d9e6",
+        "exports": [
+          [
+            "defaultTreeAdapter",
+            "defaultTreeAdapter"
+          ]
+        ],
+        "imports": [
+          [
+            54,
+            [
+              [
+                "DOCUMENT_MODE",
+                "DOCUMENT_MODE"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/parse5/dist/common/doctype.js",
+        "stem": "doctype",
+        "delivered_bytes": 3935,
+        "sha256": "414d13dda0356707f988f2cff3001c476d45fdca541aaf77c7edce3c728cfc26",
+        "exports": [
+          [
+            "isConforming",
+            "isConforming"
+          ],
+          [
+            "getDocumentMode",
+            "getDocumentMode"
+          ]
+        ],
+        "imports": [
+          [
+            54,
+            [
+              [
+                "DOCUMENT_MODE",
+                "DOCUMENT_MODE"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/parse5/dist/common/foreign-content.js",
+        "stem": "foreign-content",
+        "delivered_bytes": 4593,
+        "sha256": "eaa828f2b69f67dbcd489ec2341d1fdc1534ebf212d773bcfee68f562f40ebfe",
+        "exports": [
+          [
+            "SVG_TAG_NAMES_ADJUSTMENT_MAP",
+            "SVG_TAG_NAMES_ADJUSTMENT_MAP"
+          ],
+          [
+            "causesExit",
+            "causesExit"
+          ],
+          [
+            "adjustTokenMathMLAttrs",
+            "adjustTokenMathMLAttrs"
+          ],
+          [
+            "adjustTokenSVGAttrs",
+            "adjustTokenSVGAttrs"
+          ],
+          [
+            "adjustTokenXMLAttrs",
+            "adjustTokenXMLAttrs"
+          ],
+          [
+            "adjustTokenSVGTagName",
+            "adjustTokenSVGTagName"
+          ],
+          [
+            "isIntegrationPoint",
+            "isIntegrationPoint"
+          ]
+        ],
+        "imports": [
+          [
+            54,
+            [
+              [
+                "TAG_ID",
+                "$"
+              ],
+              [
+                "NS",
+                "NS"
+              ],
+              [
+                "ATTRS",
+                "ATTRS"
+              ],
+              [
+                "getTagID",
+                "getTagID"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/parse5/dist/parser/index.js",
+        "stem": "index",
+        "delivered_bytes": 65443,
+        "sha256": "9d84d553603137bd3d807193f4ba9be1e3067bbd2caa15322f95d5d983a02e0a",
+        "exports": [
+          [
+            "Parser",
+            "Parser"
+          ]
+        ],
+        "imports": [
+          [
+            55,
+            [
+              [
+                "Tokenizer",
+                "Tokenizer"
+              ],
+              [
+                "TokenizerMode",
+                "TokenizerMode"
+              ]
+            ]
+          ],
+          [
+            56,
+            [
+              [
+                "OpenElementStack",
+                "OpenElementStack"
+              ]
+            ]
+          ],
+          [
+            57,
+            [
+              [
+                "FormattingElementList",
+                "FormattingElementList"
+              ],
+              [
+                "EntryType",
+                "EntryType"
+              ]
+            ]
+          ],
+          [
+            58,
+            [
+              [
+                "defaultTreeAdapter",
+                "defaultTreeAdapter"
+              ]
+            ]
+          ],
+          [
+            59,
+            [
+              [
+                null,
+                "doctype"
+              ]
+            ]
+          ],
+          [
+            60,
+            [
+              [
+                null,
+                "foreignContent"
+              ]
+            ]
+          ],
+          [
+            47,
+            [
+              [
+                "ERR",
+                "ERR"
+              ]
+            ]
+          ],
+          [
+            46,
+            [
+              [
+                null,
+                "unicode"
+              ]
+            ]
+          ],
+          [
+            54,
+            [
+              [
+                "TAG_ID",
+                "$"
+              ],
+              [
+                "TAG_NAMES",
+                "TN"
+              ],
+              [
+                "NS",
+                "NS"
+              ],
+              [
+                "ATTRS",
+                "ATTRS"
+              ],
+              [
+                "SPECIAL_ELEMENTS",
+                "SPECIAL_ELEMENTS"
+              ],
+              [
+                "DOCUMENT_MODE",
+                "DOCUMENT_MODE"
+              ],
+              [
+                "NUMBERED_HEADERS",
+                "NUMBERED_HEADERS"
+              ],
+              [
+                "getTagID",
+                "getTagID"
+              ]
+            ]
+          ],
+          [
+            49,
+            [
+              [
+                "TokenType",
+                "TokenType"
+              ],
+              [
+                "getTokenAttr",
+                "getTokenAttr"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/entities/dist/esm/escape.js",
+        "stem": "escape",
+        "delivered_bytes": 4082,
+        "sha256": "5c9ea19d19c531049aa7fb831be8075c5d434dadcab19d81f5f9227b5732b535",
+        "exports": [
+          [
+            "xmlReplacer",
+            "xmlReplacer"
+          ],
+          [
+            "getCodePoint",
+            "getCodePoint"
+          ],
+          [
+            "encodeXML",
+            "encodeXML"
+          ],
+          [
+            "escape",
+            "escape"
+          ],
+          [
+            "escapeUTF8",
+            "escapeUTF8"
+          ],
+          [
+            "escapeAttribute",
+            "escapeAttribute"
+          ],
+          [
+            "escapeText",
+            "escapeText"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/parse5/dist/serializer/index.js",
+        "stem": "index",
+        "delivered_bytes": 2868,
+        "sha256": "713ed44544abf1d278e0b3f35da85140fd3313519edbd4808c744530736d6d70",
+        "exports": [
+          [
+            "serialize",
+            "serialize"
+          ],
+          [
+            "serializeOuter",
+            "serializeOuter"
+          ]
+        ],
+        "imports": [
+          [
+            54,
+            [
+              [
+                "TAG_NAMES",
+                "$"
+              ],
+              [
+                "NS",
+                "NS"
+              ],
+              [
+                "hasUnescapedText",
+                "hasUnescapedText"
+              ]
+            ]
+          ],
+          [
+            62,
+            [
+              [
+                "escapeText",
+                "escapeText"
+              ],
+              [
+                "escapeAttribute",
+                "escapeAttribute"
+              ]
+            ]
+          ],
+          [
+            58,
+            [
+              [
+                "defaultTreeAdapter",
+                "defaultTreeAdapter"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/parse5/dist/index.js",
+        "stem": "index",
+        "delivered_bytes": 337,
+        "sha256": "aaeade5cab57097e71cc365bd168950f8469618481da9c731d653a31c9137181",
+        "exports": [
+          [
+            "defaultTreeAdapter",
+            "__lil_host_export_0"
+          ],
+          [
+            "Parser",
+            "__lil_host_export_1"
+          ],
+          [
+            "serialize",
+            "__lil_host_export_2"
+          ],
+          [
+            "serializeOuter",
+            "__lil_host_export_3"
+          ],
+          [
+            "ErrorCodes",
+            "__lil_host_export_4"
+          ],
+          [
+            "foreignContent",
+            "__lil_host_export_5"
+          ],
+          [
+            "html",
+            "__lil_host_export_6"
+          ],
+          [
+            "Token",
+            "__lil_host_export_7"
+          ],
+          [
+            "Tokenizer",
+            "__lil_host_export_8"
+          ],
+          [
+            "TokenizerMode",
+            "__lil_host_export_9"
+          ],
+          [
+            "parse",
+            "parse"
+          ],
+          [
+            "parseFragment",
+            "parseFragment"
+          ]
+        ],
+        "imports": [
+          [
+            61,
+            [
+              [
+                "Parser",
+                "Parser"
+              ]
+            ]
+          ],
+          [
+            58,
+            []
+          ],
+          [
+            58,
+            [
+              [
+                "defaultTreeAdapter",
+                "__lil_host_export_0"
+              ]
+            ]
+          ],
+          [
+            61,
+            []
+          ],
+          [
+            61,
+            [
+              [
+                "Parser",
+                "__lil_host_export_1"
+              ]
+            ]
+          ],
+          [
+            63,
+            []
+          ],
+          [
+            63,
+            [
+              [
+                "serialize",
+                "__lil_host_export_2"
+              ]
+            ]
+          ],
+          [
+            63,
+            [
+              [
+                "serializeOuter",
+                "__lil_host_export_3"
+              ]
+            ]
+          ],
+          [
+            47,
+            []
+          ],
+          [
+            47,
+            [
+              [
+                "ERR",
+                "__lil_host_export_4"
+              ]
+            ]
+          ],
+          [
+            60,
+            [
+              [
+                null,
+                "__lil_host_export_5"
+              ]
+            ]
+          ],
+          [
+            54,
+            [
+              [
+                null,
+                "__lil_host_export_6"
+              ]
+            ]
+          ],
+          [
+            49,
+            [
+              [
+                null,
+                "__lil_host_export_7"
+              ]
+            ]
+          ],
+          [
+            55,
+            []
+          ],
+          [
+            55,
+            [
+              [
+                "Tokenizer",
+                "__lil_host_export_8"
+              ]
+            ]
+          ],
+          [
+            55,
+            [
+              [
+                "TokenizerMode",
+                "__lil_host_export_9"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/vfile-message/node_modules/unist-util-stringify-position/lib/index.js",
+        "stem": "index",
+        "delivered_bytes": 503,
+        "sha256": "a2e70171e3631e6782cd8ca6a3871a3487705c00a4de79a1a1c58bf3054d3467",
+        "exports": [
+          [
+            "stringifyPosition",
+            "stringifyPosition"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/vfile-message/node_modules/unist-util-stringify-position/index.js",
+        "stem": "index",
+        "delivered_bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exports": [
+          [
+            "stringifyPosition",
+            "__lil_host_export_0"
+          ]
+        ],
+        "imports": [
+          [
+            65,
+            []
+          ],
+          [
+            65,
+            [
+              [
+                "stringifyPosition",
+                "__lil_host_export_0"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/vfile-message/lib/index.js",
+        "stem": "index",
+        "delivered_bytes": 2318,
+        "sha256": "665c4358afc72a368f86f37a34badc30147426eb349e23614d641a0430a2a79b",
+        "exports": [
+          [
+            "VFileMessage",
+            "VFileMessage"
+          ]
+        ],
+        "imports": [
+          [
+            66,
+            [
+              [
+                "stringifyPosition",
+                "stringifyPosition"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/vfile-message/index.js",
+        "stem": "index",
+        "delivered_bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exports": [
+          [
+            "VFileMessage",
+            "__lil_host_export_0"
+          ]
+        ],
+        "imports": [
+          [
+            67,
+            []
+          ],
+          [
+            67,
+            [
+              [
+                "VFileMessage",
+                "__lil_host_export_0"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/vfile/lib/minpath.browser.js",
+        "stem": "minpath_browser",
+        "delivered_bytes": 3742,
+        "sha256": "61b735f968a6ae79b8c9ae2a602e37230514e75b8d1b2b01bf40a7d5cb341d36",
+        "exports": [
+          [
+            "minpath",
+            "minpath"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/vfile/lib/minproc.browser.js",
+        "stem": "minproc_browser",
+        "delivered_bytes": 45,
+        "sha256": "6870afe92881ce87d240bb4a346140307902ee85905aca83d2d186202d9851d4",
+        "exports": [
+          [
+            "minproc",
+            "minproc"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/vfile/lib/minurl.shared.js",
+        "stem": "minurl_shared",
+        "delivered_bytes": 228,
+        "sha256": "4259557fe1a4aa39e68a5d3d5d55624e9ce8ce547d8efb5d56e0589d20e83184",
+        "exports": [
+          [
+            "isUrl",
+            "isUrl"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/vfile/lib/minurl.browser.js",
+        "stem": "minurl_browser",
+        "delivered_bytes": 997,
+        "sha256": "07746435d59b341f7d048cea349316906585f10a80fa795b5868d082f04f614f",
+        "exports": [
+          [
+            "isUrl",
+            "__lil_host_export_0"
+          ],
+          [
+            "urlToPath",
+            "urlToPath"
+          ]
+        ],
+        "imports": [
+          [
+            71,
+            [
+              [
+                "isUrl",
+                "isUrl"
+              ]
+            ]
+          ],
+          [
+            71,
+            []
+          ],
+          [
+            71,
+            [
+              [
+                "isUrl",
+                "__lil_host_export_0"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/vfile/lib/index.js",
+        "stem": "index",
+        "delivered_bytes": 3185,
+        "sha256": "06cb98dddcd02cbebe96e18974c259b88e5b7e3a46e477223fbb78ef4b1604a3",
+        "exports": [
+          [
+            "VFile",
+            "VFile"
+          ]
+        ],
+        "imports": [
+          [
+            68,
+            [
+              [
+                "VFileMessage",
+                "VFileMessage"
+              ]
+            ]
+          ],
+          [
+            69,
+            [
+              [
+                "minpath",
+                "minpath"
+              ]
+            ]
+          ],
+          [
+            70,
+            [
+              [
+                "minproc",
+                "minproc"
+              ]
+            ]
+          ],
+          [
+            72,
+            [
+              [
+                "urlToPath",
+                "urlToPath"
+              ],
+              [
+                "isUrl",
+                "isUrl"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/vfile/index.js",
+        "stem": "index",
+        "delivered_bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exports": [
+          [
+            "VFile",
+            "__lil_host_export_0"
+          ]
+        ],
+        "imports": [
+          [
+            73,
+            []
+          ],
+          [
+            73,
+            [
+              [
+                "VFile",
+                "__lil_host_export_0"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/hast-util-from-html/lib/errors.js",
+        "stem": "errors",
+        "delivered_bytes": 9532,
+        "sha256": "681a830065fdd85b5fad4714e94ca6712fc34892f764ee98d9b1276dd8ee586e",
+        "exports": [
+          [
+            "errors",
+            "errors"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/hast-util-from-html/lib/index.js",
+        "stem": "index",
+        "delivered_bytes": 2189,
+        "sha256": "6e1aea7a1e1f0a4bddb66e3b438db49551a282e11f97458d57e8cc317603cf91",
+        "exports": [
+          [
+            "fromHtml",
+            "fromHtml"
+          ]
+        ],
+        "imports": [
+          [
+            41,
+            [
+              [
+                "ok",
+                "assert"
+              ]
+            ]
+          ],
+          [
+            45,
+            [
+              [
+                "fromParse5",
+                "fromParse5"
+              ]
+            ]
+          ],
+          [
+            64,
+            [
+              [
+                "parse",
+                "parse"
+              ],
+              [
+                "parseFragment",
+                "parseFragment"
+              ]
+            ]
+          ],
+          [
+            74,
+            [
+              [
+                "VFile",
+                "VFile"
+              ]
+            ]
+          ],
+          [
+            68,
+            [
+              [
+                "VFileMessage",
+                "VFileMessage"
+              ]
+            ]
+          ],
+          [
+            75,
+            [
+              [
+                "errors",
+                "errors"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/hast-util-from-html/index.js",
+        "stem": "index",
+        "delivered_bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exports": [
+          [
+            "fromHtml",
+            "__lil_host_export_0"
+          ]
+        ],
+        "imports": [
+          [
+            76,
+            []
+          ],
+          [
+            76,
+            [
+              [
+                "fromHtml",
+                "__lil_host_export_0"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/unist-util-visit/lib/index.js",
+        "stem": "index",
+        "delivered_bytes": 512,
+        "sha256": "5ddcbc3429067d1ec58ee598172c7a16362e25d695a2cec8362ea369506edac2",
+        "exports": [
+          [
+            "CONTINUE",
+            "__lil_host_export_0"
+          ],
+          [
+            "EXIT",
+            "__lil_host_export_1"
+          ],
+          [
+            "SKIP",
+            "__lil_host_export_2"
+          ],
+          [
+            "visit",
+            "visit"
+          ]
+        ],
+        "imports": [
+          [
+            40,
+            [
+              [
+                "visitParents",
+                "visitParents"
+              ]
+            ]
+          ],
+          [
+            40,
+            []
+          ],
+          [
+            40,
+            [
+              [
+                "CONTINUE",
+                "__lil_host_export_0"
+              ]
+            ]
+          ],
+          [
+            40,
+            [
+              [
+                "EXIT",
+                "__lil_host_export_1"
+              ]
+            ]
+          ],
+          [
+            40,
+            [
+              [
+                "SKIP",
+                "__lil_host_export_2"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/unist-util-visit/index.js",
+        "stem": "index",
+        "delivered_bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exports": [
+          [
+            "CONTINUE",
+            "__lil_host_export_0"
+          ],
+          [
+            "EXIT",
+            "__lil_host_export_1"
+          ],
+          [
+            "SKIP",
+            "__lil_host_export_2"
+          ],
+          [
+            "visit",
+            "__lil_host_export_3"
+          ]
+        ],
+        "imports": [
+          [
+            78,
+            []
+          ],
+          [
+            78,
+            [
+              [
+                "CONTINUE",
+                "__lil_host_export_0"
+              ]
+            ]
+          ],
+          [
+            78,
+            [
+              [
+                "EXIT",
+                "__lil_host_export_1"
+              ]
+            ]
+          ],
+          [
+            78,
+            [
+              [
+                "SKIP",
+                "__lil_host_export_2"
+              ]
+            ]
+          ],
+          [
+            78,
+            [
+              [
+                "visit",
+                "__lil_host_export_3"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/unist-util-remove-position/lib/index.js",
+        "stem": "index",
+        "delivered_bytes": 198,
+        "sha256": "d739d036c5848bd2c83fabbb1629e903ffe0ab83325f1838f52a411d357ccea2",
+        "exports": [
+          [
+            "removePosition",
+            "removePosition"
+          ]
+        ],
+        "imports": [
+          [
+            79,
+            [
+              [
+                "visit",
+                "visit"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/unist-util-remove-position/index.js",
+        "stem": "index",
+        "delivered_bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exports": [
+          [
+            "removePosition",
+            "__lil_host_export_0"
+          ]
+        ],
+        "imports": [
+          [
+            80,
+            []
+          ],
+          [
+            80,
+            [
+              [
+                "removePosition",
+                "__lil_host_export_0"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/hast-util-from-html-isomorphic/lib/index.js",
+        "stem": "index",
+        "delivered_bytes": 141,
+        "sha256": "fd2017ed318a10f9f51f9c5bdc66d836cd42df9358eccd0d5ff84dde41110acb",
+        "exports": [
+          [
+            "fromHtmlIsomorphic",
+            "fromHtmlIsomorphic"
+          ]
+        ],
+        "imports": [
+          [
+            77,
+            [
+              [
+                "fromHtml",
+                "fromHtml"
+              ]
+            ]
+          ],
+          [
+            81,
+            [
+              [
+                "removePosition",
+                "removePosition"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "../../../../../rehype-katexlil/node_modules/hast-util-from-html-isomorphic/index.js",
+        "stem": "index",
+        "delivered_bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exports": [
+          [
+            "fromHtmlIsomorphic",
+            "__lil_host_export_0"
+          ]
+        ],
+        "imports": [
+          [
+            82,
+            []
+          ],
+          [
+            82,
+            [
+              [
+                "fromHtmlIsomorphic",
+                "__lil_host_export_0"
+              ]
+            ]
+          ]
+        ]
+      }
+    ],
+    "host_reserved": [
+      "Array",
+      "Boolean",
+      "DOMParser",
+      "Error",
+      "JSON",
+      "Map",
+      "Math",
+      "Number",
+      "Object",
+      "Proxy",
+      "Reflect",
+      "Set",
+      "String",
+      "Symbol",
+      "TextDecoder",
+      "TypeError",
+      "URL",
+      "Uint16Array",
+      "decodeURIComponent",
+      "document",
+      "undefined"
+    ]
+  },
+  "outputs": [
+    {
+      "mode": "single",
+      "format": "esm",
+      "entries": [
+        {
+          "name": "index",
+          "file": "rehype-katex.esm.js",
+          "dynamic": false,
+          "closure": [
+            "rehype-katex.esm.js"
+          ],
+          "row": 735,
+          "raw_row": 1536
+        }
+      ],
+      "files": [
+        {
+          "file": "rehype-katex.esm.js",
+          "role": "entry",
+          "source_map_for": null,
+          "label": [
+            "index"
+          ],
+          "modules": [
+            "index.lil",
+            "module-88",
+            "module-89",
+            "module-90",
+            "module-91"
+          ],
+          "anchored": true,
+          "imports": [],
+          "dynamic_imports": [],
+          "bytes": 1536,
+          "codec_bytes": 735,
+          "sha256": "e7436770c11dcb3dd00564d753b2bcfb02c5810d65d0f7063849e473852ef10e"
+        }
+      ],
+      "side_effects": [
+        "rehype-katex.esm.js"
+      ],
+      "codec_total": 735,
+      "rows_total": 735,
+      "setters": 0,
+      "output": "primary",
+      "codec": "brotli",
+      "codec_settings": {
+        "brotli": {
+          "quality": 11,
+          "window": 22,
+          "mode": "generic"
+        },
+        "gzip": {
+          "level": 9,
+          "window": 15
+        }
+      },
+      "policy_fingerprint": [
+        103,
+        173,
+        245,
+        12,
+        234,
+        12,
+        181,
+        18,
+        164,
+        8,
+        170,
+        81,
+        89,
+        99,
+        93,
+        230,
+        242,
+        78,
+        227,
+        251,
+        74,
+        90,
+        161,
+        72,
+        126,
+        158,
+        253,
+        133,
+        141,
+        41,
+        16,
+        209
+      ]
+    },
+    {
+      "mode": "single",
+      "format": "iife",
+      "entries": [
+        {
+          "name": "browser",
+          "file": "rehype-katex.umd.js",
+          "dynamic": false,
+          "closure": [
+            "rehype-katex.umd.js"
+          ],
+          "row": 12191,
+          "raw_row": 48456
+        }
+      ],
+      "files": [
+        {
+          "file": "rehype-katex.umd.js",
+          "role": "entry",
+          "source_map_for": null,
+          "label": [
+            "browser"
+          ],
+          "modules": [
+            "browser.lil",
+            "lib/index.lil",
+            "module-4",
+            "module-5",
+            "module-6",
+            "module-7",
+            "module-12",
+            "module-13",
+            "module-14",
+            "module-15",
+            "module-16",
+            "module-17",
+            "module-18",
+            "module-19",
+            "module-20",
+            "module-21",
+            "module-22",
+            "module-23",
+            "module-24",
+            "module-25",
+            "module-26",
+            "module-27",
+            "module-28",
+            "module-29",
+            "module-30",
+            "module-31",
+            "module-32",
+            "module-33",
+            "module-34",
+            "module-35",
+            "module-36",
+            "module-37",
+            "module-38",
+            "module-39",
+            "module-40",
+            "module-41",
+            "module-42",
+            "module-43",
+            "module-44",
+            "module-45",
+            "module-46",
+            "module-47",
+            "module-48",
+            "module-49"
+          ],
+          "anchored": true,
+          "imports": [],
+          "dynamic_imports": [],
+          "bytes": 48456,
+          "codec_bytes": 12191,
+          "sha256": "35618120b4bcea1dbb538b06598a93fca12e664739f045c4b20efae11bc163c5"
+        }
+      ],
+      "side_effects": [
+        "rehype-katex.umd.js"
+      ],
+      "codec_total": 12191,
+      "rows_total": 12191,
+      "setters": 0,
+      "output": "browser",
+      "codec": "brotli",
+      "codec_settings": {
+        "brotli": {
+          "quality": 11,
+          "window": 22,
+          "mode": "generic"
+        },
+        "gzip": {
+          "level": 9,
+          "window": 15
+        }
+      },
+      "policy_fingerprint": [
+        38,
+        50,
+        52,
+        171,
+        78,
+        107,
+        18,
+        232,
+        168,
+        54,
+        244,
+        76,
+        96,
+        113,
+        100,
+        197,
+        246,
+        62,
+        182,
+        195,
+        89,
+        204,
+        17,
+        230,
+        120,
+        115,
+        171,
+        54,
+        219,
+        121,
+        67,
+        164
+      ]
+    },
+    {
+      "mode": "single",
+      "format": "cjs",
+      "entries": [
+        {
+          "name": "bundled",
+          "file": "rehype-katex.cjs",
+          "dynamic": false,
+          "closure": [
+            "rehype-katex.cjs"
+          ],
+          "row": 65450,
+          "raw_row": 346440
+        }
+      ],
+      "files": [
+        {
+          "file": "rehype-katex.cjs",
+          "role": "entry",
+          "source_map_for": null,
+          "label": [
+            "bundled"
+          ],
+          "modules": [
+            "lib/index.lil",
+            "bundled.lil",
+            "module-4",
+            "module-6",
+            "module-7",
+            "module-8",
+            "module-12",
+            "module-13",
+            "module-14",
+            "module-15",
+            "module-16",
+            "module-17",
+            "module-18",
+            "module-19",
+            "module-20",
+            "module-21",
+            "module-22",
+            "module-23",
+            "module-24",
+            "module-25",
+            "module-26",
+            "module-27",
+            "module-28",
+            "module-29",
+            "module-30",
+            "module-31",
+            "module-32",
+            "module-33",
+            "module-34",
+            "module-35",
+            "module-36",
+            "module-37",
+            "module-38",
+            "module-41",
+            "module-42",
+            "module-43",
+            "module-44",
+            "module-45",
+            "module-46",
+            "module-47",
+            "module-48",
+            "module-49",
+            "module-50",
+            "module-51",
+            "module-52",
+            "module-53",
+            "module-54",
+            "module-55",
+            "module-56",
+            "module-57",
+            "module-58",
+            "module-59",
+            "module-60",
+            "module-61",
+            "module-62",
+            "module-63",
+            "module-64",
+            "module-65",
+            "module-66",
+            "module-67",
+            "module-68",
+            "module-69",
+            "module-70",
+            "module-71",
+            "module-72",
+            "module-73",
+            "module-74",
+            "module-75",
+            "module-76",
+            "module-77",
+            "module-78",
+            "module-79",
+            "module-80",
+            "module-81",
+            "module-82",
+            "module-83",
+            "module-84",
+            "module-85",
+            "module-86",
+            "module-87",
+            "module-88",
+            "module-89",
+            "module-90",
+            "module-91"
+          ],
+          "anchored": true,
+          "imports": [],
+          "dynamic_imports": [],
+          "bytes": 346440,
+          "codec_bytes": 65450,
+          "sha256": "7dab198400ba04ac1244e3d1fdf02b29d69dc77c32bfc2b3473674e273419f35"
+        }
+      ],
+      "side_effects": [
+        "rehype-katex.cjs"
+      ],
+      "codec_total": 65450,
+      "rows_total": 65450,
+      "setters": 0,
+      "output": "cjs",
+      "codec": "brotli",
+      "codec_settings": {
+        "brotli": {
+          "quality": 11,
+          "window": 22,
+          "mode": "generic"
+        },
+        "gzip": {
+          "level": 9,
+          "window": 15
+        }
+      },
+      "policy_fingerprint": [
+        21,
+        27,
+        232,
+        207,
+        26,
+        137,
+        243,
+        13,
+        87,
+        82,
+        19,
+        125,
+        216,
+        97,
+        222,
+        54,
+        157,
+        109,
+        198,
+        112,
+        112,
+        44,
+        208,
+        114,
+        90,
+        116,
+        57,
+        167,
+        112,
+        237,
+        151,
+        207
+      ]
+    }
+  ]
+}

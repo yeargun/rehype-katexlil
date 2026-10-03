@@ -1,3 +1,4 @@
+import {JSDOM} from "jsdom"
 import assert from "node:assert/strict"
 import { createRequire } from "node:module"
 import { existsSync, readFileSync } from "node:fs"
@@ -145,9 +146,14 @@ describe("source, data, and artifact audit", () => {
     assert.deepEqual(Object.keys(await import("../dist/rehype-katex.esm.js")), ["default"])
     assert.deepEqual(Object.keys(await import("../dist/rehype-katex.closed.js")), ["default"])
     assert.deepEqual(Object.keys(require("../dist/rehype-katex.cjs")), ["default"])
-    delete globalThis.rehypeKatex
-    await import("../dist/rehype-katex.umd.js")
-    assert.equal(typeof globalThis.rehypeKatex, "function")
-    delete globalThis.rehypeKatex
+    const dom = new JSDOM("<!doctype html>", {runScripts: "outside-only"})
+    try {
+      dom.window.katex = require("katex")
+      dom.window.eval(readFileSync(resolve(root, "dist/rehype-katex.umd.js"), "utf8"))
+      assert.equal(typeof dom.window.rehypeKatex, "function")
+      const tree = {type: "root", children: [{type: "element", tagName: "span", properties: {className: ["math-inline"]}, children: [{type: "text", value: "x^2"}]}]}
+      dom.window.rehypeKatex()(tree, {message() { throw new Error("Unexpected KaTeX warning") }})
+      assert.match(JSON.stringify(tree), /katex/)
+    } finally { dom.window.close() }
   })
 })

@@ -1,0 +1,365 @@
+
+> @itslil/rehype-katex@7.0.3 test
+> npm run check:types && node --test test/official/test.js test/*.test.mjs
+
+
+> @itslil/rehype-katex@7.0.3 check:types
+> tsc --noEmit --strict --skipLibCheck --module NodeNext --moduleResolution NodeNext --target ES2022 test/types.test.ts
+
+TAP version 13
+# Subtest: source, data, and artifact audit
+    # Subtest: preserves the upstream rehype-katex module paths
+    ok 1 - preserves the upstream rehype-katex module paths
+      ---
+      duration_ms: 1.607372
+      ...
+    # Subtest: covers every KaTeX 0.16.22 source module by upstream filename
+    ok 2 - covers every KaTeX 0.16.22 source module by upstream filename
+      ---
+      duration_ms: 2.167952
+      ...
+    # Subtest: vendors the exact KaTeX 0.16.22 metric and Unicode mappings
+    ok 3 - vendors the exact KaTeX 0.16.22 metric and Unicode mappings
+      ---
+      duration_ms: 37.290589
+      ...
+    # Subtest: pins package, lockfile, declarations, and artifact exports
+    ok 4 - pins package, lockfile, declarations, and artifact exports
+      ---
+      duration_ms: 353.569841
+      ...
+    1..4
+ok 1 - source, data, and artifact audit
+  ---
+  duration_ms: 397.223915
+  type: 'suite'
+  ...
+# Subtest: rehype-katex
+    # Subtest: should expose the public api
+    ok 1 - should expose the public api
+      ---
+      duration_ms: 2.366445
+      ...
+    # Subtest: should transform math with katex
+    ok 2 - should transform math with katex
+      ---
+      duration_ms: 25.883754
+      ...
+    # Subtest: should support markdown fenced code
+    ok 3 - should support markdown fenced code
+      ---
+      duration_ms: 13.655299
+      ...
+    # Subtest: should integrate with `remark-math`
+    ok 4 - should integrate with `remark-math`
+      ---
+      duration_ms: 11.965793
+      ...
+    # Subtest: should transform `.math-inline.math-display` math with `displayMode: true`
+    ok 5 - should transform `.math-inline.math-display` math with `displayMode: true`
+      ---
+      duration_ms: 5.138288
+      ...
+    # Subtest: should support `macros`
+    ok 6 - should support `macros`
+      ---
+      duration_ms: 3.769554
+      ...
+    # Subtest: should handle errors, support `errorColor`
+    ok 7 - should handle errors, support `errorColor`
+      ---
+      duration_ms: 5.16566
+      ...
+    # Subtest: should support `strict: ignore`
+    ok 8 - should support `strict: ignore`
+      ---
+      duration_ms: 3.187473
+      ...
+    # Subtest: should support comments
+    ok 9 - should support comments
+      ---
+      duration_ms: 42.806672
+      ...
+    # Subtest: should not crash on non-parse errors
+    ok 10 - should not crash on non-parse errors
+      ---
+      duration_ms: 3.65507
+      ...
+    1..10
+ok 2 - rehype-katex
+  ---
+  duration_ms: 127.254521
+  ...
+# Subtest: KaTeX 0.16.22 structural parity
+    # Subtest: empty expression
+    ok 1 - empty expression
+      ---
+      duration_ms: 20.026758
+      ...
+    # Subtest: plain symbols
+    ok 2 - plain symbols
+      ---
+      duration_ms: 15.304917
+      ...
+    # Subtest: HTML line-ending preprocessing
+    ok 3 - HTML line-ending preprocessing
+      ---
+      duration_ms: 7.251168
+      ...
+    # Subtest: superscripts and subscripts
+    ok 4 - superscripts and subscripts
+      ---
+      duration_ms: 15.764751
+      ...
+    # Subtest: fractions
+    ok 5 - fractions
+      ---
+      duration_ms: 9.304215
+      ...
+    # Subtest: roots and generated SVG paths
+    ok 6 - roots and generated SVG paths
+      ---
+      duration_ms: 20.983935
+      ...
+    # Subtest: stretchy delimiters
+    ok 7 - stretchy delimiters
+      ---
+      duration_ms: 10.244497
+      ...
+    # Subtest: matrix environments
+    ok 8 - matrix environments
+      ---
+      duration_ms: 17.917443
+      ...
+    # Subtest: array rules and SVG lines
+    ok 9 - array rules and SVG lines
+      ---
+      duration_ms: 9.070391
+      ...
+    # Subtest: stretchy accents
+    ok 10 - stretchy accents
+      ---
+      duration_ms: 9.674529
+      ...
+    # Subtest: horizontal braces
+    ok 11 - horizontal braces
+      ---
+      duration_ms: 10.115596
+      ...
+    # Subtest: enclosures
+    ok 12 - enclosures
+      ---
+      duration_ms: 9.426725
+      ...
+    # Subtest: fonts and colors
+    ok 13 - fonts and colors
+      ---
+      duration_ms: 3.718067
+      ...
+    # Subtest: text and consecutive MathML text
+    ok 14 - text and consecutive MathML text
+      ---
+      duration_ms: 2.547164
+      ...
+    # Subtest: unicode fallback classes
+    ok 15 - unicode fallback classes
+      ---
+      duration_ms: 3.688362
+      ...
+    # Subtest: mathematical alphanumeric fonts
+    ok 16 - mathematical alphanumeric fonts
+      ---
+      duration_ms: 6.828316
+      ...
+    # Subtest: spacing nodes
+    ok 17 - spacing nodes
+      ---
+      duration_ms: 5.947344
+      ...
+    # Subtest: commutative diagrams
+    ok 18 - commutative diagrams
+      ---
+      duration_ms: 35.526431
+      ...
+    # Subtest: trusted anchors
+    ok 19 - trusted anchors
+      ---
+      duration_ms: 6.855938
+      ...
+    # Subtest: trusted image nodes
+    ok 20 - trusted image nodes
+      ---
+      duration_ms: 3.689645
+      ...
+    # Subtest: trusted HTML classes
+    ok 21 - trusted HTML classes
+      ---
+      duration_ms: 4.170545
+      ...
+    # Subtest: trusted HTML identifiers
+    ok 22 - trusted HTML identifiers
+      ---
+      duration_ms: 3.219623
+      ...
+    # Subtest: trusted HTML styles
+    ok 23 - trusted HTML styles
+      ---
+      duration_ms: 1.803088
+      ...
+    # Subtest: trusted data attributes
+    ok 24 - trusted data attributes
+      ---
+      duration_ms: 2.259735
+      ...
+    # Subtest: HTML-only output
+    ok 25 - HTML-only output
+      ---
+      duration_ms: 9.618414
+      ...
+    # Subtest: MathML-only output
+    ok 26 - MathML-only output
+      ---
+      duration_ms: 1.595209
+      ...
+    # Subtest: left equation numbers
+    ok 27 - left equation numbers
+      ---
+      duration_ms: 5.58737
+      ...
+    # Subtest: flush-left display
+    ok 28 - flush-left display
+      ---
+      duration_ms: 4.673798
+      ...
+    # Subtest: minimum rule thickness
+    ok 29 - minimum rule thickness
+      ---
+      duration_ms: 6.235855
+      ...
+    # Subtest: custom macros
+    ok 30 - custom macros
+      ---
+      duration_ms: 2.560919
+      ...
+    # Subtest: preserves a non-math tree and ignores scalar className
+    ok 31 - preserves a non-math tree and ignores scalar className
+      ---
+      duration_ms: 0.377828
+      ...
+    # Subtest: does not transform a matching root element without a parent
+    ok 32 - does not transform a matching root element without a parent
+      ---
+      duration_ms: 0.372217
+      ...
+    # Subtest: uses display mode when both math classes are present
+    ok 33 - uses display mode when both math classes are present
+      ---
+      duration_ms: 1.150005
+      ...
+    # Subtest: uses preformatted text and replaces the pre for language-math
+    ok 34 - uses preformatted text and replaces the pre for language-math
+      ---
+      duration_ms: 1.962698
+      ...
+    # Subtest: matches preformatted text extraction for nested HAST
+    ok 35 - matches preformatted text extraction for nested HAST
+      ---
+      duration_ms: 1.88931
+      ...
+    # Subtest: transforms each math sibling without revisiting replacements
+    ok 36 - transforms each math sibling without revisiting replacements
+      ---
+      duration_ms: 3.805351
+      ...
+    # Subtest: matches official ParseError recovery and diagnostics
+    ok 37 - matches official ParseError recovery and diagnostics
+      ---
+      duration_ms: 8.307748
+      ...
+    # Subtest: matches HTML null preprocessing in ParseError output
+    ok 38 - matches HTML null preprocessing in ParseError output
+      ---
+      duration_ms: 1.73997
+      ...
+    # Subtest: rejects invalid trusted HTML attribute names like KaTeX toMarkup
+    ok 39 - rejects invalid trusted HTML attribute names like KaTeX toMarkup
+      ---
+      duration_ms: 0.957204
+      ...
+    # Subtest: preserves upstream truthy errorColor coercion on non-parse errors
+    ok 40 - preserves upstream truthy errorColor coercion on non-parse errors
+      ---
+      duration_ms: 1.123225
+      ...
+    # Subtest: shares the runtime mhchem registry
+    ok 41 - shares the runtime mhchem registry
+      ---
+      duration_ms: 143.031842
+      ...
+    # Subtest: shares macros registered through __defineMacro
+    ok 42 - shares macros registered through __defineMacro
+      ---
+      duration_ms: 2.292285
+      ...
+    # Subtest: shares functions registered through __defineFunction
+    ok 43 - shares functions registered through __defineFunction
+      ---
+      duration_ms: 1.99579
+      ...
+    1..43
+ok 3 - KaTeX 0.16.22 structural parity
+  ---
+  duration_ms: 438.518995
+  type: 'suite'
+  ...
+# Subtest: @itslil/rehype-katex
+    # Subtest: transforms span.math-inline x^2 into katex
+    ok 1 - transforms span.math-inline x^2 into katex
+      ---
+      duration_ms: 201.615419
+      ...
+    # Subtest: exports default as the plugin
+    ok 2 - exports default as the plugin
+      ---
+      duration_ms: 1.412687
+      ...
+    # Subtest: pins tree and option keys on the library artifact
+    ok 3 - pins tree and option keys on the library artifact
+      ---
+      duration_ms: 0.457307
+      ...
+    # Subtest: closed artifact performs the core call
+    ok 4 - closed artifact performs the core call
+      ---
+      duration_ms: 7.318124
+      ...
+    1..4
+ok 4 - @itslil/rehype-katex
+  ---
+  duration_ms: 213.016354
+  type: 'suite'
+  ...
+# Subtest: three independently targeted builds have current artifact and config hashes
+ok 5 - three independently targeted builds have current artifact and config hashes
+  ---
+  duration_ms: 12.58855
+  ...
+# Subtest: public comparison describes current versus original and distinguishes build stages
+ok 6 - public comparison describes current versus original and distinguishes build stages
+  ---
+  duration_ms: 3.691507
+  ...
+# Subtest: built Pages artifact contains the current data and measured downloads
+ok 7 - built Pages artifact contains the current data and measured downloads
+  ---
+  duration_ms: 3.27667
+  ...
+1..7
+# tests 65
+# suites 3
+# pass 65
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1459.337475

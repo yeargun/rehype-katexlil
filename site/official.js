@@ -4,7 +4,7 @@ var __export = (target, all2) => {
     __defProp(target, name, { get: all2[name], enumerable: true });
 };
 
-// ../../rehype-katexlil/node_modules/property-information/lib/util/schema.js
+// ports/rehype-katexlil/node_modules/property-information/lib/util/schema.js
 var Schema = class {
   /**
    * @param {SchemaType['property']} property
@@ -28,7 +28,7 @@ Schema.prototype.normal = {};
 Schema.prototype.property = {};
 Schema.prototype.space = void 0;
 
-// ../../rehype-katexlil/node_modules/property-information/lib/util/merge.js
+// ports/rehype-katexlil/node_modules/property-information/lib/util/merge.js
 function merge(definitions, space) {
   const property = {};
   const normal = {};
@@ -39,12 +39,12 @@ function merge(definitions, space) {
   return new Schema(property, normal, space);
 }
 
-// ../../rehype-katexlil/node_modules/property-information/lib/normalize.js
+// ports/rehype-katexlil/node_modules/property-information/lib/normalize.js
 function normalize(value) {
   return value.toLowerCase();
 }
 
-// ../../rehype-katexlil/node_modules/property-information/lib/util/info.js
+// ports/rehype-katexlil/node_modules/property-information/lib/util/info.js
 var Info = class {
   /**
    * @param {string} property
@@ -72,7 +72,7 @@ Info.prototype.property = "";
 Info.prototype.spaceSeparated = false;
 Info.prototype.space = void 0;
 
-// ../../rehype-katexlil/node_modules/property-information/lib/util/types.js
+// ports/rehype-katexlil/node_modules/property-information/lib/util/types.js
 var types_exports = {};
 __export(types_exports, {
   boolean: () => boolean,
@@ -95,7 +95,7 @@ function increment() {
   return 2 ** ++powers;
 }
 
-// ../../rehype-katexlil/node_modules/property-information/lib/util/defined-info.js
+// ports/rehype-katexlil/node_modules/property-information/lib/util/defined-info.js
 var checks = (
   /** @type {ReadonlyArray<keyof typeof types>} */
   Object.keys(types_exports)
@@ -133,7 +133,7 @@ function mark(values, key, value) {
   }
 }
 
-// ../../rehype-katexlil/node_modules/property-information/lib/util/create.js
+// ports/rehype-katexlil/node_modules/property-information/lib/util/create.js
 function create(definition) {
   const properties = {};
   const normals = {};
@@ -154,7 +154,7 @@ function create(definition) {
   return new Schema(properties, normals, definition.space);
 }
 
-// ../../rehype-katexlil/node_modules/property-information/lib/aria.js
+// ports/rehype-katexlil/node_modules/property-information/lib/aria.js
 var aria = create({
   properties: {
     ariaActiveDescendant: null,
@@ -212,17 +212,17 @@ var aria = create({
   }
 });
 
-// ../../rehype-katexlil/node_modules/property-information/lib/util/case-sensitive-transform.js
+// ports/rehype-katexlil/node_modules/property-information/lib/util/case-sensitive-transform.js
 function caseSensitiveTransform(attributes, attribute) {
   return attribute in attributes ? attributes[attribute] : attribute;
 }
 
-// ../../rehype-katexlil/node_modules/property-information/lib/util/case-insensitive-transform.js
+// ports/rehype-katexlil/node_modules/property-information/lib/util/case-insensitive-transform.js
 function caseInsensitiveTransform(attributes, property) {
   return caseSensitiveTransform(attributes, property.toLowerCase());
 }
 
-// ../../rehype-katexlil/node_modules/property-information/lib/html.js
+// ports/rehype-katexlil/node_modules/property-information/lib/html.js
 var html = create({
   attributes: {
     acceptcharset: "accept-charset",
@@ -596,7 +596,7 @@ var html = create({
   transform: caseInsensitiveTransform
 });
 
-// ../../rehype-katexlil/node_modules/property-information/lib/svg.js
+// ports/rehype-katexlil/node_modules/property-information/lib/svg.js
 var svg = create({
   attributes: {
     accentHeight: "accent-height",
@@ -1160,7 +1160,7 @@ var svg = create({
   transform: caseSensitiveTransform
 });
 
-// ../../rehype-katexlil/node_modules/property-information/lib/xlink.js
+// ports/rehype-katexlil/node_modules/property-information/lib/xlink.js
 var xlink = create({
   properties: {
     xLinkActuate: null,
@@ -1177,7 +1177,7 @@ var xlink = create({
   }
 });
 
-// ../../rehype-katexlil/node_modules/property-information/lib/xmlns.js
+// ports/rehype-katexlil/node_modules/property-information/lib/xmlns.js
 var xmlns = create({
   attributes: { xmlnsxlink: "xmlns:xlink" },
   properties: { xmlnsXLink: null, xmlns: null },
@@ -1185,7 +1185,7 @@ var xmlns = create({
   transform: caseInsensitiveTransform
 });
 
-// ../../rehype-katexlil/node_modules/property-information/lib/xml.js
+// ports/rehype-katexlil/node_modules/property-information/lib/xml.js
 var xml = create({
   properties: { xmlBase: null, xmlLang: null, xmlSpace: null },
   space: "xml",
@@ -1194,7 +1194,7 @@ var xml = create({
   }
 });
 
-// ../../rehype-katexlil/node_modules/property-information/lib/find.js
+// ports/rehype-katexlil/node_modules/property-information/lib/find.js
 var cap = /[A-Z]/g;
 var dash = /-[a-z]/g;
 var valid = /^data[-\w.:]+$/i;
@@ -1230,11 +1230,11 @@ function camelcase($0) {
   return $0.charAt(1).toUpperCase();
 }
 
-// ../../rehype-katexlil/node_modules/property-information/index.js
+// ports/rehype-katexlil/node_modules/property-information/index.js
 var html2 = merge([aria, html, xlink, xmlns, xml], "html");
 var svg2 = merge([aria, svg, xlink, xmlns, xml], "svg");
 
-// ../../rehype-katexlil/node_modules/comma-separated-tokens/index.js
+// ports/rehype-katexlil/node_modules/comma-separated-tokens/index.js
 function parse(value) {
   const tokens = [];
   const input = String(value || "");
@@ -1256,7 +1256,7 @@ function parse(value) {
   return tokens;
 }
 
-// ../../rehype-katexlil/node_modules/hast-util-parse-selector/lib/index.js
+// ports/rehype-katexlil/node_modules/hast-util-parse-selector/lib/index.js
 var search = /[#.]/g;
 function parseSelector(selector, defaultTagName) {
   const value = selector || "";
@@ -1294,13 +1294,13 @@ function parseSelector(selector, defaultTagName) {
   };
 }
 
-// ../../rehype-katexlil/node_modules/space-separated-tokens/index.js
+// ports/rehype-katexlil/node_modules/space-separated-tokens/index.js
 function parse2(value) {
   const input = String(value || "").trim();
   return input ? input.split(/[ \t\n\r\f]+/g) : [];
 }
 
-// ../../rehype-katexlil/node_modules/hastscript/lib/create-h.js
+// ports/rehype-katexlil/node_modules/hastscript/lib/create-h.js
 function createH(schema, defaultTagName, caseSensitive) {
   const adjust = caseSensitive ? createAdjustMap(caseSensitive) : void 0;
   function h2(selector, properties, ...children) {
@@ -1452,7 +1452,7 @@ function createAdjustMap(values) {
   return result;
 }
 
-// ../../rehype-katexlil/node_modules/hastscript/lib/svg-case-sensitive-tag-names.js
+// ports/rehype-katexlil/node_modules/hastscript/lib/svg-case-sensitive-tag-names.js
 var svgCaseSensitiveTagNames = [
   "altGlyph",
   "altGlyphDef",
@@ -1495,11 +1495,11 @@ var svgCaseSensitiveTagNames = [
   "textPath"
 ];
 
-// ../../rehype-katexlil/node_modules/hastscript/lib/index.js
+// ports/rehype-katexlil/node_modules/hastscript/lib/index.js
 var h = createH(html2, "div");
 var s = createH(svg2, "g", svgCaseSensitiveTagNames);
 
-// ../../rehype-katexlil/node_modules/web-namespaces/index.js
+// ports/rehype-katexlil/node_modules/web-namespaces/index.js
 var webNamespaces = {
   html: "http://www.w3.org/1999/xhtml",
   mathml: "http://www.w3.org/1998/Math/MathML",
@@ -1509,7 +1509,7 @@ var webNamespaces = {
   xmlns: "http://www.w3.org/2000/xmlns/"
 };
 
-// ../../rehype-katexlil/node_modules/hast-util-from-dom/lib/index.js
+// ports/rehype-katexlil/node_modules/hast-util-from-dom/lib/index.js
 function fromDom(tree, options) {
   return transform(tree, options || {}) || { type: "root", children: [] };
 }
@@ -1610,7 +1610,7 @@ function all(node, options) {
   return children;
 }
 
-// ../../rehype-katexlil/node_modules/hast-util-from-html-isomorphic/lib/browser.js
+// ports/rehype-katexlil/node_modules/hast-util-from-html-isomorphic/lib/browser.js
 var parser = new DOMParser();
 function fromHtmlIsomorphic(value, options) {
   const node = options?.fragment ? parseFragment(value) : parser.parseFromString(value, "text/html");
@@ -1625,7 +1625,7 @@ function parseFragment(value) {
   return template.content;
 }
 
-// ../../rehype-katexlil/node_modules/unist-util-is/lib/index.js
+// ports/rehype-katexlil/node_modules/unist-util-is/lib/index.js
 var convert = (
   // Note: overloads in JSDoc can’t yet use different `@template`s.
   /**
@@ -1724,7 +1724,7 @@ function looksLikeANode(value) {
   return value !== null && typeof value === "object" && "type" in value;
 }
 
-// ../../rehype-katexlil/node_modules/unist-util-find-after/lib/index.js
+// ports/rehype-katexlil/node_modules/unist-util-find-after/lib/index.js
 var findAfter = (
   // Note: overloads like this are needed to support optional generics.
   /**
@@ -1763,7 +1763,7 @@ var findAfter = (
   })
 );
 
-// ../../rehype-katexlil/node_modules/hast-util-is-element/lib/index.js
+// ports/rehype-katexlil/node_modules/hast-util-is-element/lib/index.js
 var convertElement = (
   // Note: overloads in JSDoc can’t yet use different `@template`s.
   /**
@@ -1837,7 +1837,7 @@ function looksLikeAnElement(value) {
   return value !== null && typeof value === "object" && "type" in value && "tagName" in value;
 }
 
-// ../../rehype-katexlil/node_modules/hast-util-to-text/lib/index.js
+// ports/rehype-katexlil/node_modules/hast-util-to-text/lib/index.js
 var searchLineFeeds = /\n/g;
 var searchTabOrSpaces = /[\t ]+/g;
 var br = convertElement("br");
@@ -2143,7 +2143,7 @@ function closedDialog(node) {
   return node.tagName === "dialog" && !(node.properties || {}).open;
 }
 
-// ../../rehype-katexlil/node_modules/katex/dist/katex.mjs
+// ports/rehype-katexlil/node_modules/katex/dist/katex.mjs
 var SourceLocation = class _SourceLocation {
   // The + prefix indicates that these fields aren't writeable
   // Lexer holding the input string.
@@ -16665,12 +16665,12 @@ var katex = {
   __domTree
 };
 
-// ../../rehype-katexlil/node_modules/unist-util-visit-parents/lib/color.js
+// ports/rehype-katexlil/node_modules/unist-util-visit-parents/lib/color.js
 function color(d) {
   return d;
 }
 
-// ../../rehype-katexlil/node_modules/unist-util-visit-parents/lib/index.js
+// ports/rehype-katexlil/node_modules/unist-util-visit-parents/lib/index.js
 var empty = [];
 var CONTINUE = true;
 var EXIT = false;
@@ -16747,7 +16747,7 @@ function toResult(value) {
   return value === null || value === void 0 ? empty : [value];
 }
 
-// ../../rehype-katexlil/site/comparison-artifacts/original-oxc.mjs
+// ports/rehype-katexlil/site/comparison-artifacts/original-oxc.mjs
 var a = {};
 var o = [];
 function s2(s3) {

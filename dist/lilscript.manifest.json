@@ -1,0 +1,496 @@
+{
+  "version": 5,
+  "outputs": [
+    {
+      "mode": "single",
+      "format": "esm",
+      "entries": [
+        {
+          "name": "index",
+          "file": "rehype-katex.esm.js",
+          "dynamic": false,
+          "closure": [
+            "rehype-katex.esm.js"
+          ],
+          "row": 735,
+          "raw_row": 1536
+        }
+      ],
+      "files": [
+        {
+          "file": "rehype-katex.esm.js",
+          "role": "entry",
+          "source_map_for": null,
+          "label": [
+            "index"
+          ],
+          "modules": [
+            "index.lil",
+            "module-88",
+            "module-89",
+            "module-90",
+            "module-91"
+          ],
+          "anchored": true,
+          "imports": [],
+          "dynamic_imports": [],
+          "bytes": 1536,
+          "codec_bytes": 735,
+          "sha256": "e7436770c11dcb3dd00564d753b2bcfb02c5810d65d0f7063849e473852ef10e"
+        }
+      ],
+      "side_effects": [
+        "rehype-katex.esm.js"
+      ],
+      "codec_total": 735,
+      "rows_total": 735,
+      "setters": 0,
+      "output": "public/primary",
+      "codec": "brotli",
+      "codec_settings": {
+        "brotli": {
+          "quality": 11,
+          "window": 22,
+          "mode": "generic"
+        },
+        "gzip": {
+          "level": 9,
+          "window": 15
+        }
+      },
+      "policy_fingerprint": [
+        103,
+        173,
+        245,
+        12,
+        234,
+        12,
+        181,
+        18,
+        164,
+        8,
+        170,
+        81,
+        89,
+        99,
+        93,
+        230,
+        242,
+        78,
+        227,
+        251,
+        74,
+        90,
+        161,
+        72,
+        126,
+        158,
+        253,
+        133,
+        141,
+        41,
+        16,
+        209
+      ]
+    },
+    {
+      "mode": "single",
+      "format": "iife",
+      "entries": [
+        {
+          "name": "browser",
+          "file": "rehype-katex.umd.js",
+          "dynamic": false,
+          "closure": [
+            "rehype-katex.umd.js"
+          ],
+          "row": 12191,
+          "raw_row": 48456
+        }
+      ],
+      "files": [
+        {
+          "file": "rehype-katex.umd.js",
+          "role": "entry",
+          "source_map_for": null,
+          "label": [
+            "browser"
+          ],
+          "modules": [
+            "browser.lil",
+            "lib/index.lil",
+            "module-4",
+            "module-5",
+            "module-6",
+            "module-7",
+            "module-12",
+            "module-13",
+            "module-14",
+            "module-15",
+            "module-16",
+            "module-17",
+            "module-18",
+            "module-19",
+            "module-20",
+            "module-21",
+            "module-22",
+            "module-23",
+            "module-24",
+            "module-25",
+            "module-26",
+            "module-27",
+            "module-28",
+            "module-29",
+            "module-30",
+            "module-31",
+            "module-32",
+            "module-33",
+            "module-34",
+            "module-35",
+            "module-36",
+            "module-37",
+            "module-38",
+            "module-39",
+            "module-40",
+            "module-41",
+            "module-42",
+            "module-43",
+            "module-44",
+            "module-45",
+            "module-46",
+            "module-47",
+            "module-48",
+            "module-49"
+          ],
+          "anchored": true,
+          "imports": [],
+          "dynamic_imports": [],
+          "bytes": 48456,
+          "codec_bytes": 12191,
+          "sha256": "35618120b4bcea1dbb538b06598a93fca12e664739f045c4b20efae11bc163c5"
+        }
+      ],
+      "side_effects": [
+        "rehype-katex.umd.js"
+      ],
+      "codec_total": 12191,
+      "rows_total": 12191,
+      "setters": 0,
+      "output": "public/browser",
+      "codec": "brotli",
+      "codec_settings": {
+        "brotli": {
+          "quality": 11,
+          "window": 22,
+          "mode": "generic"
+        },
+        "gzip": {
+          "level": 9,
+          "window": 15
+        }
+      },
+      "policy_fingerprint": [
+        38,
+        50,
+        52,
+        171,
+        78,
+        107,
+        18,
+        232,
+        168,
+        54,
+        244,
+        76,
+        96,
+        113,
+        100,
+        197,
+        246,
+        62,
+        182,
+        195,
+        89,
+        204,
+        17,
+        230,
+        120,
+        115,
+        171,
+        54,
+        219,
+        121,
+        67,
+        164
+      ]
+    },
+    {
+      "mode": "single",
+      "format": "cjs",
+      "entries": [
+        {
+          "name": "bundled",
+          "file": "rehype-katex.cjs",
+          "dynamic": false,
+          "closure": [
+            "rehype-katex.cjs"
+          ],
+          "row": 65450,
+          "raw_row": 346440
+        }
+      ],
+      "files": [
+        {
+          "file": "rehype-katex.cjs",
+          "role": "entry",
+          "source_map_for": null,
+          "label": [
+            "bundled"
+          ],
+          "modules": [
+            "lib/index.lil",
+            "bundled.lil",
+            "module-4",
+            "module-6",
+            "module-7",
+            "module-8",
+            "module-12",
+            "module-13",
+            "module-14",
+            "module-15",
+            "module-16",
+            "module-17",
+            "module-18",
+            "module-19",
+            "module-20",
+            "module-21",
+            "module-22",
+            "module-23",
+            "module-24",
+            "module-25",
+            "module-26",
+            "module-27",
+            "module-28",
+            "module-29",
+            "module-30",
+            "module-31",
+            "module-32",
+            "module-33",
+            "module-34",
+            "module-35",
+            "module-36",
+            "module-37",
+            "module-38",
+            "module-41",
+            "module-42",
+            "module-43",
+            "module-44",
+            "module-45",
+            "module-46",
+            "module-47",
+            "module-48",
+            "module-49",
+            "module-50",
+            "module-51",
+            "module-52",
+            "module-53",
+            "module-54",
+            "module-55",
+            "module-56",
+            "module-57",
+            "module-58",
+            "module-59",
+            "module-60",
+            "module-61",
+            "module-62",
+            "module-63",
+            "module-64",
+            "module-65",
+            "module-66",
+            "module-67",
+            "module-68",
+            "module-69",
+            "module-70",
+            "module-71",
+            "module-72",
+            "module-73",
+            "module-74",
+            "module-75",
+            "module-76",
+            "module-77",
+            "module-78",
+            "module-79",
+            "module-80",
+            "module-81",
+            "module-82",
+            "module-83",
+            "module-84",
+            "module-85",
+            "module-86",
+            "module-87",
+            "module-88",
+            "module-89",
+            "module-90",
+            "module-91"
+          ],
+          "anchored": true,
+          "imports": [],
+          "dynamic_imports": [],
+          "bytes": 346440,
+          "codec_bytes": 65450,
+          "sha256": "7dab198400ba04ac1244e3d1fdf02b29d69dc77c32bfc2b3473674e273419f35"
+        }
+      ],
+      "side_effects": [
+        "rehype-katex.cjs"
+      ],
+      "codec_total": 65450,
+      "rows_total": 65450,
+      "setters": 0,
+      "output": "public/cjs",
+      "codec": "brotli",
+      "codec_settings": {
+        "brotli": {
+          "quality": 11,
+          "window": 22,
+          "mode": "generic"
+        },
+        "gzip": {
+          "level": 9,
+          "window": 15
+        }
+      },
+      "policy_fingerprint": [
+        21,
+        27,
+        232,
+        207,
+        26,
+        137,
+        243,
+        13,
+        87,
+        82,
+        19,
+        125,
+        216,
+        97,
+        222,
+        54,
+        157,
+        109,
+        198,
+        112,
+        112,
+        44,
+        208,
+        114,
+        90,
+        116,
+        57,
+        167,
+        112,
+        237,
+        151,
+        207
+      ]
+    },
+    {
+      "mode": "single",
+      "format": "esm",
+      "entries": [
+        {
+          "name": "index",
+          "file": "rehype-katex.closed.js",
+          "dynamic": false,
+          "closure": [
+            "rehype-katex.closed.js"
+          ],
+          "row": 735,
+          "raw_row": 1518
+        }
+      ],
+      "files": [
+        {
+          "file": "rehype-katex.closed.js",
+          "role": "entry",
+          "source_map_for": null,
+          "label": [
+            "index"
+          ],
+          "modules": [
+            "index.lil",
+            "module-2",
+            "module-3",
+            "module-4",
+            "module-5"
+          ],
+          "anchored": true,
+          "imports": [],
+          "dynamic_imports": [],
+          "bytes": 1518,
+          "codec_bytes": 735,
+          "sha256": "d6969fa13eec7ab34e7f304beae83b89b7c347a10c58243827098a510a7afe31"
+        }
+      ],
+      "side_effects": [
+        "rehype-katex.closed.js"
+      ],
+      "codec_total": 735,
+      "rows_total": 735,
+      "setters": 0,
+      "output": "closed/primary",
+      "codec": "brotli",
+      "codec_settings": {
+        "brotli": {
+          "quality": 11,
+          "window": 22,
+          "mode": "generic"
+        },
+        "gzip": {
+          "level": 9,
+          "window": 15
+        }
+      },
+      "policy_fingerprint": [
+        220,
+        190,
+        177,
+        40,
+        18,
+        221,
+        98,
+        12,
+        154,
+        137,
+        5,
+        56,
+        224,
+        191,
+        136,
+        189,
+        228,
+        119,
+        190,
+        228,
+        40,
+        96,
+        190,
+        67,
+        129,
+        18,
+        228,
+        165,
+        242,
+        156,
+        245,
+        241
+      ]
+    }
+  ],
+  "aliases": {
+    "rehype-katex.raw.js": "rehype-katex.esm.js"
+  },
+  "providers": [],
+  "source_sha256": "b9c3d5dd2d60a8c9f4611d87608d8964983e3c8f163ec47c067558785083d286"
+}

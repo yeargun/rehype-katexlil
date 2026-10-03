@@ -1,16 +1,6 @@
-import extern { fromHtmlIsomorphic } from "hast-util-from-html-isomorphic";
-import extern { toText } from "hast-util-to-text";
-import extern { default as katex } from "katex";
-import extern { SKIP, visitParents } from "unist-util-visit-parents";
-
-extern JsValue fromHtmlIsomorphic;
-extern JsValue toText;
-extern JsValue katex;
-extern JsValue SKIP;
-extern JsValue visitParents;
 extern JsValue Object;
-
-export JsValue rehypeKatex(JsValue options) {
+export JsValue createPlugin(JsValue fromHtmlIsomorphic, JsValue toText, JsValue katex, JsValue SKIP, JsValue visitParents) {
+  JsValue plugin = (JsValue options) => {
   JsValue settings = options;
   if (JS.isNullish(settings) || JS.isUndefined(settings)) {
     settings = JS.object();
@@ -98,4 +88,8 @@ export JsValue rehypeKatex(JsValue options) {
     });
     return JS.undefined();
   };
+
+  };
+  JS.invoke(Object, "defineProperty", plugin, "name", object {value: "rehypeKatex", configurable: true});
+  return plugin;
 }

@@ -1,13 +1,58 @@
-# reusable ESM — host-visible names stay
+# Compiler-owned delivery; no JavaScript post-minifier or export rewriting.
+[policy]
+version = 3
 [javascript]
+# Plain-data reads must not run getters; disable for effectful accessor integrations.
+assume_pure_property_reads = true
 priority = "size-first"
-optimization_level = 6
-cost_model = "brotli"
+# Assumes unpatched platform builtins; disable when consumers replace them.
 assume_pristine_builtins = true
-strip_console = true
-candidate_search = "off"
+# Remove debugLog instrumentation; ordinary print and host console effects remain.
+strip_debug = true
 
+# Preserved effort setting. 13 favors size; 14/15 allow more expensive marginal searches.
+[effort]
+level = 15
+
+# Optimize the delivered files for this codec, independently of raw/gzip objectives.
+[objective]
+codecs = "brotli"
 [mangle]
 identifiers = true
 properties = true
 pool_strings = true
+
+[delivery]
+mode = "single"
+directory = "."
+host_modules = "embed"
+select = ["index"]
+entry_names = "rehype-katex.esm.js"
+[delivery.entries]
+index = "src/index.lil"
+bundled = "src/bundled.lil"
+browser = "src/browser.lil"
+
+# CommonJS carries the ESM-only helper packages while KaTeX remains a dependency.
+[[delivery.also]]
+name = "cjs"
+format = "cjs"
+entries = ["bundled"]
+entry_names = "rehype-katex.cjs"
+
+# The browser uses the upstream DOM parser and the existing global KaTeX binding.
+[[delivery.also]]
+name = "browser"
+format = "iife"
+entries = ["browser"]
+exports = "default"
+global = "rehypeKatex"
+global_binding = "property"
+globals = {katex = "katex"}
+entry_names = "rehype-katex.umd.js"
+
+[policy.resources]
+logical_work = 16000000000
+
+[execution]
+jobs = 1

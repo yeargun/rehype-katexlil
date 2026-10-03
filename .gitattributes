@@ -1,0 +1,6 @@
+
+# Preserve generated JavaScript bytes, including whitespace inside embedded sources.
+dist/** -whitespace linguist-generated
+site/comparison-artifacts/*.mjs -whitespace linguist-generated
+site/rehype-katex.js -whitespace linguist-generated
+site/official.js -whitespace linguist-generated
