@@ -12,8 +12,8 @@
           "closure": [
             "rehype-katex.esm.js"
           ],
-          "row": 735,
-          "raw_row": 1536
+          "row": 592,
+          "raw_row": 1229
         }
       ],
       "files": [
@@ -26,24 +26,24 @@
           ],
           "modules": [
             "index.lil",
-            "module-88",
             "module-89",
             "module-90",
-            "module-91"
+            "module-91",
+            "module-92"
           ],
           "anchored": true,
           "imports": [],
           "dynamic_imports": [],
-          "bytes": 1536,
-          "codec_bytes": 735,
-          "sha256": "e7436770c11dcb3dd00564d753b2bcfb02c5810d65d0f7063849e473852ef10e"
+          "bytes": 1229,
+          "codec_bytes": 592,
+          "sha256": "f4e1b422d908b0227a865371d8e1e67b9709155056772d3845094b9ec7ce89f9"
         }
       ],
       "side_effects": [
         "rehype-katex.esm.js"
       ],
-      "codec_total": 735,
-      "rows_total": 735,
+      "codec_total": 592,
+      "rows_total": 592,
       "setters": 0,
       "output": "public/primary",
       "codec": "brotli",
@@ -104,8 +104,8 @@
           "closure": [
             "rehype-katex.umd.js"
           ],
-          "row": 12191,
-          "raw_row": 48456
+          "row": 12078,
+          "raw_row": 48177
         }
       ],
       "files": [
@@ -119,11 +119,10 @@
           "modules": [
             "browser.lil",
             "lib/index.lil",
-            "module-4",
             "module-5",
             "module-6",
             "module-7",
-            "module-12",
+            "module-8",
             "module-13",
             "module-14",
             "module-15",
@@ -160,21 +159,22 @@
             "module-46",
             "module-47",
             "module-48",
-            "module-49"
+            "module-49",
+            "module-50"
           ],
           "anchored": true,
           "imports": [],
           "dynamic_imports": [],
-          "bytes": 48456,
-          "codec_bytes": 12191,
-          "sha256": "35618120b4bcea1dbb538b06598a93fca12e664739f045c4b20efae11bc163c5"
+          "bytes": 48177,
+          "codec_bytes": 12078,
+          "sha256": "a500c98ac20cfc46cfe8b5767d85a4a166af1ced93a9baf5457bdde2eb0abd98"
         }
       ],
       "side_effects": [
         "rehype-katex.umd.js"
       ],
-      "codec_total": 12191,
-      "rows_total": 12191,
+      "codec_total": 12078,
+      "rows_total": 12078,
       "setters": 0,
       "output": "public/browser",
       "codec": "brotli",
@@ -235,8 +235,8 @@
           "closure": [
             "rehype-katex.cjs"
           ],
-          "row": 65450,
-          "raw_row": 346440
+          "row": 65423,
+          "raw_row": 346161
         }
       ],
       "files": [
@@ -250,11 +250,10 @@
           "modules": [
             "lib/index.lil",
             "bundled.lil",
-            "module-4",
-            "module-6",
+            "module-5",
             "module-7",
             "module-8",
-            "module-12",
+            "module-9",
             "module-13",
             "module-14",
             "module-15",
@@ -281,7 +280,7 @@
             "module-36",
             "module-37",
             "module-38",
-            "module-41",
+            "module-39",
             "module-42",
             "module-43",
             "module-44",
@@ -331,21 +330,22 @@
             "module-88",
             "module-89",
             "module-90",
-            "module-91"
+            "module-91",
+            "module-92"
           ],
           "anchored": true,
           "imports": [],
           "dynamic_imports": [],
-          "bytes": 346440,
-          "codec_bytes": 65450,
-          "sha256": "7dab198400ba04ac1244e3d1fdf02b29d69dc77c32bfc2b3473674e273419f35"
+          "bytes": 346161,
+          "codec_bytes": 65423,
+          "sha256": "c899acb53951076f7670ec2f7bd101ff0628c4afd2e9b8440a2ebeeffab73210"
         }
       ],
       "side_effects": [
         "rehype-katex.cjs"
       ],
-      "codec_total": 65450,
-      "rows_total": 65450,
+      "codec_total": 65423,
+      "rows_total": 65423,
       "setters": 0,
       "output": "public/cjs",
       "codec": "brotli",
@@ -406,8 +406,8 @@
           "closure": [
             "rehype-katex.closed.js"
           ],
-          "row": 735,
-          "raw_row": 1518
+          "row": 594,
+          "raw_row": 1242
         }
       ],
       "files": [
@@ -428,16 +428,16 @@
           "anchored": true,
           "imports": [],
           "dynamic_imports": [],
-          "bytes": 1518,
-          "codec_bytes": 735,
-          "sha256": "d6969fa13eec7ab34e7f304beae83b89b7c347a10c58243827098a510a7afe31"
+          "bytes": 1242,
+          "codec_bytes": 594,
+          "sha256": "e73fb79b609323f828c7fdd11f087a988eefed3f6568ce5090c7c5bc4d826827"
         }
       ],
       "side_effects": [
         "rehype-katex.closed.js"
       ],
-      "codec_total": 735,
-      "rows_total": 735,
+      "codec_total": 594,
+      "rows_total": 594,
       "setters": 0,
       "output": "closed/primary",
       "codec": "brotli",
@@ -492,5 +492,5 @@
     "rehype-katex.raw.js": "rehype-katex.esm.js"
   },
   "providers": [],
-  "source_sha256": "b9c3d5dd2d60a8c9f4611d87608d8964983e3c8f163ec47c067558785083d286"
+  "source_sha256": "77f92d25cc985b25c9feb88a0a906908379d0b2de7417bcef92d2717d9048988"
 }

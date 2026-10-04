@@ -1,5 +1,1 @@
-
-> @itslil/rehype-katex@7.0.3 check:pack
-> node scripts/check-pack.mjs
-
-npm pack: 108 files, 252799 bytes packed, 1266469 bytes unpacked
+npm pack: 108 files, 252305 bytes packed, 1266540 bytes unpacked

@@ -1,34 +1,35 @@
 {
   "schemaVersion": 1,
   "package": "@itslil/rehype-katex",
-  "version": "7.0.3",
-  "checkedAt": "2026-10-03T15:05:13.646490+00:00",
+  "version": "7.0.4",
+  "checkedAt": "2026-10-04T20:05:43.295Z",
   "compilerSha256": "8ff44fabb92c949e68240ce6541038fd52e2f3c04d1a9ac470031e4238541c3a",
   "buildReport": "./comparison/package-build-report.json",
-  "packageBuildSeconds": 3.534,
+  "packageBuildSeconds": 1.886,
   "validation": {
     "ok": true,
     "checks": [
       {
         "suite": "test",
         "command": [
-          "npm",
-          "test"
+          "bash",
+          "-c",
+          "npm run check:types && node --test test/official/test.js test/*.test.mjs"
         ],
         "returncode": 0,
         "log": "./comparison/package-validation/test.log",
-        "logSha256": "f326e3799857ddfe46cf34ec8dc51de12ce711c22c9de3008951834bd60ef63d"
+        "logSha256": "6a827ab1afc418e1a6730868bdb2f97fe78f78648c20cf1b0f9461f2f85b954d"
       },
       {
         "suite": "pack",
         "command": [
-          "npm",
-          "run",
-          "check:pack"
+          "bash",
+          "-c",
+          "node scripts/check-pack.mjs"
         ],
         "returncode": 0,
         "log": "./comparison/package-validation/pack.log",
-        "logSha256": "0db2b2eb1183b020d5c356802984a0be15b46d98ac6b237b1c030431884fa669"
+        "logSha256": "2aadf27de8b804bdf7ffdaf41c21a44d00252f93f0ef79776de8d283bd37efea"
       }
     ]
   },
@@ -47,7 +48,7 @@
     },
     {
       "path": "src/index.lil",
-      "sha256": "122b571e7c4f8e16b648add0433c7207716778196d047fbe2b33b0f48eb986c1"
+      "sha256": "0fa81a7353b8f793ca31f2b435c6c93b07cb9565db902aef2311fadcc2c6210c"
     },
     {
       "path": "src/katex/Lexer.lil",
@@ -130,6 +131,10 @@
       "sha256": "fcd737b675f8ec882745dfebcdeb48ff7218dbf6e9358fc706111c92899fbea9"
     },
     {
+      "path": "src/katex/environments.lil",
+      "sha256": "9e7b4bae8fa5ce8b87091b3df39f92d914406c1f7c77a04efd44400eba613747"
+    },
+    {
       "path": "src/katex/environments/array.lil",
       "sha256": "60d9c1c311c29336747a346d45650636c4c894ca7d868c9b2522ed039619a248"
     },
@@ -138,16 +143,16 @@
       "sha256": "20e6c42cb83abc25b6ca452182e5eb4c47f892f1199d4023c2fa5651782295fd"
     },
     {
-      "path": "src/katex/environments.lil",
-      "sha256": "9e7b4bae8fa5ce8b87091b3df39f92d914406c1f7c77a04efd44400eba613747"
-    },
-    {
       "path": "src/katex/fontMetrics.lil",
       "sha256": "0923dee97ba9f1ec0befbd3b6b4a984ac1c4f14d24cbd84632bd1ce3694eab10"
     },
     {
       "path": "src/katex/fontMetricsData.js",
       "sha256": "b5ad13cba5980681a4f1f618676babe7cea41fe6a8e4d6a28f63b000d5fa1880"
+    },
+    {
+      "path": "src/katex/functions.lil",
+      "sha256": "96be0d4ca270b4ab8959ae204b3196a1b5707606dedc76358fe45de9983491b9"
     },
     {
       "path": "src/katex/functions/accent.lil",
@@ -334,10 +339,6 @@
       "sha256": "ef76190c67c2b084e6a3f425c1d7c76024d8c8f2bc3cbae9360587579103591f"
     },
     {
-      "path": "src/katex/functions.lil",
-      "sha256": "96be0d4ca270b4ab8959ae204b3196a1b5707606dedc76358fe45de9983491b9"
-    },
-    {
       "path": "src/katex/host.lil",
       "sha256": "2df29a7c67b870a89699495f7ed5c64693c8ff140b38dc177a5c00b01666179f"
     },
@@ -415,7 +416,7 @@
     },
     {
       "path": "src/lib/index.lil",
-      "sha256": "52dc2ab6008368cacd60b899eb1630613edb86d89acf35e3163f3f3893d64f09"
+      "sha256": "410bdb76bf3dcc4d7f63762f38b20a5b4093f706f89a795b058912751dd4f1ae"
     },
     {
       "path": "src/to-hast.lil",
@@ -433,28 +434,28 @@
   "artifacts": [
     {
       "path": "dist/.lilscript/closed.json",
-      "bytes": 2744,
-      "sha256": "dced35fa294d0e145b867497188365f0a3b7fa4c8ed78260b10afd2f668a087c"
+      "bytes": 2678,
+      "sha256": "26f191402c6f715a81a9b51b13091450d1ec95804205d0fea42fa6ab6b7bb730"
     },
     {
       "path": "dist/.lilscript/public.json",
-      "bytes": 80708,
-      "sha256": "5b97b90e75289efe86d21208fac0d6e3904b9aa7f3e08025d9065467e065c126"
+      "bytes": 80623,
+      "sha256": "20ce5b1bda405a5a40f37d1e40e4cbd9ea26cd1dcd60e3b81efa348e86c660e6"
     },
     {
       "path": "dist/lilscript.manifest.json",
       "bytes": 10235,
-      "sha256": "8feff20bd27ae07d9fc9654bd6874ec11bc6901ced464d49dd5c7275b0800533"
+      "sha256": "70ab1af0897f40c994fa3622bbb236a185198a801845fb95a84284c86d52e8e3"
     },
     {
       "path": "dist/rehype-katex.cjs",
-      "bytes": 346440,
-      "sha256": "7dab198400ba04ac1244e3d1fdf02b29d69dc77c32bfc2b3473674e273419f35"
+      "bytes": 346161,
+      "sha256": "c899acb53951076f7670ec2f7bd101ff0628c4afd2e9b8440a2ebeeffab73210"
     },
     {
       "path": "dist/rehype-katex.closed.js",
-      "bytes": 1518,
-      "sha256": "d6969fa13eec7ab34e7f304beae83b89b7c347a10c58243827098a510a7afe31"
+      "bytes": 1242,
+      "sha256": "e73fb79b609323f828c7fdd11f087a988eefed3f6568ce5090c7c5bc4d826827"
     },
     {
       "path": "dist/rehype-katex.d.ts",
@@ -463,18 +464,18 @@
     },
     {
       "path": "dist/rehype-katex.esm.js",
-      "bytes": 1536,
-      "sha256": "e7436770c11dcb3dd00564d753b2bcfb02c5810d65d0f7063849e473852ef10e"
+      "bytes": 1229,
+      "sha256": "f4e1b422d908b0227a865371d8e1e67b9709155056772d3845094b9ec7ce89f9"
     },
     {
       "path": "dist/rehype-katex.raw.js",
-      "bytes": 1536,
-      "sha256": "e7436770c11dcb3dd00564d753b2bcfb02c5810d65d0f7063849e473852ef10e"
+      "bytes": 1229,
+      "sha256": "f4e1b422d908b0227a865371d8e1e67b9709155056772d3845094b9ec7ce89f9"
     },
     {
       "path": "dist/rehype-katex.umd.js",
-      "bytes": 48456,
-      "sha256": "35618120b4bcea1dbb538b06598a93fca12e664739f045c4b20efae11bc163c5"
+      "bytes": 48177,
+      "sha256": "a500c98ac20cfc46cfe8b5767d85a4a166af1ced93a9baf5457bdde2eb0abd98"
     }
   ],
   "scope": "Checked repository package; independent of npm publication. Main-entry objective comparisons have separate artifacts and timings."

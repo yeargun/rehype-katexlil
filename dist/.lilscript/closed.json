@@ -13,8 +13,8 @@
           "closure": [
             "rehype-katex.closed.js"
           ],
-          "row": 735,
-          "raw_row": 1518
+          "row": 594,
+          "raw_row": 1242
         }
       ],
       "files": [
@@ -35,16 +35,16 @@
           "anchored": true,
           "imports": [],
           "dynamic_imports": [],
-          "bytes": 1518,
-          "codec_bytes": 735,
-          "sha256": "d6969fa13eec7ab34e7f304beae83b89b7c347a10c58243827098a510a7afe31"
+          "bytes": 1242,
+          "codec_bytes": 594,
+          "sha256": "e73fb79b609323f828c7fdd11f087a988eefed3f6568ce5090c7c5bc4d826827"
         }
       ],
       "side_effects": [
         "rehype-katex.closed.js"
       ],
-      "codec_total": 735,
-      "rows_total": 735,
+      "codec_total": 594,
+      "rows_total": 594,
       "setters": 0,
       "output": "primary",
       "codec": "brotli",
@@ -95,7 +95,7 @@
       ]
     }
   ],
-  "source_sha256": "abb7c6bd5fad2b7bc72eaad8cc15bee1f0eacd72bcb5e19a2b8bc35be5015b7d",
+  "source_sha256": "6f7454a342760b9e35f5ae011b15c240836926583e28d6dee7a40eb3dea8b865",
   "inputs": {
     "root": 0,
     "entries": [
@@ -106,18 +106,18 @@
     ],
     "modules": [
       {
-        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/rehype-katexlil/src/index.lil",
-        "bytes": 579,
-        "sha256": "122b571e7c4f8e16b648add0433c7207716778196d047fbe2b33b0f48eb986c1",
+        "path": "/home/azureuser/lilscript-work/wt/rehype-katexlil-fix/src/index.lil",
+        "bytes": 3070,
+        "sha256": "0fa81a7353b8f793ca31f2b435c6c93b07cb9565db902aef2311fadcc2c6210c",
         "dependencies": [
           1
         ],
         "dynamic_dependencies": []
       },
       {
-        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/rehype-katexlil/src/lib/index.lil",
-        "bytes": 4223,
-        "sha256": "52dc2ab6008368cacd60b899eb1630613edb86d89acf35e3163f3f3893d64f09",
+        "path": "/home/azureuser/lilscript-work/wt/rehype-katexlil-fix/src/katex/host.lil",
+        "bytes": 7611,
+        "sha256": "2df29a7c67b870a89699495f7ed5c64693c8ff140b38dc177a5c00b01666179f",
         "dependencies": [],
         "dynamic_dependencies": []
       }

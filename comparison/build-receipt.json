@@ -1,6 +1,6 @@
 {
   "schema": 3,
-  "compiler": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/bin/lilscript",
+  "compiler": "/home/azureuser/lilscript-work/remark-fix/lilscript-8ff44f",
   "compilerSha256": "8ff44fabb92c949e68240ce6541038fd52e2f3c04d1a9ac470031e4238541c3a",
   "profiles": [
     {
@@ -9,10 +9,10 @@
       "configSha256": "715df68ab53faa1cd0757d670dcd7fa7f1a08351e24745e5ef2780f2c0f8fd02",
       "mode": "production",
       "target": "js-module",
-      "sourceSha256": "fca9bff360a0bdf6160dc1d23a6a34c4f8b7b6a2631a341667b83bb5ac06ffb3",
-      "manifestSha256": "5b97b90e75289efe86d21208fac0d6e3904b9aa7f3e08025d9065467e065c126",
+      "sourceSha256": "cef94cd3a94ba48163c90a8aa1fa2711b913bccbbeada9acba9122ef8010b50a",
+      "manifestSha256": "20ce5b1bda405a5a40f37d1e40e4cbd9ea26cd1dcd60e3b81efa348e86c660e6",
       "resolvedPolicy": {
-        "config": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/rehype-katexlil/lilscript.toml",
+        "config": "/home/azureuser/lilscript-work/wt/rehype-katexlil-fix/lilscript.toml",
         "warnings": [],
         "request": {
           "logical_work": 40000000000,
@@ -3022,7 +3022,7 @@
         "primary_fingerprint": "67adf50cea0cb512a408aa5159635de6f24ee3fb4a5aa1487e9efd858d2910d1",
         "fingerprint_scope": "requested delivery and objective policies"
       },
-      "compileWallMs": 3485
+      "compileWallMs": 1855
     },
     {
       "name": "closed",
@@ -3030,10 +3030,10 @@
       "configSha256": "742a4ae9b539be70bd44e89dfde80ef37b1521b0455fe249b58b93f193913e0f",
       "mode": "production",
       "target": "js-module",
-      "sourceSha256": "abb7c6bd5fad2b7bc72eaad8cc15bee1f0eacd72bcb5e19a2b8bc35be5015b7d",
-      "manifestSha256": "dced35fa294d0e145b867497188365f0a3b7fa4c8ed78260b10afd2f668a087c",
+      "sourceSha256": "6f7454a342760b9e35f5ae011b15c240836926583e28d6dee7a40eb3dea8b865",
+      "manifestSha256": "26f191402c6f715a81a9b51b13091450d1ec95804205d0fea42fa6ab6b7bb730",
       "resolvedPolicy": {
-        "config": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/rehype-katexlil/lilscript.closed.toml",
+        "config": "/home/azureuser/lilscript-work/wt/rehype-katexlil-fix/lilscript.closed.toml",
         "warnings": [],
         "request": {
           "logical_work": 40000000000,
@@ -4348,15 +4348,15 @@
           "resources": "service ceilings intersect TOML limits; the smaller value wins"
         }
       },
-      "compileWallMs": 49
+      "compileWallMs": 31
     }
   ],
   "artifacts": {
     "rehype-katex.esm.js": {
-      "sha256": "e7436770c11dcb3dd00564d753b2bcfb02c5810d65d0f7063849e473852ef10e",
-      "raw": 1536,
+      "sha256": "f4e1b422d908b0227a865371d8e1e67b9709155056772d3845094b9ec7ce89f9",
+      "raw": 1229,
       "codec": "brotli",
-      "codecBytes": 735,
+      "codecBytes": 592,
       "output": "public/primary",
       "policyFingerprint": [
         103,
@@ -4394,10 +4394,10 @@
       ]
     },
     "rehype-katex.umd.js": {
-      "sha256": "35618120b4bcea1dbb538b06598a93fca12e664739f045c4b20efae11bc163c5",
-      "raw": 48456,
+      "sha256": "a500c98ac20cfc46cfe8b5767d85a4a166af1ced93a9baf5457bdde2eb0abd98",
+      "raw": 48177,
       "codec": "brotli",
-      "codecBytes": 12191,
+      "codecBytes": 12078,
       "output": "public/browser",
       "policyFingerprint": [
         38,
@@ -4435,10 +4435,10 @@
       ]
     },
     "rehype-katex.cjs": {
-      "sha256": "7dab198400ba04ac1244e3d1fdf02b29d69dc77c32bfc2b3473674e273419f35",
-      "raw": 346440,
+      "sha256": "c899acb53951076f7670ec2f7bd101ff0628c4afd2e9b8440a2ebeeffab73210",
+      "raw": 346161,
       "codec": "brotli",
-      "codecBytes": 65450,
+      "codecBytes": 65423,
       "output": "public/cjs",
       "policyFingerprint": [
         21,
@@ -4476,10 +4476,10 @@
       ]
     },
     "rehype-katex.closed.js": {
-      "sha256": "d6969fa13eec7ab34e7f304beae83b89b7c347a10c58243827098a510a7afe31",
-      "raw": 1518,
+      "sha256": "e73fb79b609323f828c7fdd11f087a988eefed3f6568ce5090c7c5bc4d826827",
+      "raw": 1242,
       "codec": "brotli",
-      "codecBytes": 735,
+      "codecBytes": 594,
       "output": "closed/primary",
       "policyFingerprint": [
         220,
@@ -4517,10 +4517,10 @@
       ]
     },
     "rehype-katex.raw.js": {
-      "sha256": "e7436770c11dcb3dd00564d753b2bcfb02c5810d65d0f7063849e473852ef10e",
-      "raw": 1536,
+      "sha256": "f4e1b422d908b0227a865371d8e1e67b9709155056772d3845094b9ec7ce89f9",
+      "raw": 1229,
       "codec": "brotli",
-      "codecBytes": 735,
+      "codecBytes": 592,
       "output": "public/primary",
       "policyFingerprint": [
         103,
@@ -4567,6 +4567,6 @@
     "dist/rehype-katex.closed.js": "compiler",
     "dist/rehype-katex.raw.js": "compiler"
   },
-  "dependencyLockSha256": "5e914e8b04e84f48e83539235a3095f6bb70823ea414a1c9b30496367b1424d0",
-  "manifestSha256": "8feff20bd27ae07d9fc9654bd6874ec11bc6901ced464d49dd5c7275b0800533"
+  "dependencyLockSha256": "8a4aa265386181d04dfa65772f02caf785f8f05791e9550777677875e884de3f",
+  "manifestSha256": "70ab1af0897f40c994fa3622bbb236a185198a801845fb95a84284c86d52e8e3"
 }
