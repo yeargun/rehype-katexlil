@@ -1,4 +1,4 @@
-// Match the package's existing dependency boundary for this consumer.
+// rehype-katex 7.0.1, written as upstream's lib/index.js; dependencies stay external, as the package declares them.
 import extern {default as katex} from "katex";
 import extern {fromHtmlIsomorphic} from "hast-util-from-html-isomorphic";
 import extern {toText} from "hast-util-to-text";
@@ -8,5 +8,74 @@ extern JsValue fromHtmlIsomorphic;
 extern JsValue toText;
 extern JsValue SKIP;
 extern JsValue visitParents;
-import {createPlugin} from "./lib/index.lil";
-export JsValue default = createPlugin(fromHtmlIsomorphic, toText, katex, SKIP, visitParents);
+import { Object, String } from "./katex/host.lil";
+
+JsValue emptyOptions = JS.object();
+JsValue emptyClasses = JS.array();
+
+JsValue rehypeKatex = (JsValue options) => {
+  JsValue settings = options || emptyOptions;
+
+  return (JsValue tree, JsValue file) => {
+    visitParents(tree, "element", (JsValue element, JsValue[] parents) => {
+      JsValue classes = if (JS.isArray(element.properties.className)) { element.properties.className } else { emptyClasses };
+      bool languageMath = JS.assume(classes.includes("language-math"));
+      bool mathDisplay = JS.assume(classes.includes("math-display"));
+      bool mathInline = JS.assume(classes.includes("math-inline"));
+      bool displayMode = mathDisplay;
+
+      if (!languageMath && !mathDisplay && !mathInline) {
+        return JS.undefined();
+      }
+
+      JsValue parent = parents[parents.length - 1];
+      JsValue scope = element;
+
+      if (element.tagName === "code" && languageMath && bool(parent) && parent.type === "element" && parent.tagName === "pre") {
+        scope = parent;
+        parent = parents[parents.length - 2];
+        displayMode = true;
+      }
+
+      if (!bool(parent)) {
+        return JS.undefined();
+      }
+
+      JsValue value = toText(scope, object {whitespace: "pre"});
+      JsValue result = JS.undefined();
+
+      try {
+        result = katex.renderToString(value, Object.assign(object {}, settings, object {displayMode: displayMode, throwOnError: true}));
+      } catch (JsValue error) {
+        file.message("Could not render math with KaTeX", object {
+          ancestors: [...parents, element],
+          cause: error,
+          place: element.position,
+          ruleId: error.name.toLowerCase(),
+          source: "rehype-katex"
+        });
+
+        try {
+          result = katex.renderToString(value, Object.assign(object {}, settings, object {displayMode: displayMode, strict: "ignore", throwOnError: false}));
+        } catch (JsValue ignored) {
+          result = [object {
+            type: "element",
+            tagName: "span",
+            properties: object {className: ["katex-error"], style: "color:" + (settings.errorColor || "#cc0000"), title: String(error)},
+            children: [object {type: "text", value: value}]
+          }];
+        }
+      }
+
+      if (typeof result === "string") {
+        result = fromHtmlIsomorphic(result, object {fragment: true}).children;
+      }
+
+      JsValue[] nodes = JS.assume(result);
+      parent.children.splice(parent.children.indexOf(scope), 1, ...nodes);
+      return SKIP;
+    });
+  };
+};
+
+export JsValue default = rehypeKatex;

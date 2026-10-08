@@ -1,0 +1,307 @@
+{
+  "compiler": {
+    "baseRevision": "f7d29bd9",
+    "binarySha256": "8ff44fabb92c949e68240ce6541038fd52e2f3c04d1a9ac470031e4238541c3a",
+    "hasLocalSourceChanges": true
+  },
+  "machine": {
+    "cpu": "AMD EPYC 7763 64-Core Processor",
+    "logicalCpus": 8,
+    "memoryGiB": 15.6,
+    "os": "Linux-7.0.0-1014-azure-x86_64-with-glibc2.39",
+    "node": "v20.19.0"
+  },
+  "lilscript": [
+    {
+      "library": "rehype-katexlil",
+      "objective": "raw",
+      "command": [
+        "/home/azureuser/lilscript-rebuild-reports/2026-10-03-pages/bin/lilscript",
+        "--config",
+        "/home/azureuser/lilscript-rebuild-reports/2026-10-03-pages/configs/rehype-katexlil-raw.toml",
+        "--target",
+        "js-module",
+        "--mode",
+        "production",
+        "--jobs",
+        "1",
+        "--out-dir",
+        "/home/azureuser/lilscript-rebuild-reports/2026-10-03-pages/artifacts/rehype-katexlil/raw",
+        "--explain",
+        "json",
+        "--cache",
+        "off",
+        "--logical-work",
+        "2000000000"
+      ],
+      "wallSeconds": 0.4647026340026059,
+      "returncode": 0,
+      "compilerSha256": "8ff44fabb92c949e68240ce6541038fd52e2f3c04d1a9ac470031e4238541c3a",
+      "configSha256": "e5d5ae643657bef3624a124f55c96cf9cc507ebe72fbf57fbc246228ee940ee6",
+      "measuredAt": "2026-10-02T22:48:53.901334+00:00",
+      "outputSha256": "d4970cc85b87d36f9c67504bd1823dc539d9f3227a666078da437e525013ddd3",
+      "raw": 1503
+    },
+    {
+      "library": "rehype-katexlil",
+      "objective": "gzip",
+      "command": [
+        "/home/azureuser/lilscript-rebuild-reports/2026-10-03-pages/bin/lilscript",
+        "--config",
+        "/home/azureuser/lilscript-rebuild-reports/2026-10-03-pages/configs/rehype-katexlil-gzip.toml",
+        "--target",
+        "js-module",
+        "--mode",
+        "production",
+        "--jobs",
+        "1",
+        "--out-dir",
+        "/home/azureuser/lilscript-rebuild-reports/2026-10-03-pages/artifacts/rehype-katexlil/gzip",
+        "--explain",
+        "json",
+        "--cache",
+        "off",
+        "--logical-work",
+        "2000000000"
+      ],
+      "wallSeconds": 0.6149077139998553,
+      "returncode": 0,
+      "compilerSha256": "8ff44fabb92c949e68240ce6541038fd52e2f3c04d1a9ac470031e4238541c3a",
+      "configSha256": "477829228a8c673a76dc10d1f67853fe8d84cebfe7285fa097d071901163f4c1",
+      "measuredAt": "2026-10-02T22:48:54.521572+00:00",
+      "outputSha256": "4ee5be7e65cfaaeae928af42a1985ec801a9dd638d3c3ef483e472d7d01f3aaf",
+      "raw": 1515
+    },
+    {
+      "library": "rehype-katexlil",
+      "objective": "brotli",
+      "command": [
+        "/home/azureuser/lilscript-rebuild-reports/2026-10-03-pages/bin/lilscript",
+        "--config",
+        "/home/azureuser/lilscript-rebuild-reports/2026-10-03-pages/configs/rehype-katexlil-brotli.toml",
+        "--target",
+        "js-module",
+        "--mode",
+        "production",
+        "--jobs",
+        "1",
+        "--out-dir",
+        "/home/azureuser/lilscript-rebuild-reports/2026-10-03-pages/artifacts/rehype-katexlil/brotli",
+        "--explain",
+        "json",
+        "--cache",
+        "off",
+        "--logical-work",
+        "2000000000"
+      ],
+      "wallSeconds": 1.867154522002238,
+      "returncode": 0,
+      "compilerSha256": "8ff44fabb92c949e68240ce6541038fd52e2f3c04d1a9ac470031e4238541c3a",
+      "configSha256": "e95707e207d00ac39dfc7573cf3f4f8c37aa400bcd20044829de81f4fc136221",
+      "measuredAt": "2026-10-02T22:48:56.395426+00:00",
+      "outputSha256": "1c4573d24c3a4b89e5247ab98b2a9e8e362b6215288c4d486450b3db17d03a8e",
+      "raw": 1517
+    }
+  ],
+  "upstream": {
+    "name": "rehype-katexlil",
+    "package": "rehype-katex",
+    "version": "7.0.1",
+    "resolveDir": "/home/azureuser/lilscript-rebuild-reports/2026-10-02-optimization/vendor/rehype-katex/package",
+    "output": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-pages/upstream/rehype-katexlil",
+    "entry": "export {default} from \"/home/azureuser/lilscript-rebuild-reports/2026-10-02-optimization/vendor/rehype-katex/package/index.js\";",
+    "external": [
+      "katex",
+      "hast-util-from-html-isomorphic",
+      "hast-util-to-text",
+      "unist-util-visit-parents"
+    ],
+    "sharedExports": [
+      "default"
+    ],
+    "excludedExports": [],
+    "additionalExports": [],
+    "resolution": {
+      "platform": "neutral",
+      "conditions": [
+        "production"
+      ],
+      "mainFields": [
+        "module",
+        "main"
+      ],
+      "target": "es2020",
+      "defines": {
+        "process.env.NODE_ENV": "production"
+      }
+    },
+    "minifiers": [
+      {
+        "tool": "Terser",
+        "version": "5.51.2",
+        "esbuild": "0.28.1",
+        "artifact": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-pages/upstream/rehype-katexlil/terser.mjs",
+        "sha256": "c7e8791a88e1257b16f49f82d0a77838bfb78476996dba86363a47a18bae207b",
+        "raw": 1264,
+        "imports": [
+          {
+            "path": "hast-util-from-html-isomorphic",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "hast-util-to-text",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "katex",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "unist-util-visit-parents",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "wallSeconds": 0.14039886800000023,
+        "command": [
+          "/home/azureuser/.nvm/versions/node/v20.19.0/bin/node",
+          "/home/azureuser/lilscript-rebuild-reports/2026-10-03-pages/upstream.mjs",
+          "child",
+          "/home/azureuser/lilscript-rebuild-reports/2026-10-03-pages/upstream/rehype-katexlil/job.json",
+          "Terser"
+        ]
+      },
+      {
+        "tool": "esbuild",
+        "version": "0.28.1",
+        "esbuild": "0.28.1",
+        "artifact": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-pages/upstream/rehype-katexlil/esbuild.mjs",
+        "sha256": "32c36c0737b762b01e53588f8fd7de9ccc8a8c14cd637bc5102bf496f92f7783",
+        "raw": 1265,
+        "imports": [
+          {
+            "path": "hast-util-from-html-isomorphic",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "hast-util-to-text",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "katex",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "unist-util-visit-parents",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "wallSeconds": 0.055585471999998845,
+        "command": [
+          "/home/azureuser/.nvm/versions/node/v20.19.0/bin/node",
+          "/home/azureuser/lilscript-rebuild-reports/2026-10-03-pages/upstream.mjs",
+          "child",
+          "/home/azureuser/lilscript-rebuild-reports/2026-10-03-pages/upstream/rehype-katexlil/job.json",
+          "esbuild"
+        ]
+      },
+      {
+        "tool": "Oxc",
+        "version": "via Vite 8.2.1",
+        "esbuild": "0.28.1",
+        "artifact": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-pages/upstream/rehype-katexlil/oxc.mjs",
+        "sha256": "956a5c60208c5007f948e45f0b08ea1d21a2f61d8fc5807804c3a51be6461765",
+        "raw": 1246,
+        "imports": [
+          {
+            "path": "hast-util-from-html-isomorphic",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "hast-util-to-text",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "katex",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "unist-util-visit-parents",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "wallSeconds": 0.17197762799999874,
+        "command": [
+          "/home/azureuser/.nvm/versions/node/v20.19.0/bin/node",
+          "/home/azureuser/lilscript-rebuild-reports/2026-10-03-pages/upstream.mjs",
+          "child",
+          "/home/azureuser/lilscript-rebuild-reports/2026-10-03-pages/upstream/rehype-katexlil/job.json",
+          "Oxc"
+        ]
+      }
+    ]
+  },
+  "sourceInputs": {
+    "root": 0,
+    "entries": [
+      {
+        "name": "index",
+        "module": 0
+      }
+    ],
+    "modules": [
+      {
+        "path": "/home/azureuser/rehype-katexlil/src/index.lil",
+        "bytes": 579,
+        "sha256": "122b571e7c4f8e16b648add0433c7207716778196d047fbe2b33b0f48eb986c1",
+        "dependencies": [
+          1
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/rehype-katexlil/src/lib/index.lil",
+        "bytes": 4223,
+        "sha256": "52dc2ab6008368cacd60b899eb1630613edb86d89acf35e3163f3f3893d64f09",
+        "dependencies": [],
+        "dynamic_dependencies": []
+      }
+    ],
+    "host_modules": [],
+    "host_reserved": []
+  },
+  "validation": {
+    "checks": 33,
+    "objectives": [
+      {
+        "objective": "raw",
+        "checks": 11,
+        "suite": "upstream-derived/API"
+      },
+      {
+        "objective": "gzip",
+        "checks": 11,
+        "suite": "upstream-derived/API"
+      },
+      {
+        "objective": "brotli",
+        "checks": 11,
+        "suite": "upstream-derived/API"
+      }
+    ],
+    "scope": "Main ESM entry; selected corpora and API checks, not all package formats or complete upstream equivalence."
+  },
+  "workLimit": 2000000000,
+  "timingScope": "One sequential fresh-output build per objective/minifier. Upstream timing is ESM bundling and minification, not original-repository source compilation."
+}
